@@ -60,7 +60,7 @@
               "RelativeDocumentMoniker": "SourceCode\\enemy.cpp",
               "ToolTip": "C:\\Users\\2240021\\Documents\\GitHub\\randomparty\\randomparty\\project\\randomparty\\SourceCode\\enemy.cpp",
               "RelativeToolTip": "SourceCode\\enemy.cpp",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAC0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAC0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-10-04T12:57:12.13Z",
               "EditorCaption": ""
@@ -75,8 +75,7 @@
               "RelativeToolTip": "SourceCode\\enemy.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-10-04T12:56:55.955Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-04T12:56:55.955Z"
             },
             {
               "$type": "Document",
@@ -88,8 +87,7 @@
               "RelativeToolTip": "SourceCode\\player.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-10-04T12:54:24.787Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-04T12:54:24.787Z"
             },
             {
               "$type": "Document",
@@ -101,8 +99,7 @@
               "RelativeToolTip": "SourceCode\\player.cpp",
               "ViewState": "AgIAAB4AAAAAAAAAAAAkwCwAAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-10-04T12:54:21.944Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-04T12:54:21.944Z"
             },
             {
               "$type": "Document",
@@ -162,8 +159,7 @@
               "RelativeToolTip": "SourceCode\\all.h",
               "ViewState": "AgIAAAkAAAAAAAAAAADwvxUAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-10-04T07:03:23.536Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-04T07:03:23.536Z"
             },
             {
               "$type": "Document",
