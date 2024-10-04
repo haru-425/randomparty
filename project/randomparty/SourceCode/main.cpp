@@ -58,4 +58,6 @@ int APIENTRY wWinMain(HINSTANCE, HINSTANCE, LPWSTR, int)// g—p‚µ‚È‚¢•Ï”‚Í‹Lq‚
 
     // ƒQ[ƒ€ƒ‰ƒCƒuƒ‰ƒŠ‚ÌI—¹ˆ—
     GameLib::uninit();
+
+    return 0;
 }
