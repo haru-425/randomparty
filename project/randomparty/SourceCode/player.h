@@ -20,6 +20,7 @@ void game_init();
 void game_update();
 void game_render();
 void game_deinit();
+void player_act();
 
 #endif//SCENE_GAME_H
 #pragma once

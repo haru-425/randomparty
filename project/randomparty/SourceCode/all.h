@@ -19,6 +19,7 @@
 // 個々のヘッダーファイルは下の方へ
 #include "scene_title.h"
 #include "player.h"
+#include "enemy.h"
 
 #ifdef USE_IMGUI
 #include "../imgui/imgui.h"
