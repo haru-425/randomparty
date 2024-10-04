@@ -16,6 +16,8 @@
 
 #include "common.h"
 #include "scene_game.h"
+// 個々のヘッダーファイルは下の方へ 
+#include "scene_title.h" 
 
 #ifdef USE_IMGUI
 #include "../imgui/imgui.h"
