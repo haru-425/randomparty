@@ -114,12 +114,14 @@ void player_act()
 
 	//subVector.x = 1.0f / subVector.x;
 	//subVector.y = 1.0f / subVector.y;
+
 	player.angle = (float)atan2(subVector.y, subVector.x) + ToRadian(180);
+
 	float speedX = cosf(-player.angle) /** 40.0f*/ * -1;
 	float speedY = sinf(-player.angle) /** 40.0f */ * 1;
-	//	player.position.x += speedX * 10;
-	player.position.x = point.x;
-	//	player.position.y += speedY * 10;
-	player.position.y = point.y;
+	player.position.x += speedX * 10;
+	//player.position.x = point.x;
+	player.position.y += speedY * 10;
+	//player.position.y = point.y;
 }
 
