@@ -1,12 +1,14 @@
 #include "all.h"
 
 int     player_state;
-//PLAYER player, core;
 
 PLAYER player;
 
 Sprite* sprPlayer;
 Sprite* sprPlayerCore;
+
+POINT point;
+
 
 //--------------------------------------
 //  プレイヤーの初期設定
@@ -45,6 +47,7 @@ void player_update()
 		//////// パラメータの設定 ////////
 		player.angle = ToRadian(0);
 		player.position = { SCREEN_W / 2.0f, SCREEN_H / 2.0f };
+		//player.scale = { 1.0f, 1.0f };
 		player.scale = { 0.1f, 0.1f };
 		player.texPos = { 0, 0 };
 		player.texSize = { PLAYER_TEX_W, PLAYER_TEX_H };
@@ -100,6 +103,23 @@ void player_render()
 void player_act()
 {
 
+	GetCursorPos(&point);
+	VECTOR2 subVector;
+	//subVector.x = player.position.x - point.x;
+	subVector.x = point.x - player.position.x;
+	//subVector.x = player.position.x;
+	//subVector.y = player.position.y - point.x;
+	subVector.y = point.y - player.position.y;
+	//subVector.y = player.position.y;
 
+	//subVector.x = 1.0f / subVector.x;
+	//subVector.y = 1.0f / subVector.y;
+	player.angle = (float)atan2(subVector.y, subVector.x) + ToRadian(180);
+	float speedX = cosf(-player.angle) /** 40.0f*/ * -1;
+	float speedY = sinf(-player.angle) /** 40.0f */ * 1;
+	//	player.position.x += speedX * 10;
+	player.position.x = point.x);
+	//	player.position.y += speedY * 10;
+	player.position.y = point.y;
 }
 
