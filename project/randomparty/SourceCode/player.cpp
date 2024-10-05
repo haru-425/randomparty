@@ -118,7 +118,7 @@ void player_act()
 	float speedX = cosf(-player.angle) /** 40.0f*/ * -1;
 	float speedY = sinf(-player.angle) /** 40.0f */ * 1;
 	//	player.position.x += speedX * 10;
-	player.position.x = point.x);
+	player.position.x = point.x;
 	//	player.position.y += speedY * 10;
 	player.position.y = point.y;
 }
