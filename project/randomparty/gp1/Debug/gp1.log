@@ -1,7 +1,2 @@
-﻿  debug.cpp
-  imgui_ja_gryph_ranges.cpp
-  player.cpp
-C:\Users\2240021\Documents\GitHub\randomparty\randomparty\project\randomparty\SourceCode\player.cpp(45,3): error C3861: 'player_act': 識別子が見つかりませんでした
-  scene_game.cpp
-  scene_title.cpp
-  コードを生成中...
+﻿  player.cpp
+  gp1.vcxproj -> C:\Users\2240007\Desktop\チーム制作\randomparty\project\randomparty\Debug\gp1.exe

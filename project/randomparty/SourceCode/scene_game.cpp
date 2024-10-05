@@ -22,8 +22,8 @@ int game_timer = 0;    // タイマー
 //--------------------------------------
 void game_init()
 {
-    game_state = 0;
-    game_timer = 0;
+	game_state = 0;
+	game_timer = 0;
 }
 
 //--------------------------------------
@@ -31,39 +31,39 @@ void game_init()
 //--------------------------------------
 void game_update()
 {
-    using namespace input;
+	using namespace input;
 
-    switch (game_state)
-    {
-    case 0:
-        //////// 初期設定 ////////
+	switch (game_state)
+	{
+	case 0:
+		//////// 初期設定 ////////
 
+		player_init();
+		game_state++;
+		/*fallthrough*/
+	case 1:
+		//////// パラメータの設定 ////////
+		GameLib::setBlendMode(Blender::BS_ALPHA);
 
-        game_state++;
-        /*fallthrough*/
-    case 1:
-        //////// パラメータの設定 ////////
-        GameLib::setBlendMode(Blender::BS_ALPHA);
+		game_state++;
+		/*fallthrough*/
+	case 2:
+		//////// 通常時 ////////
+		player_update();
 
-        game_state++;
-        /*fallthrough*/
-    case 2:
-        //////// 通常時 ////////
+		break;
+	}
 
-
-        break;
-    }
-
-    game_timer++;
+	game_timer++;
 
 
 #ifdef USE_IMGUI
-    ImGui::Begin("ImGUI");
+	ImGui::Begin("ImGUI");
 
-    static float value = 0;
-    ImGui::DragFloat("value", &value, 0.001f);
+	static float value = 0;
+	ImGui::DragFloat("value", &value, 0.001f);
 
-    ImGui::End();
+	ImGui::End();
 #endif
 
 
@@ -74,12 +74,12 @@ void game_update()
 //--------------------------------------
 void game_render()
 {
-    GameLib::clear(0.0, 0.0, 0.0);
+	GameLib::clear(0.0, 0.0, 0.0);
+
+	player_render();
 
 
-
-
-    text_out(0, "Hello World", 0, 0);   // 見本
+	text_out(0, "Hello World", 0, 0);   // 見本
 
 
 }
@@ -89,4 +89,5 @@ void game_render()
 //--------------------------------------
 void game_deinit()
 {
+	player_deinit();
 }
