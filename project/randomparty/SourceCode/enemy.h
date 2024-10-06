@@ -3,6 +3,18 @@
 
 #define ENEMY_MAX (10)
 
+#define ENEMY_TEX_W        (400.0f)   // “G‚Ì‰æ‘œ1‚Â‚Ì•
+#define ENEMY_TEX_H        (400.0f)   // “G‚Ì‰æ‘œ1‚Â‚Ì‚‚³
+#define ENEMY_PIVOT_X      (ENEMY_TEX_W/2)    // “G‚Ì‰¡•ûŒü‚Ì’†S
+#define ENEMY_PIVOT_Y      (ENEMY_TEX_H/2)   // “G‚Ìc•ûŒü‚Ì‰º’[
+
+
+
+#define ENEMY_CORE_TEX_W        (128.0f)   // “G‚Ì‰æ‘œ1‚Â‚Ì•
+#define ENEMY_CORE_TEX_H        (128.0f)   // “G‚Ì‰æ‘œ1‚Â‚Ì‚‚³
+#define ENEMY_CORE_PIVOT_X      (ENEMY_CORE_TEX_W/2)    // “G‚Ì‰¡•ûŒü‚Ì’†S
+#define ENEMY_CORE_PIVOT_Y      (ENEMY_CORE_TEX_H/2)   // “G‚Ìc•ûŒü‚Ì‰º’[
+
 class ENEMY {
 private:
 public:

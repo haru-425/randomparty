@@ -39,6 +39,7 @@ void game_update()
 		//////// ‰Šúİ’è ////////
 
 		player_init();
+		enemy_init();
 		game_state++;
 		/*fallthrough*/
 	case 1:
@@ -50,6 +51,7 @@ void game_update()
 	case 2:
 		//////// ’Êí ////////
 		player_update();
+		enemy_update();
 
 		break;
 	}
@@ -77,7 +79,7 @@ void game_render()
 	GameLib::clear(0.0, 0.0, 0.0);
 
 	player_render();
-
+	enemy_render();
 
 	text_out(0, "Hello World", 0, 0);   // Œ©–{
 
@@ -90,4 +92,5 @@ void game_render()
 void game_deinit()
 {
 	player_deinit();
+	enemy_deinit();
 }
