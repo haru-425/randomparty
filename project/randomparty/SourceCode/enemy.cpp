@@ -1,7 +1,7 @@
 #include "all.h"
 
 int enemy_state;
-bool enemies_active = true; // 敵の出現を制御するフラグ
+bool enemies_active = false; // 敵の出現を制御するフラグ
 extern PLAYER player;
 
 typedef enum
