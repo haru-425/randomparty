@@ -1,2 +1,19 @@
-﻿  player.cpp
-  gp1.vcxproj -> C:\Users\2240127\Documents\GitHub\randomparty\project\randomparty\Debug\gp1.exe
+﻿  debug.cpp
+  depth_stencil.cpp
+  font.cpp
+  game_lib.cpp
+  input_manager.cpp
+  obj2d_data.cpp
+  primitive.cpp
+  sprite.cpp
+  texture.cpp
+  view_settings.cpp
+  wnd_proc.cpp
+  common.cpp
+  enemy.cpp
+  main.cpp
+  player.cpp
+  scene_game.cpp
+  scene_title.cpp
+  コードを生成中...
+  gp1.vcxproj -> C:\Users\2240007\Desktop\チーム制作\randomparty\project\randomparty\Debug\gp1.exe

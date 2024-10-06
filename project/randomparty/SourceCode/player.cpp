@@ -1,5 +1,4 @@
 #include "all.h"
-
 int     player_state;
 
 PLAYER player;
@@ -8,6 +7,7 @@ Sprite* sprPlayer;
 Sprite* sprPlayerCore;
 
 POINT point;
+POINT screenPoint;
 
 //--------------------------------------
 //  プレイヤーの初期設定
@@ -101,8 +101,10 @@ void player_render()
 //--------------------------------------
 void player_act()
 {
-
 	GetCursorPos(&point);
+
+	ScreenToClient(window::getHwnd(), &point);
+	//ScreenToClient(0, &point);
 	//↓これが必要臭いけど、window_handleの所に入れる変数が見当たらない
 	/*マウス座標の取得方法が異なる
 	マウス座標は GetCursorPos を使用して取得していますが、この関数が返す座標は スクリーン座標系(モニター全体の座標) です。
@@ -118,6 +120,9 @@ void player_act()
 	//// マウスのスクリーン座標をウィンドウ座標に変換
  //   GetCursorPos(&point);
  //   ScreenToClient(window_handle, &point);  // window_handleを正しいウィンドウハンドルに置き換える
+	//ScreenToClient(m.hwnd, &point);
+	//point.x = GET_X_LPARAM(point.x);
+	//point.y = GET_Y_LPARAM(point.y);
 	VECTOR2 subVector;
 	//subVector.x = player.position.x - point.x;
 	subVector.x = point.x - player.position.x;
