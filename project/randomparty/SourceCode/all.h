@@ -22,6 +22,7 @@
 #include "scene_title.h"
 #include "player.h"
 #include "enemy.h"
+#include "bomb.h"
 
 #ifdef USE_IMGUI
 #include "../imgui/imgui.h"
