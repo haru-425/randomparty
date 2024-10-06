@@ -46,7 +46,6 @@ void player_update()
 		//////// ÉpÉâÉÅÅ[É^ÇÃê›íË ////////
 		player.angle = ToRadian(0);
 		player.position = { SCREEN_W / 2.0f, SCREEN_H / 2.0f };
-		//player.scale = { 1.0f, 1.0f };
 		player.scale = { 0.1f, 0.1f };
 		player.texPos = { 0, 0 };
 		player.texSize = { PLAYER_TEX_W, PLAYER_TEX_H };
@@ -113,7 +112,7 @@ void player_act()
 
 	float speedX = cosf(player.angle) * 1;
 	float speedY = sinf(player.angle) * 1;
-	player.position.x += speedX * 10;
-	player.position.y += speedY * 10;
+	player.position.x += speedX * PLAYER_SPEED;
+	player.position.y += speedY * PLAYER_SPEED;
 }
 
