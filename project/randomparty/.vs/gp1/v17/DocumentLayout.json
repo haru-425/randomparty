@@ -3,24 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\2240127\\Documents\\GitHub\\randomparty\\project\\randomparty\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D11430B7-E3E6-482E-8B36-A78D576C6E14}|gp1.vcxproj|C:\\Users\\2240127\\Documents\\GitHub\\randomparty\\project\\randomparty\\SourceCode\\bomb.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{D11430B7-E3E6-482E-8B36-A78D576C6E14}|gp1.vcxproj|solutionrelative:SourceCode\\bomb.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{D11430B7-E3E6-482E-8B36-A78D576C6E14}|gp1.vcxproj|C:\\Users\\2240127\\Documents\\GitHub\\randomparty\\project\\randomparty\\SourceCode\\bomb.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{D11430B7-E3E6-482E-8B36-A78D576C6E14}|gp1.vcxproj|solutionrelative:SourceCode\\bomb.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D11430B7-E3E6-482E-8B36-A78D576C6E14}|gp1.vcxproj|C:\\Users\\2240127\\Documents\\GitHub\\randomparty\\project\\randomparty\\SourceCode\\player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{D11430B7-E3E6-482E-8B36-A78D576C6E14}|gp1.vcxproj|solutionrelative:SourceCode\\player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{D11430B7-E3E6-482E-8B36-A78D576C6E14}|gp1.vcxproj|C:\\Users\\2240127\\Documents\\GitHub\\randomparty\\project\\randomparty\\SourceCode\\bomb.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{D11430B7-E3E6-482E-8B36-A78D576C6E14}|gp1.vcxproj|solutionrelative:SourceCode\\bomb.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D11430B7-E3E6-482E-8B36-A78D576C6E14}|gp1.vcxproj|C:\\Users\\2240127\\Documents\\GitHub\\randomparty\\project\\randomparty\\SourceCode\\all.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{D11430B7-E3E6-482E-8B36-A78D576C6E14}|gp1.vcxproj|solutionrelative:SourceCode\\all.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D11430B7-E3E6-482E-8B36-A78D576C6E14}|gp1.vcxproj|C:\\Users\\2240127\\Documents\\GitHub\\randomparty\\project\\randomparty\\SourceCode\\bomb.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{D11430B7-E3E6-482E-8B36-A78D576C6E14}|gp1.vcxproj|solutionrelative:SourceCode\\bomb.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{D11430B7-E3E6-482E-8B36-A78D576C6E14}|gp1.vcxproj|C:\\Users\\2240127\\Documents\\GitHub\\randomparty\\project\\randomparty\\SourceCode\\player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{D11430B7-E3E6-482E-8B36-A78D576C6E14}|gp1.vcxproj|solutionrelative:SourceCode\\player.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D11430B7-E3E6-482E-8B36-A78D576C6E14}|gp1.vcxproj|C:\\Users\\2240127\\Documents\\GitHub\\randomparty\\project\\randomparty\\SourceCode\\player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{D11430B7-E3E6-482E-8B36-A78D576C6E14}|gp1.vcxproj|solutionrelative:SourceCode\\player.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D11430B7-E3E6-482E-8B36-A78D576C6E14}|gp1.vcxproj|C:\\Users\\2240127\\Documents\\GitHub\\randomparty\\project\\randomparty\\SourceCode\\enemy.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{D11430B7-E3E6-482E-8B36-A78D576C6E14}|gp1.vcxproj|solutionrelative:SourceCode\\enemy.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D11430B7-E3E6-482E-8B36-A78D576C6E14}|gp1.vcxproj|C:\\Users\\2240127\\Documents\\GitHub\\randomparty\\project\\randomparty\\SourceCode\\scene_title.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -43,10 +47,6 @@
       "RelativeMoniker": "D:0:0:{D11430B7-E3E6-482E-8B36-A78D576C6E14}|gp1.vcxproj|solutionrelative:SourceCode\\enemy.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D11430B7-E3E6-482E-8B36-A78D576C6E14}|gp1.vcxproj|C:\\Users\\2240127\\Documents\\GitHub\\randomparty\\project\\randomparty\\SourceCode\\enemy.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{D11430B7-E3E6-482E-8B36-A78D576C6E14}|gp1.vcxproj|solutionrelative:SourceCode\\enemy.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{D11430B7-E3E6-482E-8B36-A78D576C6E14}|gp1.vcxproj|C:\\Users\\2240127\\Documents\\GitHub\\randomparty\\project\\randomparty\\SourceCode\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{D11430B7-E3E6-482E-8B36-A78D576C6E14}|gp1.vcxproj|solutionrelative:SourceCode\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
@@ -66,30 +66,30 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "bomb.h",
               "DocumentMoniker": "C:\\Users\\2240127\\Documents\\GitHub\\randomparty\\project\\randomparty\\SourceCode\\bomb.h",
               "RelativeDocumentMoniker": "SourceCode\\bomb.h",
               "ToolTip": "C:\\Users\\2240127\\Documents\\GitHub\\randomparty\\project\\randomparty\\SourceCode\\bomb.h",
               "RelativeToolTip": "SourceCode\\bomb.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAZAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-10-06T08:18:20.034Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "bomb.cpp",
               "DocumentMoniker": "C:\\Users\\2240127\\Documents\\GitHub\\randomparty\\project\\randomparty\\SourceCode\\bomb.cpp",
               "RelativeDocumentMoniker": "SourceCode\\bomb.cpp",
               "ToolTip": "C:\\Users\\2240127\\Documents\\GitHub\\randomparty\\project\\randomparty\\SourceCode\\bomb.cpp",
               "RelativeToolTip": "SourceCode\\bomb.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-10-06T08:18:08.762Z",
               "EditorCaption": ""
@@ -108,7 +108,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "scene_title.h",
               "DocumentMoniker": "C:\\Users\\2240127\\Documents\\GitHub\\randomparty\\project\\randomparty\\SourceCode\\scene_title.h",
               "RelativeDocumentMoniker": "SourceCode\\scene_title.h",
@@ -121,7 +121,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "scene_title.cpp",
               "DocumentMoniker": "C:\\Users\\2240127\\Documents\\GitHub\\randomparty\\project\\randomparty\\SourceCode\\scene_title.cpp",
               "RelativeDocumentMoniker": "SourceCode\\scene_title.cpp",
@@ -134,7 +134,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "scene_game.cpp",
               "DocumentMoniker": "C:\\Users\\2240127\\Documents\\GitHub\\randomparty\\project\\randomparty\\SourceCode\\scene_game.cpp",
               "RelativeDocumentMoniker": "SourceCode\\scene_game.cpp",
@@ -147,7 +147,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "enemy.cpp",
               "DocumentMoniker": "C:\\Users\\2240127\\Documents\\GitHub\\randomparty\\project\\randomparty\\SourceCode\\enemy.cpp",
               "RelativeDocumentMoniker": "SourceCode\\enemy.cpp",
@@ -160,38 +160,39 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 5,
               "Title": "enemy.h",
               "DocumentMoniker": "C:\\Users\\2240127\\Documents\\GitHub\\randomparty\\project\\randomparty\\SourceCode\\enemy.h",
               "RelativeDocumentMoniker": "SourceCode\\enemy.h",
               "ToolTip": "C:\\Users\\2240127\\Documents\\GitHub\\randomparty\\project\\randomparty\\SourceCode\\enemy.h",
               "RelativeToolTip": "SourceCode\\enemy.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAmAAAAAAAAAA==",
+              "ViewState": "AQIAAAAAAAAAAAAAAADwvwAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-10-04T12:56:55.955Z"
+              "WhenOpened": "2024-10-04T12:56:55.955Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "player.h",
               "DocumentMoniker": "C:\\Users\\2240127\\Documents\\GitHub\\randomparty\\project\\randomparty\\SourceCode\\player.h",
               "RelativeDocumentMoniker": "SourceCode\\player.h",
               "ToolTip": "C:\\Users\\2240127\\Documents\\GitHub\\randomparty\\project\\randomparty\\SourceCode\\player.h",
               "RelativeToolTip": "SourceCode\\player.h",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAAB0AAAARAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB0AAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-10-04T12:54:24.787Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "player.cpp",
               "DocumentMoniker": "C:\\Users\\2240127\\Documents\\GitHub\\randomparty\\project\\randomparty\\SourceCode\\player.cpp",
               "RelativeDocumentMoniker": "SourceCode\\player.cpp",
               "ToolTip": "C:\\Users\\2240127\\Documents\\GitHub\\randomparty\\project\\randomparty\\SourceCode\\player.cpp",
               "RelativeToolTip": "SourceCode\\player.cpp",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-10-04T12:54:21.944Z",
               "EditorCaption": ""
@@ -210,7 +211,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "common.cpp",
               "DocumentMoniker": "C:\\Users\\2240127\\Documents\\GitHub\\randomparty\\project\\randomparty\\SourceCode\\common.cpp",
               "RelativeDocumentMoniker": "SourceCode\\common.cpp",
@@ -229,7 +230,7 @@
               "RelativeDocumentMoniker": "SourceCode\\all.h",
               "ToolTip": "C:\\Users\\2240127\\Documents\\GitHub\\randomparty\\project\\randomparty\\SourceCode\\all.h",
               "RelativeToolTip": "SourceCode\\all.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAVAAAA",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAABgAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-10-04T07:03:23.536Z",
               "EditorCaption": ""
