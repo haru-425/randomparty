@@ -106,6 +106,11 @@ void enemy_act() {
 			break;
 		case APPROACH_FAST:
 			// ‘¬‚¢“®‚«‚Ì“G‚Ìˆ—
+
+			speedX = cosf(enemy[i].angle) * 1;
+			speedY = sinf(enemy[i].angle) * 1;
+			enemy[i].position.x += speedX * enemy[i].speed;
+			enemy[i].position.y += speedY * enemy[i].speed;
 			break;
 		}
 
@@ -114,7 +119,7 @@ void enemy_act() {
 }
 
 ENEMY set_enemy(ENEMY enemy) {
-	enemy.type = 0;
+	enemy.type = rand() % 2;
 
 	enemy.angle = ToRadian(0);
 	enemy.position = { static_cast<float>(rand() % SCREEN_W), static_cast<float>(rand() % SCREEN_H) };
@@ -126,11 +131,11 @@ ENEMY set_enemy(ENEMY enemy) {
 	switch (enemy.type)
 	{
 	case APPROACH_SLOW:
-		enemy.speed = 4.0f;
+		enemy.speed = 2 + float(rand() % 2);
 		break;
 	case APPROACH_FAST:
 
-		enemy.speed = 5.0f;
+		enemy.speed = 3 + float(rand() % 2);
 		break;
 	}
 
