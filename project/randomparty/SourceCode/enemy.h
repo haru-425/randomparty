@@ -27,7 +27,7 @@ public:
 	VECTOR2 texSize;
 	VECTOR2 pivot;
 	VECTOR4 color;
-	
+
 
 };
 void enemy_init();
@@ -35,6 +35,7 @@ void enemy_deinit();
 void enemy_update();
 void enemy_render();
 void enemy_act();
+
 
 
 
