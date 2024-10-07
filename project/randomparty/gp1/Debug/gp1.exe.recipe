@@ -2,15 +2,7 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-<<<<<<< HEAD
-<<<<<<< HEAD
       <FullPath>C:\Users\2240021\Documents\GitHub\randomparty\randomparty\project\randomparty\Debug\gp1.exe</FullPath>
-=======
-      <FullPath>C:\Users\2240007\Desktop\チーム制作\randomparty\project\randomparty\Debug\gp1.exe</FullPath>
->>>>>>> b739d7ac7efbdcddaf47df02b8680ba2103a36c8
-=======
-      <FullPath>C:\Users\2240127\Documents\GitHub\randomparty\project\randomparty\Debug\gp1.exe</FullPath>
->>>>>>> def50d68e08b4e175e35974ce130abfd8d860624
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />
