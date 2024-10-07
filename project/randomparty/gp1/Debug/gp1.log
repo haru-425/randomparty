@@ -1,13 +1,6 @@
-﻿  bomb.cpp
-  enemy.cpp
-C:\Users\2240007\Desktop\チーム制作\randomparty\project\randomparty\SourceCode\enemy.cpp(116,23): warning C4459: 'enemy' を宣言すると、グローバル宣言が隠蔽されます
+﻿  enemy.cpp
+C:\Users\2240007\Desktop\チーム制作\randomparty\project\randomparty\SourceCode\enemy.cpp(121,23): warning C4459: 'enemy' を宣言すると、グローバル宣言が隠蔽されます
   C:\Users\2240007\Desktop\チーム制作\randomparty\project\randomparty\SourceCode\enemy.cpp(14,7):
   'enemy' の宣言を確認してください
   
-  main.cpp
-  player.cpp
-  scene_game.cpp
-  scene_title.cpp
-  game_system.cpp
-  コードを生成中...
   gp1.vcxproj -> C:\Users\2240007\Desktop\チーム制作\randomparty\project\randomparty\Debug\gp1.exe
