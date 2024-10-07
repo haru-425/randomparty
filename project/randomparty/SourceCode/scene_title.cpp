@@ -1,4 +1,5 @@
 #include "all.h"
+#include <sstream>
 
 #define SELECT_COUNT 2              //‘I‘ğˆ‚Ì”
 

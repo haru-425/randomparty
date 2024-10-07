@@ -1,20 +1,6 @@
-<<<<<<< HEAD
-﻿  scene_title.cpp
-C:\Users\2240021\Documents\GitHub\randomparty\randomparty\project\randomparty\SourceCode\scene_title.cpp(78,47): warning C4244: '引数': 'LONG' から 'float' への変換です。データが失われる可能性があります。
-C:\Users\2240021\Documents\GitHub\randomparty\randomparty\project\randomparty\SourceCode\scene_title.cpp(78,36): warning C4244: '引数': 'LONG' から 'float' への変換です。データが失われる可能性があります。
-  gp1.vcxproj -> C:\Users\2240021\Documents\GitHub\randomparty\randomparty\project\randomparty\Debug\gp1.exe
-=======
-﻿  bomb.cpp
-  enemy.cpp
-C:\Users\2240007\Desktop\チーム制作\randomparty\project\randomparty\SourceCode\enemy.cpp(116,23): warning C4459: 'enemy' を宣言すると、グローバル宣言が隠蔽されます
-  C:\Users\2240007\Desktop\チーム制作\randomparty\project\randomparty\SourceCode\enemy.cpp(14,7):
-  'enemy' の宣言を確認してください
-  
-  main.cpp
-  player.cpp
-  scene_game.cpp
+﻿  main.cpp
   scene_title.cpp
-  game_system.cpp
+C:\Users\2240021\Documents\GitHub\randomparty\randomparty\project\randomparty\SourceCode\scene_title.cpp(79,47): warning C4244: '引数': 'LONG' から 'float' への変換です。データが失われる可能性があります。
+C:\Users\2240021\Documents\GitHub\randomparty\randomparty\project\randomparty\SourceCode\scene_title.cpp(79,36): warning C4244: '引数': 'LONG' から 'float' への変換です。データが失われる可能性があります。
   コードを生成中...
-  gp1.vcxproj -> C:\Users\2240007\Desktop\チーム制作\randomparty\project\randomparty\Debug\gp1.exe
->>>>>>> fed659521eb739e83127226896b75fb98d73d1ba
+  gp1.vcxproj -> C:\Users\2240021\Documents\GitHub\randomparty\randomparty\project\randomparty\Debug\gp1.exe
