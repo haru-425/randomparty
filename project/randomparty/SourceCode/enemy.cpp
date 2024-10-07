@@ -40,26 +40,8 @@ void enemy_update() {
 	case 1:
 		//////// ÉpÉâÉÅÅ[É^ÇÃê›íË ////////
 		for (int i = 0; i < ENEMY_MAX; i++) {
+			enemy[i] = set_enemy(enemy[i]);
 
-			enemy[i].type = 0;
-
-			enemy[i].angle = ToRadian(0);
-			enemy[i].position = { static_cast<float>(rand() % SCREEN_W), static_cast<float>(rand() % SCREEN_H) };
-			enemy[i].scale = { 0.1f, 0.1f };
-			enemy[i].texPos = { 0, 0 };
-			enemy[i].texSize = { ENEMY_TEX_W, ENEMY_TEX_H };
-			enemy[i].pivot = { ENEMY_PIVOT_X, ENEMY_PIVOT_Y };
-			enemy[i].color = { 1.000f, 1.0f, 1.0f, 1.0f };
-			switch (enemy[i].type)
-			{
-			case APPROACH_SLOW:
-				enemy[i].speed = 4.0f;
-				break;
-			case APPROACH_FAST:
-
-				enemy[i].speed = 5.0f;
-				break;
-			}
 		}
 
 		++enemy_state;
@@ -129,5 +111,29 @@ void enemy_act() {
 
 
 	}
+}
+
+ENEMY set_enemy(ENEMY enemy) {
+	enemy.type = 0;
+
+	enemy.angle = ToRadian(0);
+	enemy.position = { static_cast<float>(rand() % SCREEN_W), static_cast<float>(rand() % SCREEN_H) };
+	enemy.scale = { 0.1f, 0.1f };
+	enemy.texPos = { 0, 0 };
+	enemy.texSize = { ENEMY_TEX_W, ENEMY_TEX_H };
+	enemy.pivot = { ENEMY_PIVOT_X, ENEMY_PIVOT_Y };
+	enemy.color = { 1.000f, 1.0f, 1.0f, 1.0f };
+	switch (enemy.type)
+	{
+	case APPROACH_SLOW:
+		enemy.speed = 4.0f;
+		break;
+	case APPROACH_FAST:
+
+		enemy.speed = 5.0f;
+		break;
+	}
+
+	return enemy;
 }
 

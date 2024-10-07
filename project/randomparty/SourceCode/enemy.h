@@ -35,8 +35,7 @@ void enemy_deinit();
 void enemy_update();
 void enemy_render();
 void enemy_act();
-
-
+ENEMY set_enemy(ENEMY enemy);
 
 
 #endif//ENEMY_H

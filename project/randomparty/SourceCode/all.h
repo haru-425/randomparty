@@ -23,7 +23,7 @@
 #include "player.h"
 #include "enemy.h"
 #include "bomb.h"
-#include "tracking.h"
+#include "game_system.h"
 
 #ifdef USE_IMGUI
 #include "../imgui/imgui.h"
