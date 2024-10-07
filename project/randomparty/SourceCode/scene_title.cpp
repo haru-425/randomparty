@@ -24,16 +24,56 @@ void title_init()
 //--------------------------------------
 void title_deinit()
 {
-    music::stop(3);
+    //music::stop(3);
 
     safe_delete(backspr);
 }
 
 void title_update()
 {
+
+    using namespace input;
+
+    switch (title_state) 
+    {
+
+    case 0:
+        //////// ‰Šúİ’è ////////
+        backspr = sprite_load(L"./Data/Images/Title(‰¼).png");
+        title_state++;
+        /*fallthrough*/
+    case 1:
+        //////// ƒpƒ‰ƒ[ƒ^‚Ìİ’è ////////
+        GameLib::setBlendMode(Blender::BS_ALPHA);
+
+        title_state++;
+        /*fallthrough*/
+
+    case 2:
+        if (TRG(0) & PAD_START) {
+            nextScene = SCENE_GAME;
+            break;
+        }
+        break;
+    }
+
+    title_timer++;
+
+#ifdef USE_IMGUI
+    ImGui::Begin("ImGUI");
+
+    static float value = 0;
+    ImGui::DragFloat("value", &value, 0.001f);
+
+    ImGui::End();
+#endif
+
 }
+
 void title_render()
 {
     // ‰æ–Ê‚ğÂ‚Å“h‚è‚Â‚Ô‚·
-    GameLib::clear(0.3f, 0.5f, 1.0f);
+    //GameLib::clear(0.3f, 0.5f, 1.0f);
+
+    sprite_render(backspr, SCREEN_W/2,SCREEN_H/2, 2, 2, 0, 0, 640, 480, 640 / 2, 480 / 2);
 }
