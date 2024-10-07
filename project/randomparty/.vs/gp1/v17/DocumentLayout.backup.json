@@ -91,8 +91,7 @@
               "ViewState": "AgIAADAAAAAAAAAAAAAAABAAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-10-04T12:57:12.13Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -144,8 +143,7 @@
               "ViewState": "AgIAAAwAAAAAAAAAAAAAAB0AAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-10-04T07:03:23.536Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -169,8 +167,7 @@
               "RelativeToolTip": "SourceCode\\game_system.cpp",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-10-07T03:29:56.639Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-07T03:29:56.639Z"
             },
             {
               "$type": "Document",
@@ -214,12 +211,11 @@
               "Title": "main.cpp",
               "DocumentMoniker": "C:\\Users\\2240021\\Documents\\GitHub\\randomparty\\randomparty\\project\\randomparty\\SourceCode\\main.cpp",
               "RelativeDocumentMoniker": "SourceCode\\main.cpp",
-              "ToolTip": "C:\\Users\\2240021\\Documents\\GitHub\\randomparty\\randomparty\\project\\randomparty\\SourceCode\\main.cpp*",
-              "RelativeToolTip": "SourceCode\\main.cpp*",
+              "ToolTip": "C:\\Users\\2240021\\Documents\\GitHub\\randomparty\\randomparty\\project\\randomparty\\SourceCode\\main.cpp",
+              "RelativeToolTip": "SourceCode\\main.cpp",
               "ViewState": "AgIAAFkAAAAAAAAAAAAcwEcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-10-06T03:51:51.071Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-06T03:51:51.071Z"
             },
             {
               "$type": "Document",
@@ -241,7 +237,7 @@
               "RelativeDocumentMoniker": "SourceCode\\scene_title.cpp",
               "ToolTip": "C:\\Users\\2240021\\Documents\\GitHub\\randomparty\\randomparty\\project\\randomparty\\SourceCode\\scene_title.cpp",
               "RelativeToolTip": "SourceCode\\scene_title.cpp",
-              "ViewState": "AgIAADQAAAAAAAAAAAAAAEUAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADQAAAAAAAAAAAAAAEIAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-10-06T03:51:40.919Z",
               "EditorCaption": ""
@@ -256,8 +252,7 @@
               "RelativeToolTip": "SourceCode\\scene_game.cpp",
               "ViewState": "AgIAADMAAAAAAAAAAAAAADwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2024-10-05T05:32:23.218Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-05T05:32:23.218Z"
             },
             {
               "$type": "Document",
