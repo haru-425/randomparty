@@ -1,7 +1,7 @@
 #include "all.h"
-
+#include <math.h>
 int enemy_state;
-bool enemies_active = true; // “G‚ÌoŒ»‚ğ§Œä‚·‚éƒtƒ‰ƒO
+bool enemies_active = true; // æ•µã®å‡ºç¾ã‚’åˆ¶å¾¡ã™ã‚‹ãƒ•ãƒ©ã‚°
 extern PLAYER player;
 
 typedef enum
@@ -26,19 +26,19 @@ void enemy_deinit() {
 }
 
 void enemy_update() {
-	if (!enemies_active) return; // “G‚ªƒIƒt‚È‚çXVˆ—‚È‚µ
+	if (!enemies_active) return; // æ•µãŒã‚ªãƒ•ãªã‚‰æ›´æ–°å‡¦ç†ãªã—
 
 	switch (enemy_state)
 	{
 	case 0:
-		//////// ‰Šúİ’è ////////
+		//////// åˆæœŸè¨­å®š ////////
 		sprEnemy = sprite_load(L"./Data/Images/enemy_approach_slow.png");
 		sprEnemyCore = sprite_load(L"./Data/Images/enemyCore.png");
 		++enemy_state;
 		/*fallthrough*/
 
 	case 1:
-		//////// ƒpƒ‰ƒ[ƒ^‚Ìİ’è ////////
+		//////// ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã®è¨­å®š ////////
 		for (int i = 0; i < ENEMY_MAX; i++) {
 			enemy[i] = set_enemy(enemy[i]);
 
@@ -48,9 +48,9 @@ void enemy_update() {
 		/*fallthrough*/
 
 	case 2:
-		//////// ’Êí ////////
+		//////// é€šå¸¸æ™‚ ////////
 
-		// s“®‚Ì‘JˆÚ
+		// è¡Œå‹•ã®é·ç§»
 		enemy_act();
 
 		break;
@@ -58,7 +58,7 @@ void enemy_update() {
 }
 
 void enemy_render() {
-	if (!enemies_active) return; // “G‚ªƒIƒt‚È‚ç•`‰æˆ—‚È‚µ
+	if (!enemies_active) return; // æ•µãŒã‚ªãƒ•ãªã‚‰æç”»å‡¦ç†ãªã—
 
 	for (int i = 0; i < ENEMY_MAX; i++) {
 		sprite_render(
@@ -86,35 +86,66 @@ void enemy_render() {
 }
 
 void enemy_act() {
-	if (!enemies_active) return; // “G‚ªƒIƒt‚È‚ç“®ìˆ—‚È‚µ
+	if (!enemies_active) return; // æ•µãŒã‚ªãƒ•ãªã‚‰å‹•ä½œå‡¦ç†ãªã—
 
-	for (int i = 0; i < ENEMY_MAX; i++) {
-		enemy[i].angle = tracking(player.position, enemy[i].position);
-	}
 
 	for (int i = 0; i < ENEMY_MAX; i++) {
 		float speedX, speedY;
-		switch (enemy[i].type)
-		{
-		case APPROACH_SLOW:
-			// ’x‚¢“®‚«‚Ì“G‚Ìˆ—
+		float DistanceX, DistanceY, DIstance;
+		DistanceX = player.position.x - enemy[i].position.x;
+		DistanceY = player.position.y - enemy[i].position.y;
+		DIstance = sqrtf(DistanceX * DistanceX + DistanceY * DistanceY);
 
+
+		if (DIstance <= enemy[i].trackingRange)//ç´¢æ•µç¯„å›²å†…ã‹ã©ã†ã‹
+		{
+
+			enemy[i].angle = tracking(player.position, enemy[i].position);
+			switch (enemy[i].type)
+			{
+			case APPROACH_SLOW:
+				// é…ã„å‹•ãã®æ•µã®å‡¦ç†
+
+				speedX = cosf(enemy[i].angle) * 1;
+				speedY = sinf(enemy[i].angle) * 1;
+				enemy[i].position.x += speedX * enemy[i].speed;
+				enemy[i].position.y += speedY * enemy[i].speed;
+				break;
+			case APPROACH_FAST:
+				// é€Ÿã„å‹•ãã®æ•µã®å‡¦ç†
+				speedX = cosf(enemy[i].angle) * 1;
+				speedY = sinf(enemy[i].angle) * 1;
+				enemy[i].position.x += speedX * enemy[i].speed;
+				enemy[i].position.y += speedY * enemy[i].speed;
+				break;
+			}
+
+		}
+		else
+		{
+			enemy[i].angle += ToRadian(rand() % 7 - 3);
 			speedX = cosf(enemy[i].angle) * 1;
 			speedY = sinf(enemy[i].angle) * 1;
-			enemy[i].position.x += speedX * enemy[i].speed;
-			enemy[i].position.y += speedY * enemy[i].speed;
-			break;
-		case APPROACH_FAST:
-			// ‘¬‚¢“®‚«‚Ì“G‚Ìˆ—
-			break;
+			enemy[i].position.x += speedX * enemy[i].speed * 0.5f;
+			enemy[i].position.y += speedY * enemy[i].speed * 0.5f;
 		}
 
-
+		if (enemy[i].position.x < 0 || enemy[i].position.x>SCREEN_W)
+		{
+			speedX *= -1;
+			enemy[i].angle = (float)atan2(speedY, speedX);
+		}
+		if (enemy[i].position.y < 0 || enemy[i].position.y>SCREEN_H)
+		{
+			speedY *= -1;
+			enemy[i].angle = (float)atan2(speedY, speedX);
+		}
 	}
 }
 
 ENEMY set_enemy(ENEMY enemy) {
-	enemy.type = 0;
+
+	enemy.type = 0; //rand() % 2;
 
 	enemy.angle = ToRadian(0);
 	enemy.position = { static_cast<float>(rand() % SCREEN_W), static_cast<float>(rand() % SCREEN_H) };
@@ -126,11 +157,13 @@ ENEMY set_enemy(ENEMY enemy) {
 	switch (enemy.type)
 	{
 	case APPROACH_SLOW:
-		enemy.speed = 4.0f;
+		enemy.speed = 1.5f + float(rand() % 4);
+
+		enemy.trackingRange = PLAYER_TEX_W * player.scale.x * (7 + rand() % 4);
 		break;
 	case APPROACH_FAST:
 
-		enemy.speed = 5.0f;
+		enemy.speed = 3.0f + float(rand() % 2);
 		break;
 	}
 
