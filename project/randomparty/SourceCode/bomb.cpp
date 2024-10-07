@@ -13,10 +13,33 @@ void bomb_init()
 
 	for (int i = 0; i < BOMB_MAX; i++)
 	{
-		stage[BOMB_MAX]= bomb_def;
+		stage[i]= bomb_def;
 	}
 
 }
 
+void bomb_set()
+{
+	for (int i = 0; i < BOMB_MAX; i++)
+	{
+		if (bomb_def.bomb_number == 0)
+		{
+			stage[i] = normal;
+			stage[i].bomb_number = i + 1;
+		}
+	}
+}
+
+void bomb_update()
+{
+	for (int i = 0; i < BOMB_MAX; i++)
+	{
+		if (bomb_def.bomb_number != 0)
+		{
+
+		}
+	}
+
+}
 
 //配列によって、ステージに二個爆弾を置いても別々に爆発するるようにする

@@ -25,4 +25,6 @@ extern PLAYER player;
 #define BOMB_MAX 10
 
 
+BombInfo normal = {0,1,3.0,5,true};
+
 #endif//BOMB_H
