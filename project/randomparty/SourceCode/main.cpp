@@ -13,6 +13,8 @@
 using namespace GameLib;
 
 //------< •Ï” >----------------------------------------------------------------
+int curScene = SCENE_NONE;
+int nextScene = SCENE_TITLE;
 
 //------------------------------------------------------------------------------
 //  WinMainiƒGƒ“ƒgƒŠƒ|ƒCƒ“ƒgj
@@ -22,12 +24,53 @@ int APIENTRY wWinMain(HINSTANCE, HINSTANCE, LPWSTR, int)// g—p‚µ‚È‚¢•Ï”‚Í‹Lq‚
 	// ƒQ[ƒ€ƒ‰ƒCƒuƒ‰ƒŠ‚Ì‰Šúİ’è
 	GameLib::init(L"ƒQ[ƒ€ƒvƒƒOƒ‰ƒ~ƒ“ƒO‡T", SCREEN_W, SCREEN_H, FULLSCREEN);
 
-	game_init();
+	//game_init();
 
 	while (GameLib::gameLoop())
 	{
+
+		// ƒV[ƒ“Ø‚è‘Ö‚¦ˆ—
+		if (curScene != nextScene)
+		{
+			// Œ»İ‚ÌƒV[ƒ“‚É‰‚¶‚½I—¹ˆ—
+			switch (curScene)
+			{
+			case SCENE_TITLE:
+				title_deinit();
+				break;
+			case SCENE_GAME:
+				game_deinit();
+				break;
+	}
+			// Ÿ‚ÌƒV[ƒ“‚É‰‚¶‚½‰Šúİ’èˆ—
+			switch (nextScene)
+			{
+			case SCENE_TITLE:
+				title_init();
+				break;
+			case SCENE_GAME:
+				game_init();
+				break;
+			}
+			// nextScene ‚ª curScene ‚É‚È‚é
+			curScene = nextScene;
+}
+
 		// “ü—Íˆ—
 		input::update();
+
+		// Œ»İ‚ÌƒV[ƒ“‚É‰‚¶‚½XVE•`‰æˆ—
+		switch (curScene)
+		{
+		case SCENE_TITLE:
+			title_update();
+			title_render();
+			break;
+		case SCENE_GAME:
+			game_update();
+			game_render();
+			break;
+		}
 
 #ifdef USE_IMGUI
 		ImGui_ImplDX11_NewFrame();
@@ -36,8 +79,8 @@ int APIENTRY wWinMain(HINSTANCE, HINSTANCE, LPWSTR, int)// g—p‚µ‚È‚¢•Ï”‚Í‹Lq‚
 #endif
 
 		// Œ»İ‚ÌƒV[ƒ“‚ğXVE•`‰æ
-		game_update();
-		game_render();
+		/*game_update();
+		game_render();*/
 
 #ifdef USE_IMGUI
 		ImGui::Render();
@@ -53,8 +96,19 @@ int APIENTRY wWinMain(HINSTANCE, HINSTANCE, LPWSTR, int)// g—p‚µ‚È‚¢•Ï”‚Í‹Lq‚
 		GameLib::present(1, 0);
 	}
 
+	// Œ»İ‚ÌƒV[ƒ“‚É‰‚¶‚½I—¹ˆ—‚ğs‚¤
+	switch (curScene)
+	{
+	case SCENE_TITLE:
+		title_deinit();
+		break;
+	case SCENE_GAME:
+		game_deinit();
+		break;
+	}
+
 	// ƒQ[ƒ€ƒV[ƒ“‚ÌI—¹
-	game_deinit();
+	//game_deinit();
 
 	// ƒQ[ƒ€ƒ‰ƒCƒuƒ‰ƒŠ‚ÌI—¹ˆ—
 	GameLib::uninit();

@@ -81,7 +81,7 @@ void game_render()
 	player_render();
 	enemy_render();
 
-	text_out(0, "Hello World", 0, 0);   // Œ©–{
+	//text_out(0, "Hello World", 0, 0);   // Œ©–{
 
 
 }
