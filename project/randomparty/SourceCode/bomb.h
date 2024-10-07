@@ -19,6 +19,7 @@ struct BombInfo
 	bool  bomb_playerattack;
 };
 
-extern VECTOR2 posison;
+extern PLAYER player;
+
 
 #endif//BOMB_H
