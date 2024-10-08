@@ -13,10 +13,6 @@ public:
 	VECTOR2 pivot;
 	VECTOR4 color;
 
-};
-
-
-
 void button_init();
 void button_deinit();
 void button_update();
@@ -24,5 +20,11 @@ void button_render();
 void button_act();
 
 bool click();
+
+};
+
+
+
+
 
 #endif//BUTTON_H
