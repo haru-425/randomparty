@@ -52,3 +52,18 @@ float tracking(VECTOR2 target, VECTOR2 tracking_person) {
 	angle = (float)atan2(subVector.y, subVector.x);
 	return angle;
 }
+
+bool circle_hit(VECTOR2 pos1,VECTOR2 pos2,float r1 ,float r2)
+{
+	float dx = pos1.x - pos2.x;
+	float dy = pos1.y - pos2.y;
+	float r = r1 + r2;
+	if (dx*dx+dy*dy<=r*r)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
