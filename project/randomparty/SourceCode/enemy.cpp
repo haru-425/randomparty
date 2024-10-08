@@ -83,12 +83,15 @@ void enemy_update() {
 void enemy_render() {
 	if (!enemies_active) return; // 敵がオフなら描画処理なし
 
+	//TODO:00 索敵範囲描画
+	for (int i = 0; i < ENEMY_MAX; i++) { primitive::circle(enemy[i].position.x, enemy[i].position.y, enemy[i].trackingRange, 1, 1, ToRadian(0), 0, 1, 0); }
+
 	for (int i = 0; i < ENEMY_MAX; i++) {
 
 
 
 		//TODO:00 索敵範囲描画
-		primitive::circle(enemy[i].position.x, enemy[i].position.y, enemy[i].trackingRange, 1, 1, ToRadian(0), 0, 1, 0);
+		for (int i = 0; i < ENEMY_MAX; i++) { primitive::circle(enemy[i].position.x, enemy[i].position.y, enemy[i].trackingRange, 1, 1, ToRadian(0), 0, 1, 0); }
 
 
 
