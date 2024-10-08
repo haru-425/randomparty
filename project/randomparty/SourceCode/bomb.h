@@ -19,6 +19,7 @@ struct BombInfo
 	float bomb_range;
 	int   bomb_time;
 	bool  bomb_playerattack;
+	VECTOR2 bomb_position;
 };
 
 
