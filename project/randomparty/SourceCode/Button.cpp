@@ -1,13 +1,13 @@
 #include"all.h"
 
 int button_state;
+Button button;
 
 void button_init() {
 	button_state = 0;
-<<<<<<< Updated upstream
-=======
+
 	button = { 100, 100, 50 };
->>>>>>> Stashed changes
+
 }
 
 void button_deinit() {
@@ -26,16 +26,16 @@ void button_update() {
 
 	case 1:
 		//////// パラメータの設定 ////////
-<<<<<<< Updated upstream
 
-=======
+
+
 		button.position = { SCREEN_W * 0.5f, SCREEN_H * 0.7f };
 		button.scale = { 1.0f, 1.0f };
 		button.texPos = { 0, 0 };
 		button.texSize = { button.x, button.y };
 		button.pivot = { button.x/2, button.y/2 };
 		button.color = { 1.000f, 1.0f, 1.0f, 1.0f };
->>>>>>> Stashed changes
+
 
 		++button_state;
 		/*fallthrough*/
@@ -52,9 +52,8 @@ void button_update() {
 
 
 
-<<<<<<< Updated upstream
-}
-=======
+
+
 
 void button_render() {
 	// 円形のボタンの描画
@@ -100,4 +99,4 @@ bool click() {
 	}
 	return false;
 }
->>>>>>> Stashed changes
+

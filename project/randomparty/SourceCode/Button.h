@@ -3,11 +3,15 @@
 
 class Button {
 public:
-<<<<<<< Updated upstream
-=======
+
 	float x, y, radius;
->>>>>>> Stashed changes
-	
+
+	VECTOR2 position;
+	VECTOR2 scale;
+	VECTOR2 texPos;
+	VECTOR2 texSize;
+	VECTOR2 pivot;
+	VECTOR4 color;
 
 };
 
