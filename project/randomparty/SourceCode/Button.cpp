@@ -68,7 +68,7 @@ void button_act() {
 	
 	
 		// ボタンの内部で左クリックが押された場合
-		if (TRG(0) & L_Click) {
+		if (TRG(0) & L_CLICK) {
 			if (click()) {
 				// ゲーム画面に遷移
 				nextScene = SCENE_GAME;
