@@ -145,12 +145,12 @@ void enemy_act() {
 
 ENEMY set_enemy(ENEMY enemy) {
 
-	enemy.type = 0; //rand() % 2;
+	enemy.type = rand() % 4;
 
 	enemy.angle = ToRadian(0);
 	enemy.position = { static_cast<float>(rand() % SCREEN_W), static_cast<float>(rand() % SCREEN_H) };
 	enemy.scale = { 0.1f, 0.1f };
-	enemy.texPos = { 0, 0 };
+	enemy.texPos = { ENEMY_TEX_W * enemy.type, 0 };
 	enemy.texSize = { ENEMY_TEX_W, ENEMY_TEX_H };
 	enemy.pivot = { ENEMY_PIVOT_X, ENEMY_PIVOT_Y };
 	enemy.color = { 1.000f, 1.0f, 1.0f, 1.0f };
