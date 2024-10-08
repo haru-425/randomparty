@@ -78,8 +78,8 @@ void game_render()
 {
 	GameLib::clear(0.0, 0.0, 0.0);
 
-	player_render();
 	enemy_render();
+	player_render();
 
 	//text_out(0, "Hello World", 0, 0);   // Œ©–{
 

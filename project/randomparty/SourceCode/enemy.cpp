@@ -61,6 +61,16 @@ void enemy_render() {
 	if (!enemies_active) return; // 敵がオフなら描画処理なし
 
 	for (int i = 0; i < ENEMY_MAX; i++) {
+
+
+
+		//TODO:00 索敵範囲描画
+		primitive::circle(enemy[i].position.x, enemy[i].position.y, enemy[i].trackingRange, 1, 1, ToRadian(0), 0, 1, 0);
+
+
+
+
+
 		sprite_render(
 			sprEnemy,
 			enemy[i].position.x, enemy[i].position.y,
@@ -82,6 +92,7 @@ void enemy_render() {
 			enemy[i].angle,
 			enemy[i].color.x, enemy[i].color.y, enemy[i].color.z, enemy[i].color.w
 		);
+
 	}
 }
 
