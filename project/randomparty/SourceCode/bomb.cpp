@@ -58,12 +58,15 @@ void bomb_update()
 
 void bomb_explosion(int bomb_namber)
 {
+	int waitTime=1;
 	float enemy_r = ENEMY_CORE_TEX_W * enemy[0].scale.x/2;
 	for (int i = 0; i < ENEMY_MAX; i++)
 	{
 		if (circle_hit(stage[bomb_namber].bomb_position, enemy->position, stage[bomb_namber].bomb_range, enemy_r))
 		{
-
+			enemy[i].reset();
+			enemy[i].waitNum = waitTime;
+			waitTime++;
 		}
 	}
 }
