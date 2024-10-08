@@ -18,6 +18,7 @@ void title_init()
     title_state = 0;
     title_timer = 0;
     select_c = 0;
+	button_init();
 }
 
 //--------------------------------------
@@ -34,6 +35,7 @@ void title_update()
 {
 	using namespace input;
 
+	button_update();
 	switch (title_state)
 	{
 	case 0:
@@ -76,6 +78,7 @@ void title_render()
 {
     // ‰æ–Ê‚ğÂ‚Å“h‚è‚Â‚Ô‚·
     //GameLib::clear(0.3f, 0.5f, 1.0f);
-
+	
 	sprite_render(backspr, SCREEN_W / 2, SCREEN_H / 2, 3, 3, 0, 0, 640, 480, 640 / 2, 480 / 2);
+		button_render();
 }

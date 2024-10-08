@@ -1,9 +1,15 @@
 #include"all.h"
 
+
+
 int button_state;
+Button button;
+
+
 
 void button_init() {
 	button_state = 0;
+	button = { 100, 100, 50, false };
 }
 
 void button_deinit() {
@@ -22,7 +28,12 @@ void button_update() {
 
 	case 1:
 		//////// ÉpÉâÉÅÅ[É^ÇÃê›íË ////////
-
+		button.position = { SCREEN_W * 0.5f, SCREEN_H * 0.5f };
+		button.scale = { 1.0f, 1.0f };
+		button.texPos = { 0, 0 };
+		button.texSize = { button.x, button.y };
+		button.pivot = { button.x/2, button.y/2 };
+		button.color = { 1.000f, 1.0f, 1.0f, 1.0f };
 
 		++button_state;
 		/*fallthrough*/
@@ -40,4 +51,6 @@ void button_update() {
 
 void button_render() {
 
+	primitive::circle(SCREEN_W * 0.5f, SCREEN_H * 0.7f, button.radius, 1, 1, ToRadian(0), 0, 0, 0);
+	
 }
