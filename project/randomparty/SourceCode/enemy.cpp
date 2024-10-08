@@ -2,14 +2,8 @@
 #include <math.h>
 int enemy_state;
 bool enemies_active = true; // 敵の出現を制御するフラグ
-extern PLAYER player;
 int enemy_timer;
-typedef enum
-{
-	APPROACH_SLOW,
-	APPROACH_FAST,
 
-} ENEMY_TYPE;
 
 ENEMY enemy[ENEMY_MAX];
 
@@ -69,7 +63,7 @@ void enemy_update() {
 				}
 
 
-				if (enemy[i].waitNum == 0) { enemy[i] = set_enemy(enemy[i]); debug::setString("set"); enemy[i].waitNum--; }
+				if (enemy[i].waitNum == 0) { enemy[i].set(); debug::setString("set"); enemy[i].waitNum--; }
 			}
 			enemy_timer = 0;
 		}
@@ -184,32 +178,5 @@ void enemy_act() {
 			}
 		}
 	}
-}
-
-ENEMY set_enemy(ENEMY enemy) {
-
-	enemy.type = 0;// rand() % 4;
-
-	enemy.angle = ToRadian(0);
-	enemy.position = { static_cast<float>(rand() % SCREEN_W), static_cast<float>(rand() % SCREEN_H) };
-	enemy.scale = { 0.1f, 0.1f };
-	enemy.texPos = { ENEMY_TEX_W * enemy.type, 0 };
-	enemy.texSize = { ENEMY_TEX_W, ENEMY_TEX_H };
-	enemy.pivot = { ENEMY_PIVOT_X, ENEMY_PIVOT_Y };
-	enemy.color = { 1.000f, 1.0f, 1.0f, 1.0f };
-	switch (enemy.type)
-	{
-	case APPROACH_SLOW:
-		enemy.speed = 1.5f + float(rand() % 4);
-
-		enemy.trackingRange = PLAYER_TEX_W * player.scale.x * 5;
-		break;
-	case APPROACH_FAST:
-
-		enemy.speed = 3.0f + float(rand() % 2);
-		break;
-	}
-
-	return enemy;
 }
 
