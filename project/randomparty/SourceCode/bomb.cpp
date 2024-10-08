@@ -41,10 +41,20 @@ void bomb_update()
 	{
 		if (bomb_def.bomb_number != 0)
 		{
+			stage[i].bomb_time -= 1;
+			if (stage[i].bomb_time == 0)
+			{
+				bomb_explosion(i);
 
+			}
 		}
 	}
 
+}
+
+void bomb_explosion(int bomb_namber)
+{
+	
 }
 
 //配列によって、ステージに二個爆弾を置いても別々に爆発するるようにする

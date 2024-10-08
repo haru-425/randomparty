@@ -183,6 +183,7 @@ attrib +h SourceCode\gp1.log
     <ClInclude Include="imgui\imstb_truetype.h" />
     <ClInclude Include="SourceCode\all.h" />
     <ClInclude Include="SourceCode\bomb.h" />
+    <ClInclude Include="SourceCode\Button.h" />
     <ClInclude Include="SourceCode\common.h" />
     <ClInclude Include="SourceCode\enemy.h" />
     <ClInclude Include="SourceCode\player.h" />
@@ -213,6 +214,7 @@ attrib +h SourceCode\gp1.log
     <ClCompile Include="imgui\imgui_ja_gryph_ranges.cpp" />
     <ClCompile Include="imgui\imgui_widgets.cpp" />
     <ClCompile Include="SourceCode\bomb.cpp" />
+    <ClCompile Include="SourceCode\Button.cpp" />
     <ClCompile Include="SourceCode\common.cpp" />
     <ClCompile Include="SourceCode\enemy.cpp" />
     <ClCompile Include="SourceCode\main.cpp" />

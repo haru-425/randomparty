@@ -9,6 +9,7 @@ void bomb_init();
 void bomb_deinit();
 void bomb_set();
 void bomb_update();
+void bomb_explosion(int bomb_namber);
 void bomb_render();
 
 struct BombInfo
