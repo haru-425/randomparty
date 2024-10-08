@@ -3,8 +3,15 @@
 
 class Button {
 public:
-	
+	float x, y, radius;
+	bool click;
 
+	VECTOR2 position;
+	VECTOR2 scale;
+	VECTOR2 texPos;
+	VECTOR2 texSize;
+	VECTOR2 pivot;
+	VECTOR4 color;
 };
 
 
