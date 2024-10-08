@@ -8,6 +8,7 @@
 
 //------< ƒCƒ“ƒNƒ‹[ƒh >---------------------------------------------------------
 #include "all.h"
+#include <sstream>
 
 
 //------< namespace >-----------------------------------------------------------
@@ -82,8 +83,8 @@ int APIENTRY wWinMain(HINSTANCE, HINSTANCE, LPWSTR, int)// g—p‚µ‚È‚¢•Ï”‚Í‹Lq‚
 #endif
 
 		// Œ»İ‚ÌƒV[ƒ“‚ğXVE•`‰æ
-		/*game_update();
-		game_render();*/
+		game_update();
+		/*game_render();*/
 
 #ifdef USE_IMGUI
 		ImGui::Render();
