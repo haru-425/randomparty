@@ -3,7 +3,7 @@
 int enemy_state;
 bool enemies_active = true; // 敵の出現を制御するフラグ
 extern PLAYER player;
-
+int enemy_timer;
 typedef enum
 {
 	APPROACH_SLOW,
@@ -18,6 +18,7 @@ Sprite* sprEnemyCore;
 
 void enemy_init() {
 	enemy_state = 0;
+	enemy_timer = 0;
 }
 
 void enemy_deinit() {
@@ -27,7 +28,7 @@ void enemy_deinit() {
 
 void enemy_update() {
 	if (!enemies_active) return; // 敵がオフなら更新処理なし
-
+	enemy_timer++;
 	switch (enemy_state)
 	{
 	case 0:
@@ -40,8 +41,12 @@ void enemy_update() {
 	case 1:
 		//////// パラメータの設定 ////////
 		for (int i = 0; i < ENEMY_MAX; i++) {
-			enemy[i] = set_enemy(enemy[i]);
+			//enemy[i] = set_enemy(enemy[i]);
+			enemy[i].reset();
 
+
+
+			enemy[i].waitNum = i + 1;
 		}
 
 		++enemy_state;
@@ -51,6 +56,24 @@ void enemy_update() {
 		//////// 通常時 ////////
 
 		// 行動の遷移
+		enemy_timer++;
+		if (enemy_timer > ENEMY_SPAWN_RATE)
+		{
+			for (int i = 0; i < ENEMY_MAX; i++)
+			{
+				enemy[i].waitNum--;
+				if (enemy[i].waitNum < 0)
+				{
+
+					enemy[i].waitNum = -1;
+				}
+
+
+				if (enemy[i].waitNum == 0) { enemy[i] = set_enemy(enemy[i]); debug::setString("set"); enemy[i].waitNum--; }
+			}
+			enemy_timer = 0;
+		}
+
 		enemy_act();
 
 		break;
@@ -93,7 +116,10 @@ void enemy_render() {
 			enemy[i].color.x, enemy[i].color.y, enemy[i].color.z, enemy[i].color.w
 		);
 
+		debug::setString("waitNum:%d", enemy[i].waitNum);
 	}
+
+	debug::setString("timer:%d", enemy_timer);
 }
 
 void enemy_act() {
@@ -101,62 +127,66 @@ void enemy_act() {
 
 
 	for (int i = 0; i < ENEMY_MAX; i++) {
-		float speedX, speedY;
-		float DistanceX, DistanceY, DIstance;
-		DistanceX = player.position.x - enemy[i].position.x;
-		DistanceY = player.position.y - enemy[i].position.y;
-		DIstance = sqrtf(DistanceX * DistanceX + DistanceY * DistanceY);
-
-
-		if (DIstance <= enemy[i].trackingRange)//索敵範囲内かどうか
+		if (enemy[i].waitNum <= 0)
 		{
 
-			enemy[i].angle = tracking(player.position, enemy[i].position);
-			switch (enemy[i].type)
-			{
-			case APPROACH_SLOW:
-				// 遅い動きの敵の処理
+			float speedX, speedY;
+			float DistanceX, DistanceY, DIstance;
+			DistanceX = player.position.x - enemy[i].position.x;
+			DistanceY = player.position.y - enemy[i].position.y;
+			DIstance = sqrtf(DistanceX * DistanceX + DistanceY * DistanceY);
 
+
+			if (DIstance <= enemy[i].trackingRange)//索敵範囲内かどうか
+			{
+
+				enemy[i].angle = tracking(player.position, enemy[i].position);
+				switch (enemy[i].type)
+				{
+				case APPROACH_SLOW:
+					// 遅い動きの敵の処理
+
+					speedX = cosf(enemy[i].angle) * 1;
+					speedY = sinf(enemy[i].angle) * 1;
+					enemy[i].position.x += speedX * enemy[i].speed;
+					enemy[i].position.y += speedY * enemy[i].speed;
+					break;
+				case APPROACH_FAST:
+					// 速い動きの敵の処理
+					speedX = cosf(enemy[i].angle) * 1;
+					speedY = sinf(enemy[i].angle) * 1;
+					enemy[i].position.x += speedX * enemy[i].speed;
+					enemy[i].position.y += speedY * enemy[i].speed;
+					break;
+				}
+
+			}
+			else
+			{
+				enemy[i].angle += ToRadian(rand() % 7 - 3);
 				speedX = cosf(enemy[i].angle) * 1;
 				speedY = sinf(enemy[i].angle) * 1;
-				enemy[i].position.x += speedX * enemy[i].speed;
-				enemy[i].position.y += speedY * enemy[i].speed;
-				break;
-			case APPROACH_FAST:
-				// 速い動きの敵の処理
-				speedX = cosf(enemy[i].angle) * 1;
-				speedY = sinf(enemy[i].angle) * 1;
-				enemy[i].position.x += speedX * enemy[i].speed;
-				enemy[i].position.y += speedY * enemy[i].speed;
-				break;
+				enemy[i].position.x += speedX * enemy[i].speed * 0.5f;
+				enemy[i].position.y += speedY * enemy[i].speed * 0.5f;
 			}
 
-		}
-		else
-		{
-			enemy[i].angle += ToRadian(rand() % 7 - 3);
-			speedX = cosf(enemy[i].angle) * 1;
-			speedY = sinf(enemy[i].angle) * 1;
-			enemy[i].position.x += speedX * enemy[i].speed * 0.5f;
-			enemy[i].position.y += speedY * enemy[i].speed * 0.5f;
-		}
-
-		if (enemy[i].position.x < 0 || enemy[i].position.x>SCREEN_W)
-		{
-			speedX *= -1;
-			enemy[i].angle = (float)atan2(speedY, speedX);
-		}
-		if (enemy[i].position.y < 0 || enemy[i].position.y>SCREEN_H)
-		{
-			speedY *= -1;
-			enemy[i].angle = (float)atan2(speedY, speedX);
+			if (enemy[i].position.x < 0 || enemy[i].position.x>SCREEN_W)
+			{
+				speedX *= -1;
+				enemy[i].angle = (float)atan2(speedY, speedX);
+			}
+			if (enemy[i].position.y < 0 || enemy[i].position.y>SCREEN_H)
+			{
+				speedY *= -1;
+				enemy[i].angle = (float)atan2(speedY, speedX);
+			}
 		}
 	}
 }
 
 ENEMY set_enemy(ENEMY enemy) {
 
-	enemy.type = rand() % 4;
+	enemy.type = 0;// rand() % 4;
 
 	enemy.angle = ToRadian(0);
 	enemy.position = { static_cast<float>(rand() % SCREEN_W), static_cast<float>(rand() % SCREEN_H) };
