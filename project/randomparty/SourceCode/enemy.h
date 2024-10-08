@@ -21,6 +21,7 @@ public:
 	int type;
 	float angle;
 	float speed;
+	float trackingRange;
 	VECTOR2 position;
 	VECTOR2 scale;
 	VECTOR2 texPos;
