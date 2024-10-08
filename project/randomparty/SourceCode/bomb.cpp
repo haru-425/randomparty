@@ -61,7 +61,7 @@ void bomb_explosion(int bomb_namber)
 	float enemy_r = ENEMY_CORE_TEX_W * enemy[0].scale.x/2;
 	for (int i = 0; i < ENEMY_MAX; i++)
 	{
-		if ((stage[bomb_namber].bomb_position.x-enemy[i].position.x)* (stage[bomb_namber].bomb_position.x - enemy[i].position.x) + (stage[bomb_namber].bomb_position.y - enemy[i].position.y) * (stage[bomb_namber].bomb_position.y - enemy[i].position.y))
+		if (circle_hit(stage[bomb_namber].bomb_position, enemy->position, stage[bomb_namber].bomb_range, enemy_r))
 		{
 
 		}
