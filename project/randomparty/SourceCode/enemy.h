@@ -1,7 +1,7 @@
 #ifndef ENEMY_H
 #define ENEMY_H
 
-#define ENEMY_MAX (10)
+#define ENEMY_MAX (50)
 
 #define ENEMY_TEX_W        (400.0f)   // 敵の画像1つの幅
 #define ENEMY_TEX_H        (400.0f)   // 敵の画像1つの高さ
@@ -24,6 +24,7 @@ typedef enum
 {
 	APPROACH_SLOW,
 	APPROACH_FAST,
+	CHARGE,
 
 } ENEMY_TYPE;
 
@@ -33,6 +34,9 @@ public:
 	int type;
 	int timer;
 	int waitNum;
+	int state;
+
+	int trackingRangeDiameter;
 	float angle;
 	float speed;
 	float trackingRange;
@@ -56,26 +60,33 @@ public:
 	}
 
 	void set() {
+		type = 2;//rand() % 3;
 
-		type = 0;// rand() % 4;
-
-		angle = ToRadian(0);
+		angle = ToRadian(rand() % 360);
 		position = { static_cast<float>(rand() % SCREEN_W), static_cast<float>(rand() % SCREEN_H) };
 		scale = { 0.1f, 0.1f };
 		texPos = { ENEMY_TEX_W * type, 0 };
 		texSize = { ENEMY_TEX_W, ENEMY_TEX_H };
 		pivot = { ENEMY_PIVOT_X, ENEMY_PIVOT_Y };
 		color = { 1.000f, 1.0f, 1.0f, 1.0f };
+		state = 0;
 		switch (type)
 		{
 		case APPROACH_SLOW:
-			speed = 1.5f + float(rand() % 4);
-
-			trackingRange = PLAYER_TEX_W * player.scale.x * 5;
+			speed = 1.5f + float(rand() % 2);
+			trackingRangeDiameter = 7;
+			trackingRange = PLAYER_TEX_W * player.scale.x * trackingRangeDiameter;
 			break;
 		case APPROACH_FAST:
-
 			speed = 3.0f + float(rand() % 2);
+			trackingRangeDiameter = 4;
+			trackingRange = PLAYER_TEX_W * player.scale.x * trackingRangeDiameter;
+			break;
+		case CHARGE:
+			timer = 0;
+			speed = 3.0f;
+			trackingRangeDiameter = 20;
+			trackingRange = PLAYER_TEX_W * player.scale.x * trackingRangeDiameter;
 			break;
 		}
 

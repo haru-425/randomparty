@@ -9,6 +9,7 @@ ENEMY enemy[ENEMY_MAX];
 
 Sprite* sprEnemy;
 Sprite* sprEnemyCore;
+Sprite* sprTrackingRange;
 
 void enemy_init() {
 	enemy_state = 0;
@@ -18,6 +19,8 @@ void enemy_init() {
 void enemy_deinit() {
 	safe_delete(sprEnemy);
 	safe_delete(sprEnemyCore);
+
+	safe_delete(sprTrackingRange);
 }
 
 void enemy_update() {
@@ -29,6 +32,7 @@ void enemy_update() {
 		//////// 初期設定 ////////
 		sprEnemy = sprite_load(L"./Data/Images/enemy_approach_slow.png");
 		sprEnemyCore = sprite_load(L"./Data/Images/enemyCore.png");
+		sprTrackingRange = sprite_load(L"./Data/Images/trackingRange.png");
 		++enemy_state;
 		/*fallthrough*/
 
@@ -78,10 +82,25 @@ void enemy_render() {
 	if (!enemies_active) return; // 敵がオフなら描画処理なし
 
 	//TODO:00 索敵範囲描画
-	for (int i = 0; i < ENEMY_MAX; i++) {
-		primitive::circle(enemy[i].position.x, enemy[i].position.y, enemy[i].trackingRange, 1, 1, ToRadian(0), 0, 1, 0);
-		primitive::circle(enemy[i].position.x, enemy[i].position.y, enemy[i].trackingRange - 10, 1, 1, ToRadian(0), 0, 0, 0);
-	}
+	//for (int i = 0; i < ENEMY_MAX; i++) {
+	//	//primitive::circle(enemy[i].position.x, enemy[i].position.y, enemy[i].trackingRange, 1, 1, ToRadian(0), 0, 1, 0);
+	////	primitive::circle(enemy[i].position.x, enemy[i].position.y, enemy[i].trackingRange - 10, 1, 1, ToRadian(0), 0, 0, 0);
+
+	//	sprite_render(
+	//		sprTrackingRange,
+	//		enemy[i].position.x, enemy[i].position.y,
+	//		2 * enemy[i].scale.x * enemy[i].trackingRangeDiameter, 2 * enemy[i].scale.y * enemy[i].trackingRangeDiameter,
+	//		//1, 1,
+	//		enemy[i].texPos.x, enemy[i].texPos.y,
+	//		enemy[i].texSize.x, enemy[i].texSize.y,
+	//		enemy[i].pivot.x, enemy[i].pivot.y,
+	//		0,
+	//		enemy[i].color.x, enemy[i].color.y, enemy[i].color.z, 0.3f
+
+	//	);
+
+	//	//debug::setString("trackingrange:%f", enemy[i].trackingRange * enemy[i].scale.x);
+	//}
 
 	for (int i = 0; i < ENEMY_MAX; i++) {
 
@@ -112,10 +131,10 @@ void enemy_render() {
 			enemy[i].color.x, enemy[i].color.y, enemy[i].color.z, enemy[i].color.w
 		);
 
-		debug::setString("waitNum:%d", enemy[i].waitNum);
+		//debug::setString("trackingrange:%f", enemy[i].trackingRange);
 	}
 
-	debug::setString("timer:%d", enemy_timer);
+	//debug::setString("timer:%d", enemy_timer);
 }
 
 void enemy_act() {
@@ -136,12 +155,12 @@ void enemy_act() {
 			if (DIstance <= enemy[i].trackingRange)//索敵範囲内かどうか
 			{
 
-				enemy[i].angle = tracking(player.position, enemy[i].position);
 				switch (enemy[i].type)
 				{
 				case APPROACH_SLOW:
 					// 遅い動きの敵の処理
 
+					enemy[i].angle = tracking(player.position, enemy[i].position);
 					speedX = cosf(enemy[i].angle) * 1;
 					speedY = sinf(enemy[i].angle) * 1;
 					enemy[i].position.x += speedX * enemy[i].speed;
@@ -149,10 +168,38 @@ void enemy_act() {
 					break;
 				case APPROACH_FAST:
 					// 速い動きの敵の処理
+
+					enemy[i].angle = tracking(player.position, enemy[i].position);
 					speedX = cosf(enemy[i].angle) * 1;
 					speedY = sinf(enemy[i].angle) * 1;
 					enemy[i].position.x += speedX * enemy[i].speed;
 					enemy[i].position.y += speedY * enemy[i].speed;
+					break;
+				case CHARGE:
+
+					if (DIstance <= enemy[i].trackingRange / 3)
+					{
+						if (enemy[i].state == 0)
+							enemy[i].angle += ToRadian(float(-30 + rand() % 60));
+
+						enemy[i].speed = 5;
+						enemy[i].state = 1;
+
+					}
+					else
+					{
+
+						enemy[i].speed = 3;
+						enemy[i].angle = tracking(player.position, enemy[i].position);
+
+						enemy[i].state = 0;
+					}
+
+					speedX = cosf(enemy[i].angle) * 1;
+					speedY = sinf(enemy[i].angle) * 1;
+					enemy[i].position.x += speedX * enemy[i].speed;
+					enemy[i].position.y += speedY * enemy[i].speed;
+
 					break;
 				}
 
@@ -164,6 +211,7 @@ void enemy_act() {
 				speedY = sinf(enemy[i].angle) * 1;
 				enemy[i].position.x += speedX * enemy[i].speed * 0.5f;
 				enemy[i].position.y += speedY * enemy[i].speed * 0.5f;
+				enemy[i].state = 0;
 			}
 
 			if (enemy[i].position.x < 0 || enemy[i].position.x>SCREEN_W)
@@ -177,6 +225,7 @@ void enemy_act() {
 				enemy[i].angle = (float)atan2(speedY, speedX);
 			}
 		}
+		debug::setString("state %d", enemy[i].state);
 	}
 }
 
