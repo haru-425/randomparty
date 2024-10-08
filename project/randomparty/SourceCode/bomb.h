@@ -21,6 +21,7 @@ struct BombInfo
 };
 
 
+
 #define BOMB_MAX 10
 
 

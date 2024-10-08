@@ -3,10 +3,10 @@
 BombInfo bomb_def;
 BombInfo stage[BOMB_MAX];
 
-
 BombInfo normal = { 0,1,3.0,5,true };
 
 extern PLAYER player;
+
 void bomb_init()
 {
 	bomb_def.bomb_number = 0;
