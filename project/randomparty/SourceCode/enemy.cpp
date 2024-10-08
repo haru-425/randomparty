@@ -84,14 +84,13 @@ void enemy_render() {
 	if (!enemies_active) return; // 敵がオフなら描画処理なし
 
 	//TODO:00 索敵範囲描画
-	for (int i = 0; i < ENEMY_MAX; i++) { primitive::circle(enemy[i].position.x, enemy[i].position.y, enemy[i].trackingRange, 1, 1, ToRadian(0), 0, 1, 0); }
+	for (int i = 0; i < ENEMY_MAX; i++) {
+		primitive::circle(enemy[i].position.x, enemy[i].position.y, enemy[i].trackingRange, 1, 1, ToRadian(0), 0, 1, 0);
+		primitive::circle(enemy[i].position.x, enemy[i].position.y, enemy[i].trackingRange - 10, 1, 1, ToRadian(0), 0, 0, 0);
+	}
 
 	for (int i = 0; i < ENEMY_MAX; i++) {
 
-
-
-		//TODO:00 索敵範囲描画
-		for (int i = 0; i < ENEMY_MAX; i++) { primitive::circle(enemy[i].position.x, enemy[i].position.y, enemy[i].trackingRange, 1, 1, ToRadian(0), 0, 1, 0); }
 
 
 
@@ -203,7 +202,7 @@ ENEMY set_enemy(ENEMY enemy) {
 	case APPROACH_SLOW:
 		enemy.speed = 1.5f + float(rand() % 4);
 
-		enemy.trackingRange = PLAYER_TEX_W * player.scale.x * (7 + rand() % 4);
+		enemy.trackingRange = PLAYER_TEX_W * player.scale.x * 5;
 		break;
 	case APPROACH_FAST:
 
