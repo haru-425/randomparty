@@ -3,18 +3,18 @@
 int button_state;
 Button button;
 
-void button_init() {
+void Button::button_init() {
 	button_state = 0;
 
 	button = { 100, 100, 50 };
 
 }
 
-void button_deinit() {
+void Button::button_deinit() {
 
 }
 
-void button_update() {
+void Button::button_update() {
 	switch (button_state)
 	{
 	case 0:
@@ -44,7 +44,7 @@ void button_update() {
 		//////// ’Êí ////////
 
 		// s“®‚Ì‘JˆÚ
-		button_act();
+		Button::button_act();
 
 		break;
 	}
@@ -55,14 +55,14 @@ void button_update() {
 
 
 
-void button_render() {
+void Button::button_render() {
 	// ‰~Œ`‚Ìƒ{ƒ^ƒ“‚Ì•`‰æ
 	primitive::circle(button.position.x, button.position.y, button.radius, 1, 1, ToRadian(0), 0, 0, 0);
 
 	
 }
 
-void button_act() {
+void Button::button_act() {
 	using namespace input;
 
 	
@@ -80,7 +80,7 @@ void button_act() {
 }
 
 
-bool click() {
+bool Button::click() {
 	POINT point;
 	GetCursorPos(&point);
 	ScreenToClient(window::getHwnd(), &point);
