@@ -42,7 +42,7 @@ namespace GameLib
         { PAD_TRG3      , Keyboard::M },            // 'M'
 
         { L_CLICK    , VK_LBUTTON },              // マウス左ボタン
-        //{ PAD_TRG4     , VK_RBUTTON },              // マウス右ボタン
+        { R_CLICK    , VK_RBUTTON },             // マウス右ボタン
         //{ PAD_R3       , VK_MBUTTON },              // マウス中ボタン
 
         { 0x00, 0x00 }                              // 終了コード
@@ -88,8 +88,8 @@ namespace GameLib
 
         { PAD_SELECT    , Keyboard::F1 },           // VK_F1
 
-//      { PAD_START     , VK_LBUTTON },             // マウス左ボタン
-//      { PAD_SELECT    , VK_RBUTTON },             // マウス右ボタン
+        { L_CLICK    , VK_LBUTTON },            // マウス左ボタン
+        { R_CLICK    , VK_RBUTTON },             // マウス右ボタン
 //      { PAD_TRG1      , VK_MBUTTON },             // マウス中ボタン
 
         { 0x00, 0x00 }                              // 終了コード

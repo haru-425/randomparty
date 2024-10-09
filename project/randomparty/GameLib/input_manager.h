@@ -39,6 +39,7 @@ namespace GameLib
         const int PAD_L3 = (1 << 14);
         const int PAD_R3 = (1 << 15);
         const int L_CLICK = (1 << 16);
+        const int R_CLICK = (1 << 17);
 
         // ƒpƒbƒh‚ÌÅ‘å”
         const int	GAMEPAD_NUM = 4;
