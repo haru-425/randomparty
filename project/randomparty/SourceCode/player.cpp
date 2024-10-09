@@ -1,4 +1,5 @@
 #include "all.h"
+//#include "../GameLib/input_manager.h"
 int     player_state;
 
 PLAYER player;
@@ -57,10 +58,10 @@ void player_update()
 
 	case 2:
 		//////// ’Êí ////////
-		if (TRG(0) &)
+		/*if (TRG(0) & L_CLICK) 
 		{
 
-		}
+		}*/
 		// s“®‚Ì‘JˆÚ
 		player_act();
 

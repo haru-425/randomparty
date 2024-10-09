@@ -12,8 +12,9 @@ void bomb_update();
 void bomb_explosion(int bomb_namber);
 void bomb_render();
 
-struct BombInfo
+class BombInfo
 {
+public:
 	int   bomb_number;
 	int	  bomb_type;
 	float bomb_range;
