@@ -28,14 +28,16 @@ void bomb_init() // 初期化
 
 void bomb_set()
 {
+    
 	// BOMB_MAX 個のスロットから空いている場所を探す
 	for (int i = 0; i < BOMB_MAX; i++)
 	{
-		if (bomb_def.bomb_number == 0) // 使われていないスロットを発見
+		if (stage[i].bomb_number == 0) // 使われていないスロットを発見
 		{
 			stage[i] = normal; // 新しい爆弾（normal）を設定
 			stage[i].bomb_number = i + 1; // 爆弾番号を設定
 			bomb_def.bomb_position = player.position; // 爆弾の位置をプレイヤーの現在位置に設定
+            break;
 		}
 	}
 }
@@ -45,7 +47,7 @@ void bomb_update() // 爆発までのタイマー処理
     // すべての爆弾をチェック
     for (int i = 0; i < BOMB_MAX; i++)
     {
-        if (bomb_def.bomb_number != 0) // 使われている爆弾のみ処理
+        if (stage[i].bomb_number != 0) // 使われている爆弾のみ処理
         {
             stage[i].bomb_time -= 1; // タイマーをデクリメント
             if (stage[i].bomb_time == 0) // タイマーが 0 になったら
@@ -53,6 +55,8 @@ void bomb_update() // 爆発までのタイマー処理
                 bomb_explosion(i); // 爆発処理を呼び出す
             }
         }
+
+        debug::setString("byou:%d", stage[i].bomb_time);
     }
 }
 
