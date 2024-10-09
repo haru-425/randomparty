@@ -75,4 +75,23 @@ void bomb_explosion(int bomb_number) // 爆弾の爆発処理
             // ここでスコア追加処理などを行う（スコア処理は別途実装）
         }
     }
+    stage[bomb_number] = bomb_def;
+
+}
+
+void bomb_render()
+{
+    for (int i = 0; i < BOMB_MAX; i++)
+    {
+        //sprite_render();
+    }
+}
+
+
+void bomb_deinit()
+{
+    for (int i = 0; i < BOMB_MAX; i++)
+    {
+        stage[i] = bomb_def;
+    }
 }

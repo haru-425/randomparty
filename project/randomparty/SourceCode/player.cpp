@@ -57,7 +57,10 @@ void player_update()
 
 	case 2:
 		//////// ’Êí ////////
+		if (TRG(0) &)
+		{
 
+		}
 		// s“®‚Ì‘JˆÚ
 		player_act();
 
