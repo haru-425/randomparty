@@ -52,6 +52,7 @@ void game_update()
 		//////// �ʏ펞 ////////
 		player_update();
 		enemy_update();
+		bomb_update();
 
 		break;
 	}
