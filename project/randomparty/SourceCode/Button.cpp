@@ -84,19 +84,22 @@ bool Button::click() {
 	POINT point;
 	GetCursorPos(&point);
 	ScreenToClient(window::getHwnd(), &point);
-	float button_right = button.position.x + button.texSize.x / 2;
-	float button_left = button.position.x - button.texSize.x / 2;
-	float button_top = button.position.y - button.texSize.y / 2;
-	float button_buttom = button.position.y + button.texSize.y / 2;
-	if (point.x <= button_right && button_left <= point.x)
-	{
 
-		if (point.y <= button_buttom && button_top <= point.y)
-		{
+	// 円の中心座標
+	float centerX = button.position.x;
+	float centerY = button.position.y;
 
-			return true;
-		}
+	// 円の半径
+	float radius = button.texSize.x / 2;  // texSize.x はボタンの直径として使用
+
+	// マウスの座標と円の中心との距離を計算
+	float distance = sqrt(pow(point.x - centerX, 2) + pow(point.y - centerY, 2));
+
+	// 距離が半径以下であればクリックが有効
+	if (distance <= radius) {
+		return true;
 	}
 	return false;
 }
+
 
