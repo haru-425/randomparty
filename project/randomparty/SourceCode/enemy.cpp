@@ -124,7 +124,7 @@ void enemy_render() {
 			sprEnemyCore,
 			enemy[i].position.x, enemy[i].position.y,
 			enemy[i].scale.x, enemy[i].scale.y,
-			enemy[i].texPos.x, enemy[i].texPos.y,
+			0, 0,
 			ENEMY_CORE_TEX_W, ENEMY_CORE_TEX_H,
 			ENEMY_CORE_PIVOT_X, ENEMY_CORE_PIVOT_Y,
 			enemy[i].angle,
