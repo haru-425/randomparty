@@ -33,7 +33,7 @@ void Button::button_update() {
 		button.scale = { 1.0f, 1.0f };
 		button.texPos = { 0, 0 };
 		button.texSize = { button.x, button.y };
-		button.pivot = { button.x/2, button.y/2 };
+		button.pivot = { button.x / 2, button.y / 2 };
 		button.color = { 1.000f, 1.0f, 1.0f, 1.0f };
 
 
@@ -59,24 +59,24 @@ void Button::button_render() {
 	// 円形のボタンの描画
 	primitive::circle(button.position.x, button.position.y, button.radius, 1, 1, ToRadian(0), 0, 0, 0);
 
-	
+
 }
 
 void Button::button_act() {
 	using namespace input;
 
-	
-	
-		// ボタンの内部で左クリックが押された場合
-		if (TRG(0) & L_CLICK) {
-			if (click()) {
-				// ゲーム画面に遷移
-				nextScene = SCENE_GAME;
-				return;
-			}
-			
+
+
+	// ボタンの内部で左クリックが押された場合
+	if (TRG(0) & L_CLICK) {
+		if (click()) {
+			// ゲーム画面に遷移
+			nextScene = SCENE_GAME;
+			return;
 		}
-	
+
+	}
+
 }
 
 
@@ -90,10 +90,10 @@ bool Button::click() {
 	float button_buttom = button.position.y + button.texSize.y / 2;
 	if (point.x <= button_right && button_left <= point.x)
 	{
-		
+
 		if (point.y <= button_buttom && button_top <= point.y)
 		{
-			
+
 			return true;
 		}
 	}
