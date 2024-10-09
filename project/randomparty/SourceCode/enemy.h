@@ -16,7 +16,7 @@
 #define ENEMY_CORE_PIVOT_Y      (ENEMY_CORE_TEX_H/2)   // 敵の縦方向の下端
 
 #define ENEMY_SPAWN_RATE		(4*60.0f)
-
+#define  SCALE					(0.13f)
 
 extern PLAYER player;
 
@@ -49,7 +49,7 @@ public:
 
 	void reset() {
 		position = { -1000,-1000 };//画面外
-		scale = { 0.1f, 0.1f };
+		scale = { SCALE, SCALE };
 		texPos = { ENEMY_TEX_W * type, 0 };
 		texSize = { ENEMY_TEX_W, ENEMY_TEX_H };
 		pivot = { ENEMY_PIVOT_X, ENEMY_PIVOT_Y };
@@ -64,7 +64,7 @@ public:
 
 		angle = ToRadian(rand() % 360);
 		position = { static_cast<float>(rand() % SCREEN_W), static_cast<float>(rand() % SCREEN_H) };
-		scale = { 0.1f, 0.1f };
+		scale = { SCALE, SCALE };
 		texPos = { ENEMY_TEX_W * type, 0 };
 		texSize = { ENEMY_TEX_W, ENEMY_TEX_H };
 		pivot = { ENEMY_PIVOT_X, ENEMY_PIVOT_Y };
