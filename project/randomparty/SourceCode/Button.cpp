@@ -1,4 +1,5 @@
 #include"all.h"
+using namespace input;
 
 int button_state;
 Button button;
@@ -63,7 +64,7 @@ void Button::button_render() {
 }
 
 void Button::button_act() {
-	using namespace input;
+	
 
 
 
