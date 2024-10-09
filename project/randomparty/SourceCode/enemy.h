@@ -60,7 +60,7 @@ public:
 	}
 
 	void set() {
-		type = 2;//rand() % 3;
+		type = rand() % 3;
 
 		angle = ToRadian(rand() % 360);
 		position = { static_cast<float>(rand() % SCREEN_W), static_cast<float>(rand() % SCREEN_H) };
@@ -74,18 +74,18 @@ public:
 		{
 		case APPROACH_SLOW:
 			speed = 1.5f + float(rand() % 2);
-			trackingRangeDiameter = 7;
+			trackingRangeDiameter = 15;
 			trackingRange = PLAYER_TEX_W * player.scale.x * trackingRangeDiameter;
 			break;
 		case APPROACH_FAST:
 			speed = 3.0f + float(rand() % 2);
-			trackingRangeDiameter = 4;
+			trackingRangeDiameter = 8;
 			trackingRange = PLAYER_TEX_W * player.scale.x * trackingRangeDiameter;
 			break;
 		case CHARGE:
 			timer = 0;
 			speed = 3.0f;
-			trackingRangeDiameter = 20;
+			trackingRangeDiameter = 15;
 			trackingRange = PLAYER_TEX_W * player.scale.x * trackingRangeDiameter;
 			break;
 		}
