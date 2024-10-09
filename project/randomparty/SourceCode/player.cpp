@@ -48,7 +48,7 @@ void player_update()
 		//////// ÉpÉâÉÅÅ[É^ÇÃê›íË ////////
 		player.angle = ToRadian(0);
 		player.position = { SCREEN_W / 2.0f, SCREEN_H / 2.0f };
-		player.scale = { 0.1f, 0.1f };
+		player.scale = { SCALE, SCALE };
 		player.texPos = { 0, 0 };
 		player.texSize = { PLAYER_TEX_W, PLAYER_TEX_H };
 		player.pivot = { PLAYER_PIVOT_X, PLAYER_PIVOT_Y };
@@ -59,7 +59,7 @@ void player_update()
 
 	case 2:
 		//////// í èÌéû ////////
-		if (TRG(0) & R_CLICK) 
+		if (TRG(0) & R_CLICK)
 		{
 			bomb_set();
 		}
