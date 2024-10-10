@@ -21,6 +21,7 @@ public:
 	int   bomb_time;
 	bool  bomb_playerattack;
 	VECTOR2 bomb_position;
+	int bomb_explode_count;
 };
 
 

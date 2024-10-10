@@ -1,10 +1,15 @@
 #ifndef BUTTON_H
 #define BUTTON_H
 
+#define BUTTON_TEX_W        (440.0f)   
+#define BUTTON_TEX_H        (440.0f)   
+#define BUTTON_PIVOT_X      (ENEMY_TEX_W/2)   
+#define BUTTON_PIVOT_Y      (ENEMY_TEX_H/2)   
+
 class Button {
 public:
 
-	float x, y, radius;
+	float  radius;
 
 	VECTOR2 position;
 	VECTOR2 scale;
