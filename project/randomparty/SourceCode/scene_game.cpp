@@ -17,6 +17,7 @@ int game_state = 0;    // 状態
 int game_timer = 0;    // タイマー
 
 
+
 //--------------------------------------
 //  初期設定
 //--------------------------------------
@@ -40,6 +41,7 @@ void game_update()
 
 		player_init();
 		enemy_init();
+		timer_init();
 		game_state++;
 		/*fallthrough*/
 	case 1:
@@ -53,6 +55,7 @@ void game_update()
 		player_update();
 		enemy_update();
 		bomb_update();
+		timer_update();
 
 		break;
 	}
@@ -81,7 +84,7 @@ void game_render()
 
 	enemy_render();
 	player_render();
-
+	timer_render();
 	//text_out(0, "Hello World", 0, 0);   // 見本
 
 
@@ -94,4 +97,5 @@ void game_deinit()
 {
 	player_deinit();
 	enemy_deinit();
+	timer_deinit();
 }
