@@ -18,6 +18,7 @@ void bomb_init() // 初期化
     bomb_def.bomb_type = 0;               // 爆弾の種類を 0 に設定
     bomb_def.bomb_position.x = -200;      // 爆弾の位置を初期化 (x = -200)
     bomb_def.bomb_position.y = -200;      // 爆弾の位置を初期化 (y = -200)
+    bomb_def.bomb_explode_count = 0;
 
     // BOMB_MAX 個の爆弾ステージの初期化（すべてデフォルト値に設定）
     for (int i = 0; i < BOMB_MAX; i++)
@@ -44,19 +45,23 @@ void bomb_set()
 
 void bomb_update() // 爆発までのタイマー処理
 {
+
     // すべての爆弾をチェック
     for (int i = 0; i < BOMB_MAX; i++)
     {
+        stage[i].bomb_explode_count++;
         if (stage[i].bomb_number != 0) // 使われている爆弾のみ処理
         {
-            stage[i].bomb_time -= 1; // タイマーをデクリメント
-            if (stage[i].bomb_time == 0) // タイマーが 0 になったら
+            if (stage[i].bomb_explode_count % 60 == 0)
             {
-                bomb_explosion(i); // 爆発処理を呼び出す
+                stage[i].bomb_time -= 1; // タイマーをデクリメント
+                if (stage[i].bomb_time == 0) // タイマーが 0 になったら
+                {
+                    bomb_explosion(i); // 爆発処理を呼び出す
+                }
             }
+            
         }
-
-        debug::setString("byou:%d", stage[i].bomb_time);
     }
 }
 

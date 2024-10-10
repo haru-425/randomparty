@@ -51,8 +51,8 @@ void game_update()
 	case 2:
 		//////// �ʏ펞 ////////
 		player_update();
-		enemy_update();
 		bomb_update();
+		enemy_update();
 
 		break;
 	}
