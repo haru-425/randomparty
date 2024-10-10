@@ -56,14 +56,19 @@ public:
 		color = { 1.000f, 1.0f, 1.0f, 1.0f };
 		trackingRange = 0;
 		speed = 0;
+		timer = -1;
 
 	}
 
 	void set() {
+		float spawnAngle = float(rand() % 360);
+
 		type = rand() % 3;
 
+		timer = 60 * 10;
 		angle = ToRadian(rand() % 360);
-		position = { static_cast<float>(rand() % SCREEN_W), static_cast<float>(rand() % SCREEN_H) };
+		position = { cosf(spawnAngle) * SCREEN_W,sinf(spawnAngle) * SCREEN_W };
+		//position = { static_cast<float>(rand() % SCREEN_W), static_cast<float>(rand() % SCREEN_H) };
 		scale = { SCALE, SCALE };
 		texPos = { ENEMY_TEX_W * type, 0 };
 		texSize = { ENEMY_TEX_W, ENEMY_TEX_H };
@@ -83,13 +88,11 @@ public:
 			trackingRange = PLAYER_TEX_W * player.scale.x * trackingRangeDiameter;
 			break;
 		case CHARGE:
-			timer = 0;
 			speed = 3.0f;
 			trackingRangeDiameter = 15;
 			trackingRange = PLAYER_TEX_W * player.scale.x * trackingRangeDiameter;
 			break;
 		}
-
 	}
 
 
