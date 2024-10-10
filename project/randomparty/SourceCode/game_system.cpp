@@ -1,5 +1,6 @@
 #include "all.h"
 int     system_state;
+
 void system_init()
 {
 	system_state = 0;
@@ -16,13 +17,11 @@ void system_update()
 	case 0:
 		//////// 初期設定 ////////
 
-
 		++system_state;
 		/*fallthrough*/
 
 	case 1:
 		//////// パラメータの設定 ////////
-
 
 		++system_state;
 		/*fallthrough*/
@@ -31,8 +30,6 @@ void system_update()
 		//////// 通常時 ////////
 
 		// 行動の遷移
-
-
 		break;
 	}
 }
@@ -66,4 +63,9 @@ bool circle_hit(VECTOR2 pos1,VECTOR2 pos2,float r1 ,float r2)
 	{
 		return false;
 	}
+}
+
+void second_execution()
+{
+	
 }
