@@ -15,7 +15,8 @@
 //------< 変数 >----------------------------------------------------------------
 int game_state = 0;    // 状態
 int game_timer = 0;    // タイマー
-
+extern BombInfo stage[BOMB_MAX];
+extern int chack;
 
 //--------------------------------------
 //  初期設定
@@ -53,6 +54,8 @@ void game_update()
 		player_update();
 		bomb_update();
 		enemy_update();
+		debug::setString("%d", stage[0].bomb_time);
+		debug::setString("%d", chack);
 
 		break;
 	}

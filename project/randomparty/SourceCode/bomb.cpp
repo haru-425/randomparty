@@ -2,10 +2,10 @@
 
 BombInfo bomb_def;
 BombInfo stage[BOMB_MAX];
+int chack=0;
 
 
 BombInfo normal = { 0,1,3.0,5,true };
-
 
 extern PLAYER player;
 extern ENEMY enemy[ENEMY_MAX];
@@ -37,7 +37,7 @@ void bomb_set()
 		{
 			stage[i] = normal; // 新しい爆弾（normal）を設定
 			stage[i].bomb_number = i + 1; // 爆弾番号を設定
-			bomb_def.bomb_position = player.position; // 爆弾の位置をプレイヤーの現在位置に設定
+            stage[i].bomb_position = player.position; // 爆弾の位置をプレイヤーの現在位置に設定
             break;
 		}
 	}
@@ -74,13 +74,13 @@ void bomb_explosion(int bomb_number) // 爆弾の爆発処理
     for (int i = 0; i < ENEMY_MAX; i++)
     {
         // 爆弾の爆発範囲と敵の位置が重なっているかをチェック
-        if (circle_hit(stage[bomb_number].bomb_position, enemy->position, stage[bomb_number].bomb_range, enemy_r))
+        if (circle_hit(stage[bomb_number].bomb_position, enemy[i].position, PLAYER_TEX_W * player.scale.x * stage[bomb_number].bomb_range, enemy_r))
         {
             // 敵のリセット（リポップ処理）
             enemy[i].reset();
             enemy[i].waitNum = waitTime; // リポップまでの待機時間を設定
             waitTime++; // 次の敵の待機時間を増加
-
+            chack = 1;
             // ここでスコア追加処理などを行う（スコア処理は別途実装）
         }
     }
