@@ -28,7 +28,7 @@ void title_init()
 void title_deinit()
 {
     music::stop(3);
-
+	button.button_deinit();
     safe_delete(backspr);
 }
 
