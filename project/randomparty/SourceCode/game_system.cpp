@@ -65,10 +65,6 @@ bool circle_hit(VECTOR2 pos1, VECTOR2 pos2, float r1, float r2)
 	}
 }
 
-void second_execution()
-{
-
-}
 void game_end()
 {
 	nextScene = SCENE_TITLE;
