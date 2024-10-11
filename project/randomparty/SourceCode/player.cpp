@@ -124,7 +124,7 @@ void player_act()
 	{
 
 		if (circle_hit(player.position, enemy[i].position, PLAYER_CORE_TEX_W * SCALE, ENEMY_CORE_TEX_W * SCALE)) {
-			nextScene = SCENE_TITLE;
+			game_end();
 		}
 	}
 }

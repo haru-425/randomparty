@@ -17,7 +17,8 @@ int game_state = 0;    // 状態
 int game_timer = 0;    // タイマー
 
 
-
+Sprite* sprBG;
+Sprite* sprOverley;
 //--------------------------------------
 //  初期設定
 //--------------------------------------
@@ -43,6 +44,9 @@ void game_update()
 		enemy_init();
 		timer_init();
 		bomb_init();
+
+		sprBG = sprite_load(L"./Data/Images/title_layer01.png");
+		sprOverley = sprite_load(L"./Data/Images/title_layer02.png");
 		game_state++;
 		/*fallthrough*/
 	case 1:
@@ -53,6 +57,8 @@ void game_update()
 		/*fallthrough*/
 	case 2:
 		//////// 通常時 ////////
+
+
 		player_update();
 		enemy_update();
 		bomb_update();
@@ -74,7 +80,7 @@ void game_update()
 #endif
 
 
-}
+	}
 
 //--------------------------------------
 //  描画処理
@@ -83,11 +89,15 @@ void game_render()
 {
 	GameLib::clear(0.0, 0.0, 0.0);
 
+	sprite_render(sprBG, SCREEN_W / 2, SCREEN_H / 2, 3, 3, 0, 0, 1920, 1080, 1920 / 2, 1080 / 2);
 	bomb_render();
 	enemy_render();
 	player_render();
 	timer_render();
 	//text_out(0, "Hello World", 0, 0);   // 見本
+
+
+	sprite_render(sprOverley, SCREEN_W / 2, SCREEN_H / 2, 3, 3, 0, 0, 1920, 1080, 1920 / 2, 1080 / 2);
 
 
 }
@@ -101,4 +111,7 @@ void game_deinit()
 	enemy_deinit();
 	timer_deinit();
 	bomb_deinit();
+
+	safe_delete(sprBG);
+	safe_delete(sprOverley);
 }
