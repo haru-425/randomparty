@@ -1,7 +1,7 @@
 #ifndef ENEMY_H
 #define ENEMY_H
 
-#define ENEMY_MAX (50)
+#define ENEMY_MAX (3)
 
 #define ENEMY_TEX_W        (400.0f)   // 敵の画像1つの幅
 #define ENEMY_TEX_H        (400.0f)   // 敵の画像1つの高さ
@@ -25,6 +25,7 @@ typedef enum
 	APPROACH_SLOW,
 	APPROACH_FAST,
 	CHARGE,
+	REBOUND,
 
 } ENEMY_TYPE;
 
@@ -63,11 +64,11 @@ public:
 	void set() {
 		float spawnAngle = float(rand() % 360);
 
-		type = rand() % 3;
+		type = 3;// rand() % 4;
 
 		timer = 60 * 10;
 		angle = ToRadian(rand() % 360);
-		position = { cosf(spawnAngle) * SCREEN_W,sinf(spawnAngle) * SCREEN_W };
+		position = { cosf(spawnAngle) * SCREEN_W / 2 + SCREEN_W / 2 ,sinf(spawnAngle) * SCREEN_W / 2 + SCREEN_H / 2 };
 		//position = { static_cast<float>(rand() % SCREEN_W), static_cast<float>(rand() % SCREEN_H) };
 		scale = { SCALE, SCALE };
 		texPos = { ENEMY_TEX_W * type, 0 };
@@ -90,6 +91,11 @@ public:
 		case CHARGE:
 			speed = 3.0f;
 			trackingRangeDiameter = 15;
+			trackingRange = PLAYER_TEX_W * player.scale.x * trackingRangeDiameter;
+			break;
+		case REBOUND:
+			speed = 10.0f;
+			trackingRangeDiameter = 1980;
 			trackingRange = PLAYER_TEX_W * player.scale.x * trackingRangeDiameter;
 			break;
 		}

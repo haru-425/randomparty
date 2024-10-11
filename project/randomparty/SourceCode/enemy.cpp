@@ -105,7 +105,41 @@ void enemy_render() {
 	for (int i = 0; i < ENEMY_MAX; i++) {
 
 
+		switch (enemy[i].type)
+		{
+		case REBOUND:
+			for (int j = 0; j < 50; j++)
+			{
+				float posX, posY;
+				posX = enemy[i].position.x + cosf(enemy[i].angle) * j * 25;
+				posY = enemy[i].position.y + sinf(enemy[i].angle) * j * 25;
+				if (posX < 0)
+				{
+					posX *= -1;
+				}
+				if (posY < 0)
+				{
+					posY *= -1;
+				}
+				if (posX > SCREEN_W)
+				{
+					posX = SCREEN_W - (posX - SCREEN_W);
 
+					//posY -= posY - SCREEN_H;
+					//posX *= -1;
+
+				}
+				if (posY > SCREEN_H)
+				{
+
+					posY = SCREEN_H - (posY - SCREEN_H);
+				}
+
+				primitive::circle(posX, posY, 5, 1, 1, ToRadian(0), 1, 1, 1, 0.3f);
+			}
+
+			break;
+		}
 
 
 
@@ -204,6 +238,13 @@ void enemy_act() {
 						enemy[i].position.y += speedY * enemy[i].speed;
 
 						break;
+					case REBOUND:
+
+						speedX = cosf(enemy[i].angle) * 1;
+						speedY = sinf(enemy[i].angle) * 1;
+						enemy[i].position.x += speedX * enemy[i].speed * 0.5f;
+						enemy[i].position.y += speedY * enemy[i].speed * 0.5f;
+						break;
 					}
 
 				}
@@ -234,8 +275,8 @@ void enemy_act() {
 				enemy[i].angle = tracking(player.position, enemy[i].position);
 				speedX = cosf(enemy[i].angle) * 1;
 				speedY = sinf(enemy[i].angle) * 1;
-				enemy[i].position.x += speedX * enemy[i].speed;
-				enemy[i].position.y += speedY * enemy[i].speed;
+				enemy[i].position.x += speedX * 4;
+				enemy[i].position.y += speedY * 4;
 				enemy[i].timer--;
 				//debug::setString("oraoraoraoraoraoraoraora");
 			}
