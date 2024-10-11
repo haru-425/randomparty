@@ -41,7 +41,12 @@ int APIENTRY wWinMain(HINSTANCE, HINSTANCE, LPWSTR, int)// g—p‚µ‚È‚¢•Ï”‚Í‹Lq‚
 			case SCENE_GAME:
 				game_deinit();
 				break;
+
+			case SCENE_RESULT:
+				result_deinit();
+				break;
 			}
+
 			// Ÿ‚ÌƒV[ƒ“‚É‰‚¶‚½‰Šúİ’èˆ—
 			switch (nextScene)
 			{
@@ -51,10 +56,14 @@ int APIENTRY wWinMain(HINSTANCE, HINSTANCE, LPWSTR, int)// g—p‚µ‚È‚¢•Ï”‚Í‹Lq‚
 			case SCENE_GAME:
 				game_init();
 				break;
+
+			case SCENE_RESULT:
+				result_init();
+				break;
 			}
 			// nextScene ‚ª curScene ‚É‚È‚é
 			curScene = nextScene;
-		}
+}
 
 		// “ü—Íˆ—
 		input::update();
@@ -69,9 +78,10 @@ int APIENTRY wWinMain(HINSTANCE, HINSTANCE, LPWSTR, int)// g—p‚µ‚È‚¢•Ï”‚Í‹Lq‚
 		case SCENE_GAME:
 			game_update();
 			game_render();
-
-
 			break;
+		case SCENE_RESULT:
+			result_update();
+			result_render();
 		}
 
 #ifdef USE_IMGUI
@@ -106,6 +116,9 @@ int APIENTRY wWinMain(HINSTANCE, HINSTANCE, LPWSTR, int)// g—p‚µ‚È‚¢•Ï”‚Í‹Lq‚
 		break;
 	case SCENE_GAME:
 		game_deinit();
+		break;
+	case SCENE_RESULT:
+		result_deinit();
 		break;
 	}
 

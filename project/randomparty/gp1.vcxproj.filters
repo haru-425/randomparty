@@ -135,7 +135,7 @@
     <ClInclude Include="SourceCode\timer.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="SourceCode\score.h">
+    <ClInclude Include="SourceCode\scene_result.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
   </ItemGroup>
@@ -233,7 +233,7 @@
     <ClCompile Include="SourceCode\timer.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="SourceCode\score.cpp">
+    <ClCompile Include="SourceCode\scene_result.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>
