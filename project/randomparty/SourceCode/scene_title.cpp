@@ -11,6 +11,7 @@ int select_c;
 Sprite* backspr;
 Sprite* backspr2;
 Sprite* titlespr;
+Sprite* sprRogo;
 
 VECTOR2 titlePos;
 int title_move_timer;
@@ -40,6 +41,7 @@ void title_deinit()
 	safe_delete(backspr);
 	safe_delete(backspr2);
 	safe_delete(titlespr);
+	safe_delete(sprRogo);
 }
 
 void title_update()
@@ -56,6 +58,7 @@ void title_update()
 		backspr = sprite_load(L"./Data/Images/title_layer01.png");
 		backspr2 = sprite_load(L"./Data/Images/title_layer02.png");
 		titlespr = sprite_load(L"./Data/Images/Title.png");
+		sprRogo = sprite_load(L"./Data/Images/rogo.png");
 
 		title_move_timer = 0;
 		title_state++;
@@ -98,6 +101,7 @@ void title_render()
 	sprite_render(backspr, SCREEN_W / 2, SCREEN_H / 2, 1, 1, 0, 0, 1920, 1080, 1920 / 2, 1080 / 2);
 	sprite_render(backspr2, SCREEN_W / 2, SCREEN_H / 2, 1, 1, 0, 0, 1920, 1080, 1920 / 2, 1080 / 2);
 	sprite_render(titlespr, titlePos.x, titlePos.y, 0.5f, 0.5f, 0, 0, 3000, 500, 3000 / 2, 500 / 2);
+	sprite_render(sprRogo, SCREEN_W - 50, SCREEN_H - 50, 0.3f, 0.3f, 0, 0, 400, 400, 400 / 2, 400 / 2);
 	button.button_render();
 }
 void title_act() {
@@ -107,8 +111,8 @@ void title_act() {
 	float title_angle;
 	*/
 	title_move_timer++;
-	titlePos.x = SCREEN_W / 2 + cos(title_angle) * 20;
-	titlePos.y = SCREEN_H * 0.3f + sin(title_angle / 2) * 20;
+	titlePos.x = SCREEN_W / 2 + cos(title_angle) * 30;
+	titlePos.y = SCREEN_H * 0.3f + sin(title_angle / 2) * 30;
 	title_angle += ToRadian(1);
 
 
