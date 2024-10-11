@@ -96,7 +96,7 @@ void title_render()
 
 	sprite_render(backspr, SCREEN_W / 2, SCREEN_H / 2, 3, 3, 0, 0, 1920, 1080, 1920 / 2, 1080 / 2);
 	sprite_render(backspr2, SCREEN_W / 2, SCREEN_H / 2, 3, 3, 0, 0, 1920, 1080, 1920 / 2, 1080 / 2);
-	sprite_render(titlespr, titlePos.x, SCREEN_H * 0.3f, 0.5f, 0.5f, 0, 0, 3000, 500, 3000 / 2, 500 / 2);
+	sprite_render(titlespr, titlePos.x, titlePos.y, 0.5f, 0.5f, 0, 0, 3000, 500, 3000 / 2, 500 / 2);
 	button.button_render();
 }
 void title_act() {
@@ -107,7 +107,7 @@ void title_act() {
 	*/
 	title_move_timer++;
 	titlePos.x = SCREEN_W / 2 + cos(title_angle) * 20;
-	titlePos.x = SCREEN_H * 0.3f + cos(title_angle) * 20;
+	titlePos.y = SCREEN_H * 0.3f + sin(title_angle / 2) * 20;
 	title_angle += ToRadian(1);
 
 
