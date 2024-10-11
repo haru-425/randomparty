@@ -8,7 +8,7 @@
 	void timer_deinit();
 	void timer_update();
 	void timer_render();
-	void game_end();
+	
 
 
 
