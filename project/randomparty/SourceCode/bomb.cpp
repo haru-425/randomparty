@@ -96,10 +96,12 @@ void bomb_explosion(int bomb_number) // ”š’e‚Ì”š”­ˆ—
 
 void bomb_render()
 {
+
     for (int i = 0; i < BOMB_MAX; i++)
     {
-        sprite_render(range_circl,stage[i].bomb_position.x, stage[i].bomb_position.y, BOMB_RANGE_SCALE * stage[i].bomb_range, BOMB_RANGE_SCALE * stage[i].bomb_range,0,0,400,400,200,200);
-        /*primitive::circl(stage[i].bomb_position.x, stage[i].bomb_position.y,)*/
+
+        primitive::circle(stage[i].bomb_position.x, stage[i].bomb_position.y, BOMB_RANGE_SCALE * stage[i].bomb_range,1,1,0,1,1,0);
+        sprite_render(range_circl,stage[i].bomb_position.x, stage[i].bomb_position.y, SCALE * stage[i].bomb_range*2, SCALE * stage[i].bomb_range*2,0,0,400,400,200,200);
     }
 }
 
