@@ -12,7 +12,7 @@ void timer_init() {
 }
 
 void timer_deinit() {
-    // 必要なリソースの解放があればここで処理
+    
 }
 
 void timer_update() {
@@ -27,6 +27,7 @@ void timer_update() {
     // 残り時間が0以下になったらタイマー停止
     if (remaining_time < 0) {
         remaining_time = 0;
+        nextScene = SCENE_TITLE;
     }
 }
 
