@@ -63,9 +63,24 @@ public:
 
 	void set() {
 		float spawnAngle = float(rand() % 360);
-
-		type = rand() % 4;
-
+		float Probability = float(rand() % 100);
+		//type = rand() % 4;
+		if (Probability < 30)
+		{
+			type = APPROACH_SLOW;
+		}
+		else 	if (Probability < 60)
+		{
+			type = APPROACH_FAST;
+		}
+		else 	if (Probability < 95)
+		{
+			type = CHARGE;
+		}
+		else 	if (Probability < 100)
+		{
+			type = REBOUND;
+		}
 		timer = 60 * 5;
 		angle = ToRadian(rand() % 360);
 		position = { cosf(spawnAngle) * SCREEN_W / 2 + SCREEN_W / 2 ,sinf(spawnAngle) * SCREEN_W / 2 + SCREEN_H / 2 };
