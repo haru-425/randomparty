@@ -4,7 +4,7 @@ using namespace input;
 int     player_state;
 
 PLAYER player;
-
+extern ENEMY enemy[ENEMY_MAX];
 Sprite* sprPlayer;
 Sprite* sprPlayerCore;
 
@@ -119,5 +119,13 @@ void player_act()
 	float speedY = sinf(player.angle) * 1;
 	player.position.x += speedX * PLAYER_SPEED;
 	player.position.y += speedY * PLAYER_SPEED;
+
+	for (int i = 0; i < ENEMY_MAX; i++)
+	{
+
+		if (circle_hit(player.position, enemy[i].position, PLAYER_CORE_TEX_W * SCALE, ENEMY_CORE_TEX_W * SCALE)) {
+			nextScene = SCENE_TITLE;
+		}
+	}
 }
 
