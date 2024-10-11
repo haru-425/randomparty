@@ -1,7 +1,7 @@
 #ifndef ENEMY_H
 #define ENEMY_H
 
-#define ENEMY_MAX (3)
+#define ENEMY_MAX (50)
 
 #define ENEMY_TEX_W        (400.0f)   // 敵の画像1つの幅
 #define ENEMY_TEX_H        (400.0f)   // 敵の画像1つの高さ
@@ -15,7 +15,7 @@
 #define ENEMY_CORE_PIVOT_X      (ENEMY_CORE_TEX_W/2)    // 敵の横方向の中心
 #define ENEMY_CORE_PIVOT_Y      (ENEMY_CORE_TEX_H/2)   // 敵の縦方向の下端
 
-#define ENEMY_SPAWN_RATE		(4*60.0f)
+#define ENEMY_SPAWN_RATE		(0.5f*60.0f)
 #define  SCALE					(0.13f)
 
 extern PLAYER player;
@@ -64,7 +64,7 @@ public:
 	void set() {
 		float spawnAngle = float(rand() % 360);
 
-		type = 3;// rand() % 4;
+		type = rand() % 4;
 
 		timer = 60 * 10;
 		angle = ToRadian(rand() % 360);
