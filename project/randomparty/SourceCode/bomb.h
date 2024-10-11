@@ -5,6 +5,7 @@
 #include "all.h"
 
 #define BOMB_RANGE_SCALE ( PLAYER_TEX_W * SCALE)
+#define BOMB_MAX 10
 
 // 関数のプロトタイプ宣言 
 void bomb_init();
