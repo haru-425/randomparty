@@ -8,6 +8,7 @@ void system_init();
 void system_deinit();
 void system_update();
 void system_render();
+void game_end();
 
 // 関数のプロトタイプ宣言
 float tracking(VECTOR2 target, VECTOR2 tracking_person);
