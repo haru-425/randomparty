@@ -11,6 +11,12 @@ int select_c;
 Sprite* backspr;
 Sprite* backspr2;
 Sprite* titlespr;
+
+VECTOR2 titlePos;
+int title_move_timer;
+float title_angle;
+
+
 extern Button button;
 
 //--------------------------------------
@@ -18,9 +24,9 @@ extern Button button;
 //--------------------------------------
 void title_init()
 {
-    title_state = 0;
-    title_timer = 0;
-    select_c = 0;
+	title_state = 0;
+	title_timer = 0;
+	select_c = 0;
 	button.button_init();
 }
 
@@ -29,9 +35,9 @@ void title_init()
 //--------------------------------------
 void title_deinit()
 {
-    music::stop(3);
+	music::stop(3);
 	button.button_deinit();
-    safe_delete(backspr);
+	safe_delete(backspr);
 	safe_delete(backspr2);
 	safe_delete(titlespr);
 }
@@ -50,6 +56,7 @@ void title_update()
 		backspr2 = sprite_load(L"./Data/Images/title_layer02.png");
 		titlespr = sprite_load(L"./Data/Images/Title.png");
 
+		title_move_timer = 0;
 		title_state++;
 		/*fallthrough*/
 	case 1:
@@ -63,7 +70,7 @@ void title_update()
 		if (TRG(0) & PAD_START) {
 			nextScene = SCENE_GAME;
 		}
-
+		title_act();
 		break;
 	}
 
@@ -84,11 +91,24 @@ void title_update()
 }
 void title_render()
 {
-    // âÊñ Çê¬Ç≈ìhÇËÇ¬Ç‘Ç∑
-    //GameLib::clear(0.3f, 0.5f, 1.0f);
+	// âÊñ Çê¬Ç≈ìhÇËÇ¬Ç‘Ç∑
+	//GameLib::clear(0.3f, 0.5f, 1.0f);
 
 	sprite_render(backspr, SCREEN_W / 2, SCREEN_H / 2, 3, 3, 0, 0, 1920, 1080, 1920 / 2, 1080 / 2);
 	sprite_render(backspr2, SCREEN_W / 2, SCREEN_H / 2, 3, 3, 0, 0, 1920, 1080, 1920 / 2, 1080 / 2);
-	sprite_render(titlespr, SCREEN_W / 2, SCREEN_H *0.3f, 0.5f, 0.5f, 0, 0, 3000, 500, 3000 / 2, 500 / 2);
+	sprite_render(titlespr, titlePos.x, SCREEN_H * 0.3f, 0.5f, 0.5f, 0, 0, 3000, 500, 3000 / 2, 500 / 2);
 	button.button_render();
+}
+void title_act() {
+	/*
+	VECTOR2 titlePos;
+	int title_move_timer;
+	float title_angle;
+	*/
+	title_move_timer++;
+	titlePos.x = SCREEN_W / 2 + cos(title_angle) * 20;
+	titlePos.x = SCREEN_H * 0.3f + cos(title_angle) * 20;
+	title_angle += ToRadian(1);
+
+
 }
