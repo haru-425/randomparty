@@ -103,45 +103,50 @@ void enemy_render() {
 	//}
 
 	for (int i = 0; i < ENEMY_MAX; i++) {
-
-
-		switch (enemy[i].type)
+		if (enemy[i].waitNum <= 0)
 		{
-		case REBOUND:
-			for (int j = 0; j < 50; j++)
+
+			if (enemy[i].position.x >= 0 && enemy[i].position.x <= SCREEN_W && enemy[i].position.y >= 0 && enemy[i].position.y <= SCREEN_H)
 			{
-				float posX, posY;
-				posX = enemy[i].position.x + cosf(enemy[i].angle) * j * 25;
-				posY = enemy[i].position.y + sinf(enemy[i].angle) * j * 25;
-				if (posX < 0)
-				{
-					posX *= -1;
-				}
-				if (posY < 0)
-				{
-					posY *= -1;
-				}
-				if (posX > SCREEN_W)
-				{
-					posX = SCREEN_W - (posX - SCREEN_W);
 
-					//posY -= posY - SCREEN_H;
-					//posX *= -1;
 
-				}
-				if (posY > SCREEN_H)
+				switch (enemy[i].type)
 				{
+				case REBOUND:
+					for (int j = 0; j < 50; j++)
+					{
+						float posX, posY;
+						posX = enemy[i].position.x + cosf(enemy[i].angle) * j * 25;
+						posY = enemy[i].position.y + sinf(enemy[i].angle) * j * 25;
+						if (posX < 0)
+						{
+							posX *= -1;
+						}
+						if (posY < 0)
+						{
+							posY *= -1;
+						}
+						if (posX > SCREEN_W)
+						{
+							posX = SCREEN_W - (posX - SCREEN_W);
 
-					posY = SCREEN_H - (posY - SCREEN_H);
+							//posY -= posY - SCREEN_H;
+							//posX *= -1;
+
+						}
+						if (posY > SCREEN_H)
+						{
+
+							posY = SCREEN_H - (posY - SCREEN_H);
+						}
+
+						primitive::circle(posX, posY, 5, 1, 1, ToRadian(0), 1, 1, 1, 0.3f);
+					}
+
+					break;
 				}
-
-				primitive::circle(posX, posY, 5, 1, 1, ToRadian(0), 1, 1, 1, 0.3f);
 			}
-
-			break;
 		}
-
-
 
 		sprite_render(
 			sprEnemy,
