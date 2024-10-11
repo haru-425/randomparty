@@ -107,9 +107,9 @@ void bomb_render()
 
         /*primitive::circle(stage[i].bomb_position.x, stage[i].bomb_position.y, BOMB_RANGE_SCALE * stage[i].bomb_range,1,1,0,1,1,0);*/
         sprite_render(range_circl, stage[i].bomb_position.x, stage[i].bomb_position.y, SCALE * stage[i].bomb_range * 2, SCALE * stage[i].bomb_range * 2, 0, 0, 400, 400, 200, 200, 0, 1, 0, 0);
-        sprite_render(bomb, stage[i].bomb_position.x, stage[i].bomb_position.y, SCALE * stage[i].bomb_range * 2, SCALE * stage[i].bomb_range * 2, 0, 0, 400, 400, 200, 200, 0, 1, 0, 0);
+        sprite_render(bomb, stage[i].bomb_position.x, stage[i].bomb_position.y, SCALE * stage[i].bomb_range * 0.5, SCALE * stage[i].bomb_range * 0.5, 0, 0, 400, 400, 200, 200, 0);
         std::string bomb_time = std::to_string(stage[i].bomb_time);
-        text_out(1, bomb_time.c_str(), stage[i].bomb_position.x-20, stage[i].bomb_position.y-8, 1, 1, 1, 1, 1, 1);  // 座標 (0, 0) にテキスト描画
+        text_out(1, bomb_time.c_str(), stage[i].bomb_position.x-17, stage[i].bomb_position.y-12, 1, 1, 1, 1, 1, 1);  // 座標 (0, 0) にテキスト描画
     }
 }
 
