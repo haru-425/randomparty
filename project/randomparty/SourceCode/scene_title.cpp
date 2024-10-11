@@ -52,6 +52,7 @@ void title_update()
 	case 0:
 		//////// ‰Šúİ’è ////////
 
+		GameLib::setBlendMode(Blender::BS_ALPHA);
 		backspr = sprite_load(L"./Data/Images/title_layer01.png");
 		backspr2 = sprite_load(L"./Data/Images/title_layer02.png");
 		titlespr = sprite_load(L"./Data/Images/Title.png");
@@ -92,10 +93,10 @@ void title_update()
 void title_render()
 {
 	// ‰æ–Ê‚ğÂ‚Å“h‚è‚Â‚Ô‚·
-	//GameLib::clear(0.3f, 0.5f, 1.0f);
+	GameLib::clear(0.3f, 0.5f, 1.0f);
 
-	sprite_render(backspr, SCREEN_W / 2, SCREEN_H / 2, 3, 3, 0, 0, 1920, 1080, 1920 / 2, 1080 / 2);
-	sprite_render(backspr2, SCREEN_W / 2, SCREEN_H / 2, 3, 3, 0, 0, 1920, 1080, 1920 / 2, 1080 / 2);
+	sprite_render(backspr, SCREEN_W / 2, SCREEN_H / 2, 1, 1, 0, 0, 1920, 1080, 1920 / 2, 1080 / 2);
+	sprite_render(backspr2, SCREEN_W / 2, SCREEN_H / 2, 1, 1, 0, 0, 1920, 1080, 1920 / 2, 1080 / 2);
 	sprite_render(titlespr, titlePos.x, titlePos.y, 0.5f, 0.5f, 0, 0, 3000, 500, 3000 / 2, 500 / 2);
 	button.button_render();
 }

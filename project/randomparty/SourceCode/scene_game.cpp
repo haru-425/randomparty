@@ -40,6 +40,7 @@ void game_update()
 	case 0:
 		//////// èâä˙ê›íË ////////
 
+		GameLib::setBlendMode(Blender::BS_ALPHA);
 		player_init();
 		enemy_init();
 		timer_init();
@@ -80,7 +81,7 @@ void game_update()
 #endif
 
 
-	}
+}
 
 //--------------------------------------
 //  ï`âÊèàóù
@@ -89,7 +90,7 @@ void game_render()
 {
 	GameLib::clear(0.0, 0.0, 0.0);
 
-	sprite_render(sprBG, SCREEN_W / 2, SCREEN_H / 2, 3, 3, 0, 0, 1920, 1080, 1920 / 2, 1080 / 2);
+	sprite_render(sprBG, SCREEN_W / 2, SCREEN_H / 2, 1, 1, 0, 0, 1920, 1080, 1920 / 2, 1080 / 2);
 	bomb_render();
 	enemy_render();
 	player_render();
@@ -97,8 +98,7 @@ void game_render()
 	//text_out(0, "Hello World", 0, 0);   // å©ñ{
 
 
-	sprite_render(sprOverley, SCREEN_W / 2, SCREEN_H / 2, 3, 3, 0, 0, 1920, 1080, 1920 / 2, 1080 / 2);
-
+	sprite_render(sprOverley, SCREEN_W / 2, SCREEN_H / 2, 1, 1, 0, 0, 1920, 1080, 1920 / 2, 1080 / 2);
 
 }
 
