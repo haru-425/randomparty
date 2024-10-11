@@ -1,7 +1,7 @@
 #ifndef TIMER_H
 #define TIMER_H
 
-#define TIME_LIMIT  (60*10)
+#define TIME_LIMIT  (60*30)
 
 
 	void timer_init();
