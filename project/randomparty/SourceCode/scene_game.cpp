@@ -19,6 +19,7 @@ int game_timer = 0;    // タイマー
 
 Sprite* sprBG;
 Sprite* sprOverley;
+SCORE score;
 //--------------------------------------
 //  初期設定
 //--------------------------------------
@@ -41,6 +42,7 @@ void game_update()
 		//////// 初期設定 ////////
 
 		GameLib::setBlendMode(Blender::BS_ALPHA);
+	
 		player_init();
 		enemy_init();
 		timer_init();
@@ -64,7 +66,7 @@ void game_update()
 		enemy_update();
 		bomb_update();
 		timer_update();
-
+		score.near_score();
 		break;
 	}
 
