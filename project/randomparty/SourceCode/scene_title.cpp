@@ -9,6 +9,8 @@ int title_timer;
 int select_c;
 
 Sprite* backspr;
+Sprite* backspr2;
+Sprite* titlespr;
 extern Button button;
 
 //--------------------------------------
@@ -30,6 +32,8 @@ void title_deinit()
     music::stop(3);
 	button.button_deinit();
     safe_delete(backspr);
+	safe_delete(backspr2);
+	safe_delete(titlespr);
 }
 
 void title_update()
@@ -42,7 +46,10 @@ void title_update()
 	case 0:
 		//////// ‰Šúİ’è ////////
 
-		backspr = sprite_load(L"./Data/Images/Title(‰¼).png");
+		backspr = sprite_load(L"./Data/Images/title_layer01.png");
+		backspr2 = sprite_load(L"./Data/Images/title_layer02.png");
+		titlespr = sprite_load(L"./Data/Images/Title.png");
+
 		title_state++;
 		/*fallthrough*/
 	case 1:
@@ -80,6 +87,8 @@ void title_render()
     // ‰æ–Ê‚ğÂ‚Å“h‚è‚Â‚Ô‚·
     //GameLib::clear(0.3f, 0.5f, 1.0f);
 
-	sprite_render(backspr, SCREEN_W / 2, SCREEN_H / 2, 3, 3, 0, 0, 640, 480, 640 / 2, 480 / 2);
+	sprite_render(backspr, SCREEN_W / 2, SCREEN_H / 2, 3, 3, 0, 0, 1920, 1080, 1920 / 2, 1080 / 2);
+	sprite_render(backspr2, SCREEN_W / 2, SCREEN_H / 2, 3, 3, 0, 0, 1920, 1080, 1920 / 2, 1080 / 2);
+	sprite_render(titlespr, SCREEN_W / 2, SCREEN_H *0.3f, 0.5f, 0.5f, 0, 0, 3000, 500, 3000 / 2, 500 / 2);
 	button.button_render();
 }

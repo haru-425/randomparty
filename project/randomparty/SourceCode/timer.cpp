@@ -27,7 +27,7 @@ void timer_update() {
     // 残り時間が0以下になったらタイマー停止
     if (remaining_time < 0) {
         remaining_time = 0;
-        nextScene = SCENE_TITLE;
+        game_end();
     }
 }
 

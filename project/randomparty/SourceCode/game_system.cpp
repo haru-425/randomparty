@@ -69,3 +69,7 @@ void second_execution()
 {
 
 }
+void game_end()
+{
+	nextScene = SCENE_TITLE;
+}
