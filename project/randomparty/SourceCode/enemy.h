@@ -15,7 +15,7 @@
 #define ENEMY_CORE_PIVOT_X      (ENEMY_CORE_TEX_W/2)    // 敵の横方向の中心
 #define ENEMY_CORE_PIVOT_Y      (ENEMY_CORE_TEX_H/2)   // 敵の縦方向の下端
 
-#define ENEMY_SPAWN_RATE		(0.5f*60.0f)
+#define ENEMY_SPAWN_RATE		(2.0f*60.0f)
 #define  SCALE					(0.13f)
 
 extern PLAYER player;
@@ -66,7 +66,7 @@ public:
 
 		type = rand() % 4;
 
-		timer = 60 * 10;
+		timer = 60 * 5;
 		angle = ToRadian(rand() % 360);
 		position = { cosf(spawnAngle) * SCREEN_W / 2 + SCREEN_W / 2 ,sinf(spawnAngle) * SCREEN_W / 2 + SCREEN_H / 2 };
 		//position = { static_cast<float>(rand() % SCREEN_W), static_cast<float>(rand() % SCREEN_H) };
@@ -80,7 +80,7 @@ public:
 		{
 		case APPROACH_SLOW:
 			speed = 1.5f + float(rand() % 2);
-			trackingRangeDiameter = 15;
+			trackingRangeDiameter = 10;
 			trackingRange = PLAYER_TEX_W * player.scale.x * trackingRangeDiameter;
 			break;
 		case APPROACH_FAST:
@@ -90,7 +90,7 @@ public:
 			break;
 		case CHARGE:
 			speed = 3.0f;
-			trackingRangeDiameter = 15;
+			trackingRangeDiameter = 20;
 			trackingRange = PLAYER_TEX_W * player.scale.x * trackingRangeDiameter;
 			break;
 		case REBOUND:
