@@ -33,7 +33,7 @@ void Button::button_update() {
         button.texSize = { BUTTON_TEX_W, BUTTON_TEX_H };
         button.pivot = { BUTTON_PIVOT_X, BUTTON_PIVOT_Y };
         button.color = { 1.0f, 1.0f, 1.0f, 1.0f };
-        button.radius = BUTTON_TEX_W / 2;
+        button.radius = BUTTON_TEX_W / 4;
 
         ++button_state;
         /*fallthrough*/
@@ -49,7 +49,7 @@ void Button::button_update() {
 void Button::button_render() {
    
 
-    // スプライト描画（中心位置、スプライトサイズなど）
+    
     sprite_render(sprButton, button.position.x, button.position.y, 0.5f, 0.5f, 0, 0, 440, 440, 440 / 2, 440 / 2);
 }
 

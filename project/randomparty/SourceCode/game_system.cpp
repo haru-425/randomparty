@@ -50,12 +50,12 @@ float tracking(VECTOR2 target, VECTOR2 tracking_person) {
 	return angle;
 }
 
-bool circle_hit(VECTOR2 pos1,VECTOR2 pos2,float r1 ,float r2)
+bool circle_hit(VECTOR2 pos1, VECTOR2 pos2, float r1, float r2)
 {
 	float dx = pos1.x - pos2.x;
 	float dy = pos1.y - pos2.y;
 	float r = r1 + r2;
-	if (dx*dx+dy*dy<=r*r)
+	if (dx * dx + dy * dy <= r * r)
 	{
 		return true;
 	}
@@ -67,5 +67,5 @@ bool circle_hit(VECTOR2 pos1,VECTOR2 pos2,float r1 ,float r2)
 
 void second_execution()
 {
-	
+
 }
