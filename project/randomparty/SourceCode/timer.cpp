@@ -20,7 +20,7 @@ void timer_update() {
     frame_count++;
 
     // 1フレームを「1秒」に見立てて60フレーム経過ごとに1秒減らす
-    if (frame_count % 60 == 0) {
+    if (frame_count  >= 0) {
         --remaining_time;   // 残り時間を1秒減少
     }
 
