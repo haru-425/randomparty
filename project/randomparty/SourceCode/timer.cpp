@@ -41,5 +41,5 @@ void timer_render() {
     }
 
     std::string time_text = "TIME: " + std::to_string(seconds) ;
-    text_out(1, time_text.c_str(), 0, 0, 2, 2, 1, 1, 1, 1);  // 座標 (200, 0) にテキスト描画
+    text_out(1, time_text.c_str(), 0, 0, 2, 2, 1, 1, 1, 1);  // 座標 (0, 0) にテキスト描画
 }
