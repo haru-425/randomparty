@@ -27,7 +27,7 @@ void timer_update() {
     // 残り時間が0以下になったらタイマー停止
     if (remaining_time < 0) {
         remaining_time = 0;
-        nextScene = SCENE_TITLE;
+        game_end();
     }
 }
 
@@ -35,5 +35,5 @@ void timer_render() {
     // 残り時間を秒単位で表示する
     int seconds = remaining_time / 60;  // フレームカウントで秒単位に変換
     std::string time_text = "TIME: " + std::to_string(seconds) ;
-    text_out(1, time_text.c_str(), 200, 0, 1, 1, 1, 1, 1, 1);  // 座標 (200, 0) にテキスト描画
+    text_out(1, time_text.c_str(), 0, 0, 2, 2, 1, 1, 1, 1);  // 座標 (200, 0) にテキスト描画
 }

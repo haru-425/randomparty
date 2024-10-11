@@ -2,12 +2,13 @@
 
 BombInfo bomb_def;
 BombInfo stage[BOMB_MAX];
-int chack=0;
-
-Sprite* range_circl;
-
+int player_has_bomb;
 
 BombInfo normal = { 0,1,3.0,5,true };
+
+
+Sprite* range_circl;
+Sprite* bomb;
 
 extern PLAYER player;
 extern ENEMY enemy[ENEMY_MAX];
@@ -31,22 +32,27 @@ void bomb_init() // 初期化
     }
 
     range_circl = sprite_load(L"./Data/Images/trackingRange.png");
+    //bomb= sprite_load(L"./Data/Images/bomb.png");
+    player_has_bomb = BOMB_MAX;
 }
 
 void bomb_set()
 {
-    
-	// BOMB_MAX 個のスロットから空いている場所を探す
-	for (int i = 0; i < BOMB_MAX; i++)
-	{
-		if (stage[i].bomb_number == 0) // 使われていないスロットを発見
-		{
-			stage[i] = normal; // 新しい爆弾（normal）を設定
-			stage[i].bomb_number = i + 1; // 爆弾番号を設定
-            stage[i].bomb_position = player.position; // 爆弾の位置をプレイヤーの現在位置に設定
-            break;
-		}
-	}
+    if (player_has_bomb>0)
+    {
+        // BOMB_MAX 個のスロットから空いている場所を探す
+        for (int i = 0; i < BOMB_MAX; i++)
+        {
+            if (stage[i].bomb_number == 0) // 使われていないスロットを発見
+            {
+                stage[i] = normal; // 新しい爆弾（normal）を設定
+                stage[i].bomb_number = i + 1; // 爆弾番号を設定
+                stage[i].bomb_position = player.position; // 爆弾の位置をプレイヤーの現在位置に設定
+                break;
+            }
+        }
+        player_has_bomb--;
+    }
 }
 
 void bomb_update() // 爆発までのタイマー処理
@@ -86,7 +92,6 @@ void bomb_explosion(int bomb_number) // 爆弾の爆発処理
             enemy[i].reset();
             enemy[i].waitNum = waitTime; // リポップまでの待機時間を設定
             waitTime++; // 次の敵の待機時間を増加
-            chack = 1;
             // ここでスコア追加処理などを行う（スコア処理は別途実装）
         }
     }
@@ -100,8 +105,9 @@ void bomb_render()
     for (int i = 0; i < BOMB_MAX; i++)
     {
 
-        primitive::circle(stage[i].bomb_position.x, stage[i].bomb_position.y, BOMB_RANGE_SCALE * stage[i].bomb_range,1,1,0,1,1,0);
-        sprite_render(range_circl,stage[i].bomb_position.x, stage[i].bomb_position.y, SCALE * stage[i].bomb_range*2, SCALE * stage[i].bomb_range*2,0,0,400,400,200,200);
+        /*primitive::circle(stage[i].bomb_position.x, stage[i].bomb_position.y, BOMB_RANGE_SCALE * stage[i].bomb_range,1,1,0,1,1,0);*/
+        sprite_render(range_circl, stage[i].bomb_position.x, stage[i].bomb_position.y, SCALE * stage[i].bomb_range * 2, SCALE * stage[i].bomb_range * 2, 0, 0, 400, 400, 200, 200, 0, 1, 0, 0);
+        //sprite_render(bomb, stage[i].bomb_position.x, stage[i].bomb_position.y, SCALE * stage[i].bomb_range * 2, SCALE * stage[i].bomb_range * 2, 0, 0, 400, 400, 200, 200, 0, 1, 0, 0);
     }
 }
 
