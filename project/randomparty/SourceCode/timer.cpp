@@ -14,7 +14,7 @@ void timer_init() {
 }
 
 void timer_deinit() {
-   
+    // 必要に応じて後処理を記述
 }
 
 void timer_update() {
@@ -22,7 +22,7 @@ void timer_update() {
     frame_count++;
 
     // 60フレームごとに1秒減らす
-    if (frame_count >= 0) {
+    if (frame_count > 60) {
         remaining_time--;   // 残り時間を1秒減少
         frame_count = 0;    // フレームカウントをリセット
     }
