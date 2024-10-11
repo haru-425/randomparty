@@ -42,6 +42,7 @@ void game_update()
 		player_init();
 		enemy_init();
 		timer_init();
+		bomb_init();
 		game_state++;
 		/*fallthrough*/
 	case 1:
@@ -82,6 +83,7 @@ void game_render()
 {
 	GameLib::clear(0.0, 0.0, 0.0);
 
+	bomb_render();
 	enemy_render();
 	player_render();
 	timer_render();
@@ -98,4 +100,5 @@ void game_deinit()
 	player_deinit();
 	enemy_deinit();
 	timer_deinit();
+	bomb_deinit();
 }

@@ -4,6 +4,8 @@
 
 #include "all.h"
 
+#define BOMB_RANGE_SCALE ( PLAYER_TEX_W * player.scale.x)
+
 // 関数のプロトタイプ宣言 
 void bomb_init();
 void bomb_deinit();

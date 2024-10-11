@@ -4,11 +4,15 @@ BombInfo bomb_def;
 BombInfo stage[BOMB_MAX];
 int chack=0;
 
+Sprite* range_circl;
+
 
 BombInfo normal = { 0,1,3.0,5,true };
 
 extern PLAYER player;
 extern ENEMY enemy[ENEMY_MAX];
+
+
 void bomb_init() // 初期化
 {
     bomb_def.bomb_number = 0;             // 爆弾番号を 0 に設定（未使用状態）
@@ -25,6 +29,8 @@ void bomb_init() // 初期化
     {
         stage[i] = bomb_def;
     }
+
+    range_circl = sprite_load(L"./Data/Images/trackingRange.png");
 }
 
 void bomb_set()
@@ -74,7 +80,7 @@ void bomb_explosion(int bomb_number) // 爆弾の爆発処理
     for (int i = 0; i < ENEMY_MAX; i++)
     {
         // 爆弾の爆発範囲と敵の位置が重なっているかをチェック
-        if (circle_hit(stage[bomb_number].bomb_position, enemy[i].position, PLAYER_TEX_W * player.scale.x * stage[bomb_number].bomb_range, enemy_r))
+        if (circle_hit(stage[bomb_number].bomb_position, enemy[i].position, BOMB_RANGE_SCALE * stage[bomb_number].bomb_range, enemy_r))
         {
             // 敵のリセット（リポップ処理）
             enemy[i].reset();
@@ -92,7 +98,8 @@ void bomb_render()
 {
     for (int i = 0; i < BOMB_MAX; i++)
     {
-        //sprite_render();
+        sprite_render(range_circl,stage[i].bomb_position.x, stage[i].bomb_position.y, BOMB_RANGE_SCALE * stage[i].bomb_range, BOMB_RANGE_SCALE * stage[i].bomb_range,0,0,400,400,200,200);
+        /*primitive::circl(stage[i].bomb_position.x, stage[i].bomb_position.y,)*/
     }
 }
 
