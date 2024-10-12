@@ -219,10 +219,10 @@ void enemy_act() {
 						break;
 					case CHARGE:
 
-						if (DIstance <= enemy[i].trackingRange / 2)
+						if (DIstance <= enemy[i].trackingRange / 3)
 						{
 							if (enemy[i].state == 0)
-								enemy[i].angle += ToRadian(float(-30 + rand() % 60));
+								enemy[i].angle += ToRadian(float(-10 + rand() % 20));
 
 							enemy[i].speed = 5;
 							enemy[i].state = 1;
@@ -280,8 +280,8 @@ void enemy_act() {
 				enemy[i].angle = tracking(player.position, enemy[i].position);
 				speedX = cosf(enemy[i].angle) * 1;
 				speedY = sinf(enemy[i].angle) * 1;
-				enemy[i].position.x += speedX * 4;
-				enemy[i].position.y += speedY * 4;
+				enemy[i].position.x += speedX * 2;
+				enemy[i].position.y += speedY * 2;
 				enemy[i].timer--;
 				//debug::setString("oraoraoraoraoraoraoraora");
 			}

@@ -48,6 +48,17 @@ public:
 	VECTOR2 pivot;
 	VECTOR4 color;
 
+	ENEMY() {
+		position = { -1000,-1000 };//画面外
+		scale = { SCALE, SCALE };
+		texPos = { ENEMY_TEX_W * type, 0 };
+		texSize = { ENEMY_TEX_W, ENEMY_TEX_H };
+		pivot = { ENEMY_PIVOT_X, ENEMY_PIVOT_Y };
+		color = { 1.000f, 1.0f, 1.0f, 1.0f };
+		trackingRange = 0;
+		speed = 0;
+		timer = -1;
+	}
 	void reset() {
 		position = { -1000,-1000 };//画面外
 		scale = { SCALE, SCALE };
@@ -65,11 +76,11 @@ public:
 		float spawnAngle = float(rand() % 360);
 		float Probability = float(rand() % 100);
 		//type = rand() % 4;
-		if (Probability < 30)
+		if (Probability < 32.5)
 		{
 			type = APPROACH_SLOW;
 		}
-		else 	if (Probability < 60)
+		else 	if (Probability < 65)
 		{
 			type = APPROACH_FAST;
 		}
@@ -94,18 +105,18 @@ public:
 		switch (type)
 		{
 		case APPROACH_SLOW:
-			speed = 1.5f + float(rand() % 2);
+			speed = 0.5f + float(rand() % 2);
 			trackingRangeDiameter = 10;
 			trackingRange = PLAYER_TEX_W * player.scale.x * trackingRangeDiameter;
 			break;
 		case APPROACH_FAST:
-			speed = 3.0f + float(rand() % 2);
+			speed = 2.0f + float(rand() % 2);
 			trackingRangeDiameter = 8;
 			trackingRange = PLAYER_TEX_W * player.scale.x * trackingRangeDiameter;
 			break;
 		case CHARGE:
-			speed = 3.0f;
-			trackingRangeDiameter = 20;
+			speed = 2.0f;
+			trackingRangeDiameter = 10;
 			trackingRange = PLAYER_TEX_W * player.scale.x * trackingRangeDiameter;
 			break;
 		case REBOUND:
