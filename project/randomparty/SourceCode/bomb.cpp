@@ -12,7 +12,7 @@ Sprite* bomb;
 
 extern PLAYER player;
 extern ENEMY enemy[ENEMY_MAX];
-
+extern SCORE score;
 
 void bomb_init() // 初期化
 {
@@ -93,6 +93,7 @@ void bomb_explosion(int bomb_number) // 爆弾の爆発処理
             enemy[i].waitNum = waitTime; // リポップまでの待機時間を設定
             waitTime++; // 次の敵の待機時間を増加
             // ここでスコア追加処理などを行う（スコア処理は別途実装）
+            score.enemy_kill_point();
         }
     }
     stage[bomb_number] = bomb_def;

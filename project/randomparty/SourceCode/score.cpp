@@ -21,7 +21,7 @@ void SCORE::near_score()
 		near_total += (300 - distance[0]) / 50;
 		total_score += (300 - distance[0]) / 50;
 	}
-	debug::setString("%d", near_total);
+	debug::setString("%d", total_score);
 	distance[0] = 1000000;
 }
 
