@@ -2,7 +2,7 @@
 
 using namespace std;
 
-// タイマー状態変数
+
 int timer_state;
 int remaining_time;  // 残り時間
 int frame_count;     // フレームカウント
@@ -14,11 +14,11 @@ void timer_init() {
 }
 
 void timer_deinit() {
-    // 必要に応じて後処理を記述
+    
 }
 
 void timer_update() {
-    // フレームごとにカウントを増加
+    
     frame_count++;
 
     // 60フレームごとに1秒減らす
@@ -27,7 +27,7 @@ void timer_update() {
         frame_count = 0;    // フレームカウントをリセット
     }
 
-    // 残り時間が0以下になったらタイマー停止し、リザルト画面へ
+    // 残り時間が1以下になったらタイマー停止し、リザルト画面へ
     if (remaining_time < 1) {
         remaining_time = 1;
         game_end();
@@ -36,7 +36,7 @@ void timer_update() {
 
 void timer_render() {
     // 残り時間が1秒以上の場合のみ表示
-    if (remaining_time > 0) {
+    if (remaining_time >= 1) {
         string time_text = "TIME: " + to_string(remaining_time);
         text_out(1, time_text.c_str(), 0, 0, 2, 2, 1, 1, 1, 1);  // 座標 (0, 0) にテキスト描画
     }
