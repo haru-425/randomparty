@@ -33,4 +33,10 @@ public:
 	{
 		return near_total;
 	}
+	void score_reset()
+	{
+		total_score=0;
+		enemy_kill=0;
+		near_total=0;
+	}
 };
