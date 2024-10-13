@@ -111,8 +111,8 @@ void title_act() {
 	float title_angle;
 	*/
 	title_move_timer++;
-	titlePos.x = SCREEN_W / 2 + cos(title_angle) * 30;
-	titlePos.y = SCREEN_H * 0.3f + sin(title_angle / 2) * 30;
+	titlePos.x = SCREEN_W / 2 + cos(title_angle) * 20;
+	titlePos.y = SCREEN_H * 0.3f + sin(2 * title_angle) * 20;
 	title_angle += ToRadian(1);
 
 
