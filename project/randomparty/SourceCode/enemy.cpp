@@ -219,7 +219,7 @@ void enemy_act() {
 						break;
 					case CHARGE:
 
-						if (DIstance <= enemy[i].trackingRange / 3)
+						if (DIstance <= enemy[i].trackingRange / 2)
 						{
 							if (enemy[i].state == 0)
 								enemy[i].angle += ToRadian(float(-10 + rand() % 20));
