@@ -1,5 +1,5 @@
 #include"all.h"
-
+extern SCORE score;
 int result_state;
 
 void result_init()
@@ -15,6 +15,7 @@ void result_deinit()
 void result_update() 
 {
 	result_end();
+	score.score_reset();
 }
 
 void result_render() 
