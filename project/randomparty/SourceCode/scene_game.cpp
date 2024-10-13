@@ -42,7 +42,7 @@ void game_update()
 		//////// ‰Šúİ’è ////////
 
 		GameLib::setBlendMode(Blender::BS_ALPHA);
-	
+
 		player_init();
 		enemy_init();
 		timer_init();
