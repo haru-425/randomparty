@@ -50,6 +50,8 @@ void game_update()
 
 		sprBG = sprite_load(L"./Data/Images/title_layer01.png");
 		sprOverley = sprite_load(L"./Data/Images/title_layer02.png");
+
+		SetCursorPos(SCREEN_W / 2, SCREEN_H / 2);
 		game_state++;
 		/*fallthrough*/
 	case 1:
