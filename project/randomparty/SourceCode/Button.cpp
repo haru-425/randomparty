@@ -5,6 +5,7 @@ int button_state;
 Button button;
 Sprite* sprButton;
 
+
 void Button::button_init() {
     button_state = 0;
 
@@ -59,6 +60,7 @@ void Button::button_act() {
         if (click()) {
             // ƒQ[ƒ€‰æ–Ê‚É‘JˆÚ
             timer_init();
+            
             nextScene = SCENE_GAME;
             return;
         }
