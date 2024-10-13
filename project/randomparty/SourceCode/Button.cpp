@@ -58,6 +58,7 @@ void Button::button_act() {
     if (TRG(0) & L_CLICK) {
         if (click()) {
             // ƒQ[ƒ€‰æ–Ê‚É‘JˆÚ
+            timer_init();
             nextScene = SCENE_GAME;
             return;
         }
