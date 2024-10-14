@@ -71,7 +71,8 @@ void help_render()
 	sprite_render(sprDescription_H, SCREEN_W / 2, SCREEN_H / 2, 1, 1, 0, 0, 1920, 1080, 1920 / 2, 1080 / 2);
 
 }
-void help_act() {
+void help_act() 
+{
 
 
 }
