@@ -48,9 +48,7 @@ void Button::button_update() {
 }
 
 void Button::button_render() {
-   
 
-    
     sprite_render(sprButton, button.position.x, button.position.y, 0.5f, 0.5f, 0, 0, 440, 440, 440 / 2, 440 / 2);
 }
 
@@ -58,10 +56,8 @@ void Button::button_act() {
     // ボタン内部で左クリックが押された場合
     if (TRG(0) & L_CLICK) {
         if (click()) {
-            // ゲーム画面に遷移
-            timer_init();
-            
-            nextScene = SCENE_GAME;
+            // ゲーム画面に遷移            
+            game_start();
             return;
         }
     }
