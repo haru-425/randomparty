@@ -10,7 +10,7 @@ Sprite* sprOverley_H;
 Sprite* sprDescription_H;
 
 extern Button button;
-int help_page
+int help_page;
 //--------------------------------------
 //  ‰Šúİ’è
 //--------------------------------------
