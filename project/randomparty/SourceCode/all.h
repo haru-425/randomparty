@@ -28,6 +28,7 @@
 #include "timer.h"
 #include "score.h"
 #include "scene_result.h"
+#include "scene_help.h"
 
 #ifdef USE_IMGUI
 #include "../imgui/imgui.h"
