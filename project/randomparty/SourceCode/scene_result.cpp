@@ -30,6 +30,7 @@ void result_init()
 
 	r_score.bomb = used_bomb * ENEMY_KILL_POINT * 3 * -1;
 	r_score.Nearby = score.distance_score_get();
+	r_score.result = r_score.kill + r_score.bomb + r_score.Nearby;
 
 }
 
@@ -62,77 +63,90 @@ void result_render()
 	sprite_render(sprScore, SCREEN_W / 2, SCREEN_H / 2, 1, 1, 0, 0, 1920, 1080, 1920 / 2, 1080 / 2);
 	//text_out(1, "“G‚ÌƒLƒ‹”F", SCREEN_W / 2, SCREEN_H * 2, 2, 2, 1, 1, 1, 0.5f, TEXT_ALIGN::MIDDLE_RIGHT);
 
-	debug::setString("r%d d%d", r_score.kill, d_score.kill);
+	debug::setString("r%d d%d", r_score.result, d_score.result);
 	debug::setString("state%d", DrawScoreState);
 }
 
 
 void ScoreDisplay() {
-	if (result_timer % 1 == 0)
+
+	switch (DrawScoreState)
 	{
-		switch (DrawScoreState)
+	case 0:
+		if (r_score.kill == d_score.kill)
 		{
-		case 0:
-			if (r_score.kill == d_score.kill)
-			{
-				DrawScoreState++;
+			DrawScoreState++;
 
-				break;
-			}
-			if (d_score.kill > r_score.kill - 200)
-			{
-				d_score.kill++;
-			}
-			else {
-
-				d_score.kill += ENEMY_KILL_POINT / 2;
-			}
-			break;
-		case 1:
-			if (r_score.bomb == d_score.bomb)
-			{
-				DrawScoreState++;
-
-				break;
-			}
-			if (d_score.bomb < r_score.bomb + 200)
-			{
-				d_score.bomb--;
-			}
-			else {
-
-				d_score.bomb -= ENEMY_KILL_POINT / 2;
-			}
-			break;
-		case 2:
-			if (r_score.Nearby == d_score.Nearby)
-			{
-				DrawScoreState++;
-
-				break;
-			}
-
-			if (d_score.Nearby > r_score.Nearby - 200)
-			{
-				d_score.Nearby++;
-			}
-			else {
-
-				d_score.Nearby += ENEMY_KILL_POINT / 2;
-			}
-			break;
-		case 3:
-			if (r_score.result == d_score.result)
-			{
-				DrawScoreState++;
-
-				break;
-			}
-
-			d_score.result++;
 			break;
 		}
+		if (d_score.kill > r_score.kill - 200)
+		{
+			d_score.kill++;
+		}
+		else {
+
+			d_score.kill += ENEMY_KILL_POINT / 2;
+		}
+		break;
+	case 1:
+		if (r_score.bomb == d_score.bomb)
+		{
+			DrawScoreState++;
+
+			break;
+		}
+		if (d_score.bomb < r_score.bomb + 200)
+		{
+			d_score.bomb--;
+		}
+		else {
+
+			d_score.bomb -= ENEMY_KILL_POINT / 2;
+		}
+		break;
+	case 2:
+		if (r_score.Nearby == d_score.Nearby)
+		{
+			DrawScoreState++;
+
+			break;
+		}
+		if (d_score.Nearby > r_score.Nearby - 200)
+		{
+			d_score.Nearby++;
+		}
+		else {
+
+			d_score.Nearby += ENEMY_KILL_POINT / 2;
+		}
+		break;
+	case 3:
+		if (r_score.result == d_score.result)
+		{
+			DrawScoreState++;
+
+			break;
+		}
+		if (r_score.result >= 0)
+		{
+
+			if (d_score.result > r_score.result - 500)
+			{
+				if (d_score.result > r_score.result - 200)
+				{
+					d_score.result++;
+				}
+				d_score.result += 13;
+			}
+			else {
+
+				d_score.result += ENEMY_KILL_POINT / 2;
+			}
+		}
+
+		break;
 	}
+
 
 
 
