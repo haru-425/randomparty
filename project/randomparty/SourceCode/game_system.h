@@ -8,6 +8,7 @@ void system_init();
 void system_deinit();
 void system_update();
 void system_render();
+void game_start();
 void game_end();
 void result_end();
 

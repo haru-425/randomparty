@@ -1,5 +1,6 @@
 #include "all.h"
 int     system_state;
+extern SCORE score;
 
 void system_init()
 {
@@ -65,6 +66,11 @@ bool circle_hit(VECTOR2 pos1, VECTOR2 pos2, float r1, float r2)
 	}
 }
 
+void game_start()
+{
+	nextScene = SCENE_GAME;
+}
+
 void game_end()
 {
 	nextScene = SCENE_RESULT;
@@ -73,6 +79,7 @@ void game_end()
 void result_end() {
 	using namespace input;
 	if (TRG(0) & PAD_START) {
-		nextScene = SCENE_TITLE;		
+		nextScene = SCENE_TITLE;	
+		score.score_reset();	
 	}
 }
