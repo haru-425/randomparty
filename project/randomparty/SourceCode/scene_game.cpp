@@ -73,15 +73,15 @@ void game_update()
 
 	game_timer++;
 
-
-#ifdef USE_IMGUI
-	ImGui::Begin("ImGUI");
-
-	static float value = 0;
-	ImGui::DragFloat("value", &value, 0.001f);
-
-	ImGui::End();
-#endif
+	//
+	//#ifdef USE_IMGUI
+	//	ImGui::Begin("ImGUI");
+	//
+	//	static float value = 0;
+	//	ImGui::DragFloat("value", &value, 0.001f);
+	//
+	//	ImGui::End();
+	//#endif
 
 
 }
