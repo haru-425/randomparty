@@ -17,7 +17,7 @@ void result_update()
 {
 	result_end();
 	
-	timer_init();
+	
 }
 
 void result_render()

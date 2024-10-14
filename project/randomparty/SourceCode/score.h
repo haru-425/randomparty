@@ -2,7 +2,7 @@
 #include <math.h>
 #include "all.h"
 
-#define ENEMY_KILL_POINT 100
+#define ENEMY_KILL_POINT 50
 
 extern PLAYER player;
 extern ENEMY enemy[ENEMY_MAX];
