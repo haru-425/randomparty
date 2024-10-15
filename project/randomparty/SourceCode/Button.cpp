@@ -132,20 +132,21 @@ void Button::help_button_update()
 
     case 1:
         // パラメータの設定
-        HelpButton.position = { SCREEN_W * 0.3f, SCREEN_H * 0.7f };  // 中心位置
+        HelpButton.position = { SCREEN_W * 0.3f, SCREEN_H * 0.8f };  // 中心位置
         HelpButton.scale = { 1.0f, 1.0f };
         HelpButton.texPos = { 0, 0 };
         HelpButton.texSize = { HELP_TEX_W, HELP_TEX_H };
         HelpButton.pivot = { HELP_PIVOT_X, HELP_PIVOT_Y };
         HelpButton.color = { 1.0f, 1.0f, 1.0f, 1.0f };
-        button.radius = HELP_TEX_W / 4;
+        HelpButton.radius = HELP_TEX_W / 6.7;
+        
 
         ++help_button_state;
         /*fallthrough*/
 
     case 2:
         // 通常時の処理
-        Button::end_button_act();
+        Button::help_button_act();
 
         break;
     }
@@ -164,13 +165,13 @@ void Button::set_button_update()
 
     case 1:
         // パラメータの設定
-        SetButton.position = { SCREEN_W * 0.7f, SCREEN_H * 0.7f };  // 中心位置
+        SetButton.position = { SCREEN_W * 0.7f, SCREEN_H * 0.8f };  // 中心位置
         SetButton.scale = { 1.0f, 1.0f };
         SetButton.texPos = { 0, 0 };
         SetButton.texSize = { SET_TEX_W, SET_TEX_H };
         SetButton.pivot = { SET_PIVOT_X, SET_PIVOT_Y };
         SetButton.color = { 1.0f, 1.0f, 1.0f, 1.0f };
-        button.radius = SET_TEX_W / 4;
+        SetButton.radius = SET_TEX_W / 6.7;
 
         ++set_button_state;
         /*fallthrough*/
@@ -196,12 +197,14 @@ void Button::end_button_render()
 
 void Button::help_button_render()
 {
-    sprite_render(sprHelp, HelpButton.position.x, HelpButton.position.y, 0.5f, 0.5f, 0, 0, 440, 440, 440 / 2, 440 / 2);
+    sprite_render(sprHelp, HelpButton.position.x, HelpButton.position.y, 0.3f, 0.3f, 0, 0, 440, 440, 440 / 2, 440 / 2);
+   
 }
 
 void Button::set_button_render()
 {
-    sprite_render(sprSet, SetButton.position.x, SetButton.position.y, 0.5f, 0.5f, 0, 0, 440, 440, 440 / 2, 440 / 2);
+    sprite_render(sprSet, SetButton.position.x, SetButton.position.y, 0.3f, 0.3f, 0, 0, 440, 440, 440 / 2, 440 / 2);
+   
 }
 
 void Button::button_act() 
@@ -292,37 +295,37 @@ bool Button::end_click() {
 bool Button::help_click() 
 {
     // マウスカーソルの座標取得
-    POINT point;
-    GetCursorPos(&point);
-    ScreenToClient(window::getHwnd(), &point);
+    POINT Helppoint;
+    GetCursorPos(&Helppoint);
+    ScreenToClient(window::getHwnd(), &Helppoint);
 
     // 円の中心座標
-    float centerX = HelpButton.position.x;
-    float centerY = HelpButton.position.y;
+    float HelpcenterX = HelpButton.position.x;
+    float HelpcenterY = HelpButton.position.y;
 
     // マウスカーソルと円の中心との距離を計算
-    float distance = sqrt(pow(point.x - centerX, 2) + pow(point.y - centerY, 2));
+    float Helpdistance = sqrt(pow(Helppoint.x - HelpcenterX, 2) + pow(Helppoint.y - HelpcenterY, 2));
 
     // 距離がボタンの半径以下であればクリックが有効
-    return (distance <= HelpButton.radius);
+    return (Helpdistance <= HelpButton.radius);
 }
 
 bool Button::set_click()
 {
     // マウスカーソルの座標取得
-    POINT point;
-    GetCursorPos(&point);
-    ScreenToClient(window::getHwnd(), &point);
+    POINT Setpoint;
+    GetCursorPos(&Setpoint);
+    ScreenToClient(window::getHwnd(), &Setpoint);
 
     // 円の中心座標
-    float centerX = SetButton.position.x;
-    float centerY = SetButton.position.y;
+    float SetcenterX = SetButton.position.x;
+    float SetcenterY = SetButton.position.y;
 
     // マウスカーソルと円の中心との距離を計算
-    float distance = sqrt(pow(point.x - centerX, 2) + pow(point.y - centerY, 2));
+    float Setdistance = sqrt(pow(Setpoint.x - SetcenterX, 2) + pow(Setpoint.y - SetcenterY, 2));
 
     // 距離がボタンの半径以下であればクリックが有効
-    return (distance <= SetButton.radius);
+    return (Setdistance <= SetButton.radius);
 }
 
 
