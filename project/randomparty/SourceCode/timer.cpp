@@ -43,7 +43,7 @@ void timer_render()
     // 残り時間が1秒以上の場合のみ表示
     if (timer.remaining_time >= 1) {
         string time_text = "TIME: " + to_string(timer.remaining_time);
-        text_out(1, time_text.c_str(), 0, 0, 2, 2, 1, 1, 1, 1);  // 座標 (0, 0) にテキスト描画
+        text_out(6, time_text.c_str(), 0, 0, 2, 2, 1, 1, 1, 1);  // 座標 (0, 0) にテキスト描画
     }
 }
 
