@@ -1,4 +1,5 @@
 #include "all.h"
+using namespace input;
 int     system_state;
 extern SCORE score;
 
@@ -77,10 +78,15 @@ void game_end()
 }
 
 void result_end() {
-	using namespace input;
+	
 	
 		nextScene = SCENE_TITLE;	
 		score.score_reset();
 		enemy->reset();
 	
+}
+
+void help_start() 
+{
+		nextScene = SCENE_HELP;
 }

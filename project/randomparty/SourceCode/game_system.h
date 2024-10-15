@@ -11,6 +11,7 @@ void system_render();
 void game_start();
 void game_end();
 void result_end();
+void help_start();
 
 // 関数のプロトタイプ宣言
 float tracking(VECTOR2 target, VECTOR2 tracking_person);

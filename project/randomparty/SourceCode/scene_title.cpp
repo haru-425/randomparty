@@ -6,7 +6,7 @@
 int title_state;
 int title_timer;
 
-int select_c;
+
 
 Sprite* backspr;
 Sprite* backspr2;
@@ -19,6 +19,8 @@ float title_angle;
 
 
 extern Button button;
+extern Button HelpButton;
+extern Button SetButton;
 
 //--------------------------------------
 //  èâä˙ê›íË
@@ -27,8 +29,10 @@ void title_init()
 {
 	title_state = 0;
 	title_timer = 0;
-	select_c = 0;
+	
 	button.button_init();
+	HelpButton.help_button_init();
+	SetButton.set_button_init();
 }
 
 //--------------------------------------
@@ -38,6 +42,8 @@ void title_deinit()
 {
 	music::stop(3);
 	button.button_deinit();
+	HelpButton.help_button_deinit();
+	SetButton.set_button_deinit();
 	safe_delete(backspr);
 	safe_delete(backspr2);
 	safe_delete(titlespr);
@@ -48,6 +54,8 @@ void title_update()
 {
 	using namespace input;
 	button.button_update();
+	HelpButton.help_button_update();
+	SetButton.set_button_update();
 
 	switch (title_state)
 	{
@@ -71,9 +79,7 @@ void title_update()
 		/*fallthrough*/
 	case 2:
 		//////// í èÌéû ////////
-		if (TRG(0) & PAD_START) {
-			nextScene = SCENE_HELP;
-		}
+		
 		title_act();
 		break;
 	}
@@ -103,6 +109,8 @@ void title_render()
 	sprite_render(titlespr, titlePos.x, titlePos.y, 0.5f, 0.5f, 0, 0, 3000, 500, 3000 / 2, 500 / 2);
 	sprite_render(sprRogo, SCREEN_W - 50, SCREEN_H - 50, 0.3f, 0.3f, 0, 0, 400, 400, 400 / 2, 400 / 2);
 	button.button_render();
+	HelpButton.help_button_render();
+	SetButton.set_button_render();
 }
 void title_act() {
 	/*

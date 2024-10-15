@@ -11,6 +11,16 @@
 #define END_PIVOT_X         (END_TEX_W/2)
 #define END_PIVOT_Y         (END_TEX_H/2)
 
+#define HELP_TEX_W           (440.0f)
+#define HELP_TEX_H           (440.0)
+#define HELP_PIVOT_X         (HELP_TEX_W/2)
+#define HELP_PIVOT_Y         (HELP_TEX_H/2)
+
+#define SET_TEX_W           (440.0f)
+#define SET_TEX_H           (440.0)
+#define SET_PIVOT_X         (HELP_TEX_W/2)
+#define SET_PIVOT_Y         (HELP_TEX_H/2)
+
 class Button {
 public:
 
@@ -37,7 +47,19 @@ public:
 	void end_button_act();
 	bool end_click();
 	
-	
+	void help_button_init();
+	void help_button_deinit();
+	void help_button_update();
+	void help_button_render();
+	void help_button_act();
+	bool help_click();
+
+	void set_button_init();
+	void set_button_deinit();
+	void set_button_update();
+	void set_button_render();
+	void set_button_act();
+	bool set_click();
 
 };
 
