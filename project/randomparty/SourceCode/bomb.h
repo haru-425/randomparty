@@ -8,7 +8,7 @@
 #define BOMB_RANGE_SCALE ( PLAYER_TEX_W * SCALE)
 
 // 爆弾の最大数を定義
-#define BOMB_MAX 10
+#define BOMB_MAX 5
 
 // 関数のプロトタイプ宣言
 // これらは別のファイルで実装される爆弾の初期化、更新、描画などの処理関数

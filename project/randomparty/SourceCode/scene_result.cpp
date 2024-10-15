@@ -132,11 +132,9 @@ void ScoreDisplay() {
 
 			if (d_score.result > r_score.result - 500)
 			{
-				if (d_score.result > r_score.result - 200)
-				{
-					d_score.result++;
-				}
-				d_score.result += 13;
+
+				d_score.result++;
+
 			}
 			else {
 
