@@ -79,6 +79,7 @@ void bomb_update() // 爆弾のタイマーを更新する処理
             }
         }
     }
+    debug::setString("%d", player_has_bomb);
 }
 
 void bomb_explosion(int bomb_number) // 爆弾の爆発処理
