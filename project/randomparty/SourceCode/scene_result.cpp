@@ -2,6 +2,7 @@
 
 #include <sstream>
 extern SCORE score;
+extern Button EndButton;
 extern int player_has_bomb;
 
 
@@ -16,6 +17,11 @@ RESULT r_score;
 RESULT d_score;
 void result_init()
 {
+	d_score.bomb = 0;
+	d_score.kill = 0;
+	d_score.Nearby = 0;
+	d_score.result = 0;
+
 	result_timer = 0;
 
 	sprBG = sprite_load(L"./Data/Images/title_layer01.png");
@@ -32,11 +38,12 @@ void result_init()
 	r_score.Nearby = score.distance_score_get();
 	r_score.result = r_score.kill + r_score.bomb + r_score.Nearby;
 
+	EndButton.end_button_init();
 }
 
 void result_deinit()
 {
-
+	EndButton.end_button_deinit();
 	safe_delete(sprBG);
 	safe_delete(sprOverley);
 	safe_delete(sprScore);
@@ -44,8 +51,8 @@ void result_deinit()
 
 void result_update()
 {
-	result_end();
-
+	//result_end();
+	EndButton.end_button_update();
 	result_timer++;
 }
 
@@ -53,8 +60,7 @@ void result_render()
 {
 	GameLib::clear(0.0, 0.0, 0.0);
 
-	//仮のEnterキー表示
-	//text_out(1, "push enter key", SCREEN_W * 0.275, SCREEN_H * 0.7, 2, 2);
+	
 	sprite_render(sprBG, SCREEN_W / 2, SCREEN_H / 2, 1, 1, 0, 0, 1920, 1080, 1920 / 2, 1080 / 2);
 
 	sprite_render(sprOverley, SCREEN_W / 2, SCREEN_H / 2, 1, 1, 0, 0, 1920, 1080, 1920 / 2, 1080 / 2);
@@ -63,8 +69,10 @@ void result_render()
 	sprite_render(sprScore, SCREEN_W / 2, SCREEN_H / 2, 1, 1, 0, 0, 1920, 1080, 1920 / 2, 1080 / 2);
 	//text_out(1, "敵のキル数：", SCREEN_W / 2, SCREEN_H * 2, 2, 2, 1, 1, 1, 0.5f, TEXT_ALIGN::MIDDLE_RIGHT);
 
-	debug::setString("r%d d%d", r_score.result, d_score.result);
-	debug::setString("state%d", DrawScoreState);
+	EndButton.end_button_render();
+
+	//debug::setString("r%d d%d", r_score.result, d_score.result);
+	//debug::setString("state%d", DrawScoreState);
 }
 
 

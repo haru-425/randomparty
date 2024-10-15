@@ -78,9 +78,9 @@ void game_end()
 
 void result_end() {
 	using namespace input;
-	if (TRG(0) & PAD_START) {
+	
 		nextScene = SCENE_TITLE;	
 		score.score_reset();
 		enemy->reset();
-	}
+	
 }

@@ -60,15 +60,18 @@ void game_update()
 		game_state++;
 		/*fallthrough*/
 	case 2:
+		
+
+	case 3:
 		//////// �ʏ펞 ////////
-
-
-		player_update();
-		enemy_update();
-		bomb_update();
-		timer_update();
-		score.near_score();
-		break;
+		
+		
+			player_update();
+			enemy_update();
+			bomb_update();
+			timer_update();
+			score.near_score();
+			break;
 	}
 
 	game_timer++;
