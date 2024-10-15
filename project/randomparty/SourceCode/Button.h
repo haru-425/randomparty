@@ -3,8 +3,13 @@
 
 #define BUTTON_TEX_W        (440.0f)   
 #define BUTTON_TEX_H        (440.0f)   
-#define BUTTON_PIVOT_X      (ENEMY_TEX_W/2)   
-#define BUTTON_PIVOT_Y      (ENEMY_TEX_H/2)   
+#define BUTTON_PIVOT_X      (BUTTON_TEX_W/2)   
+#define BUTTON_PIVOT_Y      (BUTTON_TEX_H/2)   
+
+#define END_TEX_W           (128.0f)
+#define END_TEX_H           (64.0f)
+#define END_PIVOT_X         (END_TEX_W/2)
+#define END_PIVOT_Y         (END_TEX_H/2)
 
 class Button {
 public:
@@ -18,13 +23,21 @@ public:
 	VECTOR2 pivot;
 	VECTOR4 color;
 
-void button_init();
-void button_deinit();
-void button_update();
-void button_render();
-void button_act();
+	void button_init();
+	void button_deinit();
+	void button_update();
+	void button_render();
+	void button_act();
+	bool click();
 
-bool click();
+	void end_button_init();
+	void end_button_deinit();
+	void end_button_update();
+	void end_button_render();
+	void end_button_act();
+	bool end_click();
+	
+	
 
 };
 
