@@ -32,7 +32,4 @@ public:
 	int bomb_explode_count;// 爆発カウント（時間経過のトラッキングに使用）
 };
 
-// 爆弾の最大数を再定義（上でも定義されているが、念のための再定義）
-#define BOMB_MAX 10
-
 #endif // BOMB_H

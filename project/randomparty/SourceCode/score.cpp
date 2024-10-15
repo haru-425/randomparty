@@ -28,8 +28,8 @@ void SCORE::near_score()
 	if (300 - distance[0] > 0 && time % 10 == 0) // 10フレームごとにスコア加算処理を実行
 	{
 		// 距離に応じたスコアを計算して加算（300未満の距離に対してスコアを増加）
-		near_total += (300 - distance[0]) / 50;
-		total_score += (300 - distance[0]) / 50;
+		near_total += (300 - distance[0]) / 30;
+		total_score += (300 - distance[0]) / 30;
 	}
 
 	// 現在の総合スコアをデバッグ情報として出力

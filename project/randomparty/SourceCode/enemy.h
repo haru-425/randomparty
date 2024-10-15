@@ -94,7 +94,7 @@ public:
 		}
 		timer = 60 * 5;
 		angle = ToRadian(rand() % 360);
-		position = { cosf(spawnAngle) * SCREEN_W / 2 + SCREEN_W / 2 ,sinf(spawnAngle) * SCREEN_W / 2 + SCREEN_H / 2 };
+		position = { cosf(spawnAngle) * SCREEN_W / 2 * 1.5f + SCREEN_W / 2 ,sinf(spawnAngle) * SCREEN_H / 2 * 1.5f + SCREEN_H / 2 };
 		//position = { static_cast<float>(rand() % SCREEN_W), static_cast<float>(rand() % SCREEN_H) };
 		scale = { SCALE, SCALE };
 		texPos = { ENEMY_TEX_W * type, 0 };
