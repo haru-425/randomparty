@@ -4,6 +4,7 @@
 using namespace input;
 
 int help_state;
+int select_c;
 
 Sprite* sprBG_H;
 Sprite* sprOverley_H;
@@ -48,14 +49,49 @@ void help_update()
 		/*fallthrough*/
 	case 1:
 		//////// ÉpÉâÉÅÅ[É^ÇÃê›íË ////////
+		tuto_player_init();
 
 		help_state++;
 		/*fallthrough*/
 	case 2:
 		//////// í èÌéû ////////
+        POINT point;
+        GetCursorPos(&point);
+        ScreenToClient(window::getHwnd(), &point);
 
-		help_act();
-		break;
+        if (TRG(0) & PAD_DOWN)
+        {
+            select_c++;
+        }if (TRG(0) & PAD_UP)
+        {
+            select_c--;
+        }
+		switch (select_c)
+		{
+		case1:
+			tuto_player_update();
+			break;
+		case 2:
+			break;
+		default:
+			break;
+		}
+        /*if (TRG(0) & PAD_START && select_c == 0)
+        {
+            sound::play(XWB_SYSTEM, XWB_SYSTEM_START);
+
+            nextScene = SCENE_GAME;
+            break;
+        }
+        if (TRG(0) & PAD_START && select_c == 1)
+        {
+            sound::play(XWB_TITLE, 0);
+
+            nextScene = SCENE_SETTING;
+            break;
+        }*/
+
+        break;
 	}
 
 }

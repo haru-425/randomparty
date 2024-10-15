@@ -29,6 +29,7 @@
 #include "score.h"
 #include "scene_result.h"
 #include "scene_help.h"
+#include "tuto_player.h"
 
 #ifdef USE_IMGUI
 #include "../imgui/imgui.h"
