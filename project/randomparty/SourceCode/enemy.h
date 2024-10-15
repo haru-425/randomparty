@@ -1,7 +1,7 @@
 #ifndef ENEMY_H
 #define ENEMY_H
 
-#define ENEMY_MAX (50)
+#define ENEMY_MAX (25)
 
 #define ENEMY_TEX_W        (400.0f)   // 敵の画像1つの幅
 #define ENEMY_TEX_H        (400.0f)   // 敵の画像1つの高さ
