@@ -17,8 +17,6 @@ int help_page;
 void help_init()
 {
 	help_state = 0;
-
-
 }
 
 //--------------------------------------
@@ -59,7 +57,6 @@ void help_update()
 		help_act();
 		break;
 	}
-
 
 }
 void help_render()

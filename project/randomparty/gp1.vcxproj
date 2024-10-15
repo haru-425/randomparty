@@ -194,6 +194,8 @@ attrib +h SourceCode\gp1.log
     <ClInclude Include="SourceCode\game_system.h" />
     <ClInclude Include="SourceCode\score.h" />
     <ClInclude Include="SourceCode\timer.h" />
+    <ClInclude Include="SourceCode\tuto_player.h" />
+    <ClInclude Include="SourceCode\tyto_enemy.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GameLib\debug.cpp" />
@@ -230,6 +232,8 @@ attrib +h SourceCode\gp1.log
     <ClCompile Include="SourceCode\game_system.cpp" />
     <ClCompile Include="SourceCode\score.cpp" />
     <ClCompile Include="SourceCode\timer.cpp" />
+    <ClCompile Include="SourceCode\tuto_player.cpp" />
+    <ClCompile Include="SourceCode\tyto_enemy.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

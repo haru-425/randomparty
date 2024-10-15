@@ -58,6 +58,13 @@ void player_update()
 		/*fallthrough*/
 
 	case 2:
+		if (curScene != SCENE_HELP)
+		{
+			player_state++;
+		}
+		// s“®‚Ì‘JˆÚ
+		player_act();
+	case 3:
 		//////// ’Êí ////////
 		if (TRG(0) & R_CLICK)
 		{
@@ -65,7 +72,6 @@ void player_update()
 		}
 		// s“®‚Ì‘JˆÚ
 		player_act();
-
 
 		break;
 	}
