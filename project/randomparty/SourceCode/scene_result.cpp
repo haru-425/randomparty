@@ -15,6 +15,7 @@ int result_state;
 int result_timer;
 RESULT r_score;
 RESULT d_score;
+int music_timer;
 void result_init()
 {
 	d_score.bomb = 0;
@@ -23,6 +24,7 @@ void result_init()
 	d_score.result = 0;
 
 	result_timer = 0;
+	music_timer = 0;
 
 	sprBG = sprite_load(L"./Data/Images/title_layer01.png");
 	sprOverley = sprite_load(L"./Data/Images/title_layer02.png");
@@ -84,7 +86,7 @@ void result_render()
 
 
 void ScoreDisplay() {
-
+	music_timer++;
 	switch (DrawScoreState)
 	{
 	case 0:
@@ -102,6 +104,10 @@ void ScoreDisplay() {
 
 			d_score.kill += ENEMY_KILL_POINT / 2;
 		}
+		if (music_timer % 10 == 0)
+		{
+			sound::play(XWB_SYSTEM, XWB_SYSTEM_RESULT);
+		}
 		break;
 	case 1:
 		if (r_score.bomb == d_score.bomb)
@@ -117,6 +123,10 @@ void ScoreDisplay() {
 		else {
 
 			d_score.bomb -= ENEMY_KILL_POINT / 2;
+		}
+		if (music_timer % 10 == 0)
+		{
+			sound::play(XWB_SYSTEM, XWB_SYSTEM_RESULT);
 		}
 		break;
 
@@ -134,6 +144,10 @@ void ScoreDisplay() {
 		else {
 
 			d_score.Nearby += ENEMY_KILL_POINT / 2;
+		}
+		if (music_timer % 10 == 0)
+		{
+			sound::play(XWB_SYSTEM, XWB_SYSTEM_RESULT);
 		}
 		break;
 	case 3:
@@ -157,7 +171,10 @@ void ScoreDisplay() {
 				d_score.result += ENEMY_KILL_POINT / 2;
 			}
 		}
-
+		if (music_timer % 10 == 0)
+		{
+			sound::play(XWB_SYSTEM, XWB_SYSTEM_RESULT);
+		}
 		break;
 	}
 

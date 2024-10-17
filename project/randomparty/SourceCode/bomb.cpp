@@ -64,6 +64,9 @@ void bomb_set() // プレイヤーが爆弾を設置する処理
 		}
 		player_has_bomb--; // プレイヤーの持っている爆弾数を減少させる
 	}
+	else {
+		sound::play(XWB_SYSTEM, XWB_SYSTEM_BOMB_FAILURE);
+	}
 }
 
 void bomb_update() // 爆弾のタイマーを更新する処理
@@ -81,6 +84,8 @@ void bomb_update() // 爆弾のタイマーを更新する処理
 				if (stage[i].bomb_time == 0) // タイマーが 0 になったら
 				{
 					bomb_explosion(i); // 爆発処理を呼び出す
+
+					sound::play(XWB_SYSTEM, XWB_SYSTEM_EXPLODE);
 				}
 			}
 		}

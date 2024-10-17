@@ -11,7 +11,7 @@ void audio_init()
 
 
 
-	//sound::load(XWB_SYSTEM, L"./Data/Sounds/system.xwb");   // メニューなどのSE
+	sound::load(XWB_SYSTEM, L"./Data/Sounds/system.xwb");   // メニューなどのSE
 
 
 	//sound::setVolume(XWB_STAGE1, XWB_STAGE1_MISSILE, 4.0f);
