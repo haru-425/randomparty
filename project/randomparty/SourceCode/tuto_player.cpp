@@ -4,9 +4,9 @@ using namespace input;
 int Tutorial_state;
 extern int player_state;
 extern int select_c;
+extern int render_mode;
 
-Sprite* player_description;
-Sprite* bomb_description;
+
 
 void tuto_player_init()
 {
@@ -18,21 +18,20 @@ void tuto_player_update()
 	{
 	case 0:
 		player_init();
-
+		
 		++Tutorial_state;
 		/*fallthrough*/
 
 	case 1:
-
 		++Tutorial_state;
 		/*fallthrough*/
 
 	case 2:
-		//Sprite::render();
 		player_update();
 		if (TRG(0) & PAD_START)
 		{
 			++Tutorial_state;
+			++render_mode;
 		}
 		break;
 	case 3:
@@ -47,7 +46,8 @@ void tuto_player_update()
 		++Tutorial_state;
 		/*fallthrough*/
 	case 5:
-		//Sprite::render();
+		debug::setString("a");
+		player_update();
 		if (TRG(0) & PAD_START)
 		{
 			tuto_player_deinit();
@@ -60,7 +60,5 @@ void tuto_player_update()
 
 void tuto_player_deinit()
 {
-	safe_delete(player_description);
-	safe_delete(bomb_description);
 	player_deinit();
 }
