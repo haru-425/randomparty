@@ -82,7 +82,10 @@ void result_end() {
 	
 		nextScene = SCENE_TITLE;	
 		score.score_reset();
-		enemy->reset();
+		for (int i = 0; i < ENEMY_MAX; i++) {
+			enemy->reset();
+		}
+		
 	
 }
 
