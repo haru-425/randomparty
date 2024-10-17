@@ -181,16 +181,16 @@ void ScoreDisplay() {
 
 
 
-	text_out(6, "kill:", SCREEN_W / 2, SCREEN_H / 10 * 2, 2, 2, 1, 1, 1, 1, TEXT_ALIGN::MIDDLE_RIGHT);
-	text_out(6, std::to_string(d_score.kill), SCREEN_W / 2, SCREEN_H / 10 * 2, 2, 2, 1, 1, 1, 1, TEXT_ALIGN::MIDDLE_LEFT);
+	GameLib::text_out(6, "kill:", SCREEN_W / 2, SCREEN_H / 10 * 2, 2, 2, 1, 1, 1, 1, TEXT_ALIGN::MIDDLE_RIGHT);
+	GameLib::text_out(6, std::to_string(d_score.kill), SCREEN_W / 2, SCREEN_H / 10 * 2, 2, 2, 1, 1, 1, 1, TEXT_ALIGN::MIDDLE_LEFT);
 
-	text_out(6, "bomb:", SCREEN_W / 2, SCREEN_H / 10 * 4, 2, 2, 1, 1, 1, 1, TEXT_ALIGN::MIDDLE_RIGHT);
-	text_out(6, std::to_string(d_score.bomb), SCREEN_W / 2, SCREEN_H / 10 * 4, 2, 2, 1, 1, 1, 1, TEXT_ALIGN::MIDDLE_LEFT);
+	GameLib::text_out(6, "bomb:", SCREEN_W / 2, SCREEN_H / 10 * 4, 2, 2, 1, 1, 1, 1, TEXT_ALIGN::MIDDLE_RIGHT);
+	GameLib::text_out(6, std::to_string(d_score.bomb), SCREEN_W / 2, SCREEN_H / 10 * 4, 2, 2, 1, 1, 1, 1, TEXT_ALIGN::MIDDLE_LEFT);
 
-	text_out(6, "near by:", SCREEN_W / 2, SCREEN_H / 10 * 6, 2, 2, 1, 1, 1, 1, TEXT_ALIGN::MIDDLE_RIGHT);
-	text_out(6, std::to_string(d_score.Nearby), SCREEN_W / 2, SCREEN_H / 10 * 6, 2, 2, 1, 1, 1, 1, TEXT_ALIGN::MIDDLE_LEFT);
+	GameLib::text_out(6, "near by:", SCREEN_W / 2, SCREEN_H / 10 * 6, 2, 2, 1, 1, 1, 1, TEXT_ALIGN::MIDDLE_RIGHT);
+	GameLib::text_out(6, std::to_string(d_score.Nearby), SCREEN_W / 2, SCREEN_H / 10 * 6, 2, 2, 1, 1, 1, 1, TEXT_ALIGN::MIDDLE_LEFT);
 
 
-	text_out(6, "result:", SCREEN_W / 2, SCREEN_H / 10 * 8, 2, 2, 1, 1, 1, 1, TEXT_ALIGN::MIDDLE_RIGHT);
-	text_out(6, std::to_string(d_score.result), SCREEN_W / 2, SCREEN_H / 10 * 8, 2, 2, 1, 1, 1, 1, TEXT_ALIGN::MIDDLE_LEFT);
+	GameLib::text_out(6, "result:", SCREEN_W / 2, SCREEN_H / 10 * 8, 2, 2, 1, 1, 1, 1, TEXT_ALIGN::MIDDLE_RIGHT);
+	GameLib::text_out(6, std::to_string(d_score.result), SCREEN_W / 2, SCREEN_H / 10 * 8, 2, 2, 1, 1, 1, 1, TEXT_ALIGN::MIDDLE_LEFT);
 }
