@@ -15,6 +15,7 @@ int result_state;
 int result_timer;
 RESULT r_score;
 RESULT d_score;
+int music_timer;
 void result_init()
 {
 	d_score.bomb = 0;
@@ -23,6 +24,7 @@ void result_init()
 	d_score.result = 0;
 
 	result_timer = 0;
+	music_timer = 0;
 
 	sprBG = sprite_load(L"./Data/Images/title_layer01.png");
 	sprOverley = sprite_load(L"./Data/Images/title_layer02.png");
@@ -39,6 +41,9 @@ void result_init()
 	r_score.result = r_score.kill + r_score.bomb + r_score.Nearby;
 
 	EndButton.end_button_init();
+
+	music::play(BGM_RESULT, true);
+
 }
 
 void result_deinit()
@@ -47,6 +52,10 @@ void result_deinit()
 	safe_delete(sprBG);
 	safe_delete(sprOverley);
 	safe_delete(sprScore);
+
+	music::stop(BGM_RESULT);
+
+
 }
 
 void result_update()
@@ -60,7 +69,7 @@ void result_render()
 {
 	GameLib::clear(0.0, 0.0, 0.0);
 
-	
+
 	sprite_render(sprBG, SCREEN_W / 2, SCREEN_H / 2, 1, 1, 0, 0, 1920, 1080, 1920 / 2, 1080 / 2);
 
 	sprite_render(sprOverley, SCREEN_W / 2, SCREEN_H / 2, 1, 1, 0, 0, 1920, 1080, 1920 / 2, 1080 / 2);
@@ -77,7 +86,7 @@ void result_render()
 
 
 void ScoreDisplay() {
-
+	music_timer++;
 	switch (DrawScoreState)
 	{
 	case 0:
@@ -95,6 +104,10 @@ void ScoreDisplay() {
 
 			d_score.kill += ENEMY_KILL_POINT / 2;
 		}
+		if (music_timer % 10 == 0)
+		{
+			sound::play(XWB_SYSTEM, XWB_SYSTEM_RESULT);
+		}
 		break;
 	case 1:
 		if (r_score.bomb == d_score.bomb)
@@ -111,7 +124,12 @@ void ScoreDisplay() {
 
 			d_score.bomb -= ENEMY_KILL_POINT / 2;
 		}
+		if (music_timer % 10 == 0)
+		{
+			sound::play(XWB_SYSTEM, XWB_SYSTEM_RESULT);
+		}
 		break;
+
 	case 2:
 		if (r_score.Nearby == d_score.Nearby)
 		{
@@ -126,6 +144,10 @@ void ScoreDisplay() {
 		else {
 
 			d_score.Nearby += ENEMY_KILL_POINT / 2;
+		}
+		if (music_timer % 10 == 0)
+		{
+			sound::play(XWB_SYSTEM, XWB_SYSTEM_RESULT);
 		}
 		break;
 	case 3:
@@ -149,23 +171,26 @@ void ScoreDisplay() {
 				d_score.result += ENEMY_KILL_POINT / 2;
 			}
 		}
-
+		if (music_timer % 10 == 0)
+		{
+			sound::play(XWB_SYSTEM, XWB_SYSTEM_RESULT);
+		}
 		break;
 	}
 
 
 
 
-	text_out(6, "kill:", SCREEN_W / 2, SCREEN_H / 10 * 2, 2, 2, 1, 1, 1, 1, TEXT_ALIGN::MIDDLE_RIGHT);
-	text_out(6, std::to_string(d_score.kill), SCREEN_W / 2, SCREEN_H / 10 * 2, 2, 2, 1, 1, 1, 1, TEXT_ALIGN::MIDDLE_LEFT);
+	GameLib::text_out(6, "kill:", SCREEN_W / 2, SCREEN_H / 10 * 2, 2, 2, 1, 1, 1, 1, TEXT_ALIGN::MIDDLE_RIGHT);
+	GameLib::text_out(6, std::to_string(d_score.kill), SCREEN_W / 2, SCREEN_H / 10 * 2, 2, 2, 1, 1, 1, 1, TEXT_ALIGN::MIDDLE_LEFT);
 
-	text_out(6, "bomb:", SCREEN_W / 2, SCREEN_H / 10 * 4, 2, 2, 1, 1, 1, 1, TEXT_ALIGN::MIDDLE_RIGHT);
-	text_out(6, std::to_string(d_score.bomb), SCREEN_W / 2, SCREEN_H / 10 * 4, 2, 2, 1, 1, 1, 1, TEXT_ALIGN::MIDDLE_LEFT);
+	GameLib::text_out(6, "bomb:", SCREEN_W / 2, SCREEN_H / 10 * 4, 2, 2, 1, 1, 1, 1, TEXT_ALIGN::MIDDLE_RIGHT);
+	GameLib::text_out(6, std::to_string(d_score.bomb), SCREEN_W / 2, SCREEN_H / 10 * 4, 2, 2, 1, 1, 1, 1, TEXT_ALIGN::MIDDLE_LEFT);
 
-	text_out(6, "near by:", SCREEN_W / 2, SCREEN_H / 10 * 6, 2, 2, 1, 1, 1, 1, TEXT_ALIGN::MIDDLE_RIGHT);
-	text_out(6, std::to_string(d_score.Nearby), SCREEN_W / 2, SCREEN_H / 10 * 6, 2, 2, 1, 1, 1, 1, TEXT_ALIGN::MIDDLE_LEFT);
+	GameLib::text_out(6, "near by:", SCREEN_W / 2, SCREEN_H / 10 * 6, 2, 2, 1, 1, 1, 1, TEXT_ALIGN::MIDDLE_RIGHT);
+	GameLib::text_out(6, std::to_string(d_score.Nearby), SCREEN_W / 2, SCREEN_H / 10 * 6, 2, 2, 1, 1, 1, 1, TEXT_ALIGN::MIDDLE_LEFT);
 
 
-	text_out(6, "result:", SCREEN_W / 2, SCREEN_H / 10 * 8, 2, 2, 1, 1, 1, 1, TEXT_ALIGN::MIDDLE_RIGHT);
-	text_out(6, std::to_string(d_score.result), SCREEN_W / 2, SCREEN_H / 10 * 8, 2, 2, 1, 1, 1, 1, TEXT_ALIGN::MIDDLE_LEFT);
+	GameLib::text_out(6, "result:", SCREEN_W / 2, SCREEN_H / 10 * 8, 2, 2, 1, 1, 1, 1, TEXT_ALIGN::MIDDLE_RIGHT);
+	GameLib::text_out(6, std::to_string(d_score.result), SCREEN_W / 2, SCREEN_H / 10 * 8, 2, 2, 1, 1, 1, 1, TEXT_ALIGN::MIDDLE_LEFT);
 }

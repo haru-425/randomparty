@@ -213,6 +213,8 @@ void Button::button_act()
 	if (TRG(0) & L_CLICK) {
 		if (click()) {
 			// ÉQÅ[ÉÄâÊñ Ç…ëJà⁄
+
+			sound::play(XWB_SYSTEM, XWB_SYSTEM_BUTTON);
 			game_start();
 			return;
 		}
@@ -225,6 +227,7 @@ void Button::end_button_act()
 	if (TRG(0) & L_CLICK) {
 		if (end_click()) {
 
+			sound::play(XWB_SYSTEM, XWB_SYSTEM_BUTTON);
 			result_end();
 			return;
 		}
@@ -237,6 +240,7 @@ void Button::help_button_act()
 	if (TRG(0) & L_CLICK) {
 		if (help_click()) {
 
+			sound::play(XWB_SYSTEM, XWB_SYSTEM_BUTTON);
 			help_start();
 			return;
 		}
@@ -249,6 +253,7 @@ void Button::set_button_act()
 	if (TRG(0) & L_CLICK) {
 		if (set_click()) {
 
+			sound::play(XWB_SYSTEM, XWB_SYSTEM_BUTTON);
 			result_end();
 			return;
 		}

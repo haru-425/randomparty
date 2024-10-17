@@ -31,6 +31,8 @@
 #include "scene_help.h"
 #include "tuto_player.h"
 
+#include"audio.h"
+
 #ifdef USE_IMGUI
 #include "../imgui/imgui.h"
 #include "../imgui/imgui_internal.h"

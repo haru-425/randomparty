@@ -60,7 +60,7 @@ void player_update()
 		/*fallthrough*/
 
 	case 2:
-		if (curScene != SCENE_HELP && countdownComplete==true)
+		if (curScene != SCENE_HELP && countdownComplete == true)
 		{
 			player_state++;
 		}
@@ -134,6 +134,7 @@ void player_act()
 	{
 
 		if (circle_hit(player.position, enemy[i].position, PLAYER_CORE_TEX_W * SCALE, ENEMY_CORE_TEX_W * SCALE)) {
+			sound::play(XWB_SYSTEM, XWB_SYSTEM_DEATH);
 			game_end();
 		}
 	}

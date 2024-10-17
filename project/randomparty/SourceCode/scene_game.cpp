@@ -61,6 +61,7 @@ void game_update()
 		//////// ƒpƒ‰ƒ[ƒ^‚Ìİ’è ////////
 		GameLib::setBlendMode(Blender::BS_ALPHA);
 
+		music::play(BGM_GAME, true);
 		game_state++;
 		/*fallthrough*/
 	case 2:
@@ -138,4 +139,7 @@ void game_deinit()
 
 	safe_delete(sprBG);
 	safe_delete(sprOverley);
+
+
+	music::stop(BGM_GAME);
 }
