@@ -5,10 +5,14 @@ using namespace input;
 
 int help_state;
 int select_c;
+int render_mode;
 
 Sprite* sprBG_H;
 Sprite* sprOverley_H;
 Sprite* sprDescription_H;
+Sprite* player_description;
+Sprite* bomb_description;
+Sprite* next_button;
 
 extern Button button;
 int help_page;
@@ -25,6 +29,9 @@ void help_init()
 //--------------------------------------
 void help_deinit()
 {
+
+	safe_delete(player_description);
+	safe_delete(bomb_description);
 	safe_delete(sprBG_H);
 	safe_delete(sprOverley_H);
 	safe_delete(sprDescription_H);
@@ -45,12 +52,15 @@ void help_update()
 		sprBG_H = sprite_load(L"./Data/Images/title_layer01.png");
 		sprOverley_H = sprite_load(L"./Data/Images/title_layer02.png");
 		sprDescription_H = sprite_load(L"./Data/Images/enemy_describe.png");
+		player_description = sprite_load(L"./Data/Images/help_player.png");
+		bomb_description = sprite_load(L"./Data/Images/help_boomb.png");
+		next_button = sprite_load(L"./Data/Images/nextButton.png");
 		help_state++;
 		/*fallthrough*/
 	case 1:
 		//////// ÉpÉâÉÅÅ[É^ÇÃê›íË ////////
 		tuto_player_init();
-
+		render_mode = 1;
 		help_state++;
 		/*fallthrough*/
 	case 2:
@@ -58,7 +68,7 @@ void help_update()
         POINT point;
         GetCursorPos(&point);
         ScreenToClient(window::getHwnd(), &point);
-
+		tuto_player_update();
         if (TRG(0) & PAD_DOWN)
         {
             select_c++;
@@ -75,6 +85,7 @@ void help_update()
 			break;
 		default:
 			break;
+			
 		}
         /*if (TRG(0) & PAD_START && select_c == 0)
         {
@@ -99,9 +110,24 @@ void help_render()
 {
 	// âÊñ Çê¬Ç≈ìhÇËÇ¬Ç‘Ç∑
 	GameLib::clear(0.3f, 0.5f, 1.0f);
-	sprite_render(sprBG_H, SCREEN_W / 2, SCREEN_H / 2, 1, 1, 0, 0, 1920, 1080, 1920 / 2, 1080 / 2);
+	/*sprite_render(sprBG_H, SCREEN_W / 2, SCREEN_H / 2, 1, 1, 0, 0, 1920, 1080, 1920 / 2, 1080 / 2);
 	sprite_render(sprOverley_H, SCREEN_W / 2, SCREEN_H / 2, 1, 1, 0, 0, 1920, 1080, 1920 / 2, 1080 / 2);
-	sprite_render(sprDescription_H, SCREEN_W / 2, SCREEN_H / 2, 1, 1, 0, 0, 1920, 1080, 1920 / 2, 1080 / 2);
+	sprite_render(sprDescription_H, SCREEN_W / 2, SCREEN_H / 2, 1, 1, 0, 0, 1920, 1080, 1920 / 2, 1080 / 2);*/
+	switch (render_mode)
+	{
+	case 1:
+		player_render();
+		sprite_render(player_description, 0, 0, 1, 1, 0, 0);
+		
+		break;
+	case 2:
+		player_render();
+		sprite_render(bomb_description, 0, 0, 1, 1, 0, 0);
+		
+		break;
+	default:
+		break;
+	}
 
 }
 void help_act() 
