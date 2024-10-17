@@ -29,7 +29,7 @@ void title_init()
 {
 	title_state = 0;
 	title_timer = 0;
-	
+
 	button.button_init();
 	HelpButton.help_button_init();
 	SetButton.set_button_init();
@@ -48,6 +48,9 @@ void title_deinit()
 	safe_delete(backspr2);
 	safe_delete(titlespr);
 	safe_delete(sprRogo);
+
+
+	music::stop(BGM_TITLE);
 }
 
 void title_update()
@@ -74,12 +77,12 @@ void title_update()
 	case 1:
 		//////// ƒpƒ‰ƒ[ƒ^‚Ìİ’è ////////
 		GameLib::setBlendMode(Blender::BS_ALPHA);
-
+		music::play(BGM_TITLE, true);
 		title_state++;
 		/*fallthrough*/
 	case 2:
 		//////// ’Êí ////////
-		
+
 		title_act();
 		break;
 	}

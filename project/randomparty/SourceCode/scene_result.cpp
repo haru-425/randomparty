@@ -39,6 +39,7 @@ void result_init()
 	r_score.result = r_score.kill + r_score.bomb + r_score.Nearby;
 
 	EndButton.end_button_init();
+
 }
 
 void result_deinit()
@@ -47,6 +48,8 @@ void result_deinit()
 	safe_delete(sprBG);
 	safe_delete(sprOverley);
 	safe_delete(sprScore);
+
+
 }
 
 void result_update()
@@ -60,7 +63,7 @@ void result_render()
 {
 	GameLib::clear(0.0, 0.0, 0.0);
 
-	
+
 	sprite_render(sprBG, SCREEN_W / 2, SCREEN_H / 2, 1, 1, 0, 0, 1920, 1080, 1920 / 2, 1080 / 2);
 
 	sprite_render(sprOverley, SCREEN_W / 2, SCREEN_H / 2, 1, 1, 0, 0, 1920, 1080, 1920 / 2, 1080 / 2);

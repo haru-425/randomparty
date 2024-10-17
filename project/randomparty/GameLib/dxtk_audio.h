@@ -313,7 +313,7 @@ namespace GameLib
                             DirectX::SoundState state = soundInst[trackNo][i]->GetState();
                             if (state != DirectX::SoundState::STOPPED) continue;
                         }
-                        
+
                         soundInst[trackNo][i] = waveBank->CreateInstance(trackNo);
                         if (soundInst[trackNo][i])
                         {

@@ -183,6 +183,7 @@ attrib +h SourceCode\gp1.log
     <ClInclude Include="imgui\imstb_truetype.h" />
     <ClInclude Include="resource1.h" />
     <ClInclude Include="SourceCode\all.h" />
+    <ClInclude Include="SourceCode\audio.h" />
     <ClInclude Include="SourceCode\bomb.h" />
     <ClInclude Include="SourceCode\Button.h" />
     <ClInclude Include="SourceCode\common.h" />
@@ -220,6 +221,7 @@ attrib +h SourceCode\gp1.log
     <ClCompile Include="imgui\imgui_impl_win32.cpp" />
     <ClCompile Include="imgui\imgui_ja_gryph_ranges.cpp" />
     <ClCompile Include="imgui\imgui_widgets.cpp" />
+    <ClCompile Include="SourceCode\audio.cpp" />
     <ClCompile Include="SourceCode\bomb.cpp" />
     <ClCompile Include="SourceCode\Button.cpp" />
     <ClCompile Include="SourceCode\common.cpp" />

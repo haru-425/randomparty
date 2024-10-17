@@ -25,7 +25,7 @@ int APIENTRY wWinMain(HINSTANCE, HINSTANCE, LPWSTR, int)// g—p‚µ‚È‚¢•Ï”‚Í‹Lq‚
 	GameLib::init(L"FIGAVOID", SCREEN_W, SCREEN_H, FULLSCREEN);
 
 	//game_init();
-
+	audio_init();
 	while (GameLib::gameLoop())
 	{
 
@@ -74,7 +74,7 @@ int APIENTRY wWinMain(HINSTANCE, HINSTANCE, LPWSTR, int)// g—p‚µ‚È‚¢•Ï”‚Í‹Lq‚
 
 		// “ü—Íˆ—
 		input::update();
-
+		music::update();
 		// Œ»İ‚ÌƒV[ƒ“‚É‰‚¶‚½XVE•`‰æˆ—
 		switch (curScene)
 		{
@@ -137,7 +137,7 @@ int APIENTRY wWinMain(HINSTANCE, HINSTANCE, LPWSTR, int)// g—p‚µ‚È‚¢•Ï”‚Í‹Lq‚
 
 	// ƒQ[ƒ€ƒV[ƒ“‚ÌI—¹
 	//game_deinit();
-
+	audio_deinit();
 	// ƒQ[ƒ€ƒ‰ƒCƒuƒ‰ƒŠ‚ÌI—¹ˆ—
 	GameLib::uninit();
 
