@@ -11,7 +11,6 @@
 #include <sstream>
 Sprite* sprBG;
 Sprite* sprOverley;
-Sprite* sprRemainingBomb;
 //------< 定数 >----------------------------------------------------------------
 
 //------< 変数 >----------------------------------------------------------------
@@ -54,7 +53,6 @@ void game_update()
 
 		sprBG = sprite_load(L"./Data/Images/title_layer01.png");
 		sprOverley = sprite_load(L"./Data/Images/title_layer02.png");
-		sprRemainingBomb = sprite_load(L"./Data/Images/bomb.png");
 
 		SetCursorPos(SCREEN_W / 2, SCREEN_H / 2);
 		game_state++;
@@ -67,34 +65,34 @@ void game_update()
 		/*fallthrough*/
 	case 2:
 		if (countDown > 0) {
-			static int frameCounter = 0;
-			frameCounter++;
-			if (frameCounter >= 60) { // 1秒毎にカウントダウン
-				frameCounter = 0;
-				countDown--;
-			}
-		}
-		else if (!countdownComplete) {
-			static int startCounter = 0;
-			startCounter++;
-			if (startCounter >= 60) { // 1秒間 "Start" を表示
-				countdownComplete = true;
-				startCounter = 0;
-			}
-		}
-
+            static int frameCounter = 0;
+            frameCounter++;
+            if (frameCounter >= 60) { // 1秒毎にカウントダウン
+                frameCounter = 0;
+                countDown--;
+            }
+        }
+        else if (!countdownComplete) {
+            static int startCounter = 0;
+            startCounter++;
+            if (startCounter >= 60) { // 1秒間 "Start" を表示
+                countdownComplete = true;
+                startCounter = 0;
+            }
+        }
+		
 	case 3:
 		//////// 通常時 ////////
-
+		
 		if (countdownComplete) {
-
+			
 			enemy_update();
 			bomb_update();
 			timer_update();
 			score.near_score();
 		}
 		player_update();
-		break;
+			break;
 	}
 
 	game_timer++;
@@ -126,14 +124,14 @@ void game_render()
 
 	if (countdownComplete) {
 		bomb_render();
-		enemy_render();
+		enemy_render();	
 		timer_render();
 	}
-
-	else if (countDown >= 0)
-		text_out(6, to_string(countDown), SCREEN_W / 2 + 120, SCREEN_H / 2, 20, 20, 1, 1, 1, 0.5f, TEXT_ALIGN::MIDDLE);
-
-
+	
+	else if(countDown>=0)
+	text_out(6, to_string(countDown), SCREEN_W / 2+120, SCREEN_H / 2 , 20, 20,1,1,1,0.5f,TEXT_ALIGN::MIDDLE);
+	
+	
 }
 
 //--------------------------------------
@@ -148,6 +146,4 @@ void game_deinit()
 
 	safe_delete(sprBG);
 	safe_delete(sprOverley);
-	safe_delete(sprRemainingBomb);
-
 }
