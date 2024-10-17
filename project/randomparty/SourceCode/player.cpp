@@ -126,6 +126,7 @@ void player_act()
 	player.position.x += speedX * PLAYER_SPEED;
 	player.position.y += speedY * PLAYER_SPEED;
 
+
 	for (int i = 0; i < ENEMY_MAX; i++)
 	{
 
