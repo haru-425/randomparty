@@ -16,8 +16,8 @@ Global Settings
     Header File = system.h;
     Exclude Category Names = 0;
     Exclude Variable Names = 0;
-    Last Modified Low = 0;
-    Last Modified High = 0;
+    Last Modified Low = 636562899;
+    Last Modified High = 31137950;
 
     Category
     {
@@ -225,8 +225,8 @@ Wave Bank
     Windows Bank Path Edited = 0;
     Seek Tables = 1;
     Compression Preset Name = <none>;
-    Bank Last Revised Low = 3955057125;
-    Bank Last Revised High = 31137949;
+    Bank Last Revised Low = 2125505772;
+    Bank Last Revised High = 31137954;
 
     Wave
     {
@@ -340,6 +340,29 @@ Wave Bank
             File Type = 1;
             Last Modified Low = 4023223952;
             Last Modified High = 31137948;
+        }
+    }
+
+    Wave
+    {
+        Name = setbomb;
+        File = setbomb.wav;
+        Build Settings Last Modified Low = 2125505772;
+        Build Settings Last Modified High = 31137954;
+
+        Cache
+        {
+            Format Tag = 0;
+            Channels = 2;
+            Sampling Rate = 48000;
+            Bits Per Sample = 1;
+            Play Region Offset = 44;
+            Play Region Length = 173240;
+            Loop Region Offset = 0;
+            Loop Region Length = 0;
+            File Type = 1;
+            Last Modified Low = 2007752611;
+            Last Modified High = 31137954;
         }
     }
 }

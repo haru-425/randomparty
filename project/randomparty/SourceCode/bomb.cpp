@@ -63,6 +63,8 @@ void bomb_set() // プレイヤーが爆弾を設置する処理
 			}
 		}
 		player_has_bomb--; // プレイヤーの持っている爆弾数を減少させる
+
+		sound::play(XWB_SYSTEM, XWB_SYSTEM_BOMB_SET);
 	}
 	else {
 		sound::play(XWB_SYSTEM, XWB_SYSTEM_BOMB_FAILURE);

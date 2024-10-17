@@ -22,6 +22,7 @@
 #define XWB_SYSTEM_DEATH		2
 #define XWB_SYSTEM_RESULT		3
 #define XWB_SYSTEM_BUTTON		4
+#define XWB_SYSTEM_BOMB_SET		5
 
 // 関数のプロトタイプ宣言
 void audio_init();
