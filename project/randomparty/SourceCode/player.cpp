@@ -5,6 +5,7 @@ int     player_state;
 
 PLAYER player;
 extern ENEMY enemy[ENEMY_MAX];
+extern bool countdownComplete;
 Sprite* sprPlayer;
 Sprite* sprPlayerCore;
 
@@ -33,6 +34,7 @@ void player_deinit()
 //--------------------------------------
 void player_update()
 {
+	debug::setString("%d", player_state);
 	switch (player_state)
 	{
 	case 0:
@@ -58,12 +60,13 @@ void player_update()
 		/*fallthrough*/
 
 	case 2:
-		if (curScene != SCENE_HELP)
+		if (curScene != SCENE_HELP && countdownComplete==true)
 		{
 			player_state++;
 		}
 		// s“®‚Ì‘JˆÚ
 		player_act();
+		break;
 	case 3:
 		//////// ’Êí ////////
 		if (TRG(0) & R_CLICK)

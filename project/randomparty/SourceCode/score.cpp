@@ -32,8 +32,8 @@ void SCORE::near_score()
 		total_score += (300 - distance[0]) / 30;
 	}
 
-	// 現在の総合スコアをデバッグ情報として出力
-	debug::setString("%d", total_score);
+	//// 現在の総合スコアをデバッグ情報として出力
+	//debug::setString("%d", total_score);
 
 	// 次回の計算に備えて最小距離を非常に大きな値にリセット
 	distance[0] = 1000000;
