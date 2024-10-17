@@ -22,6 +22,7 @@ int help_page;
 void help_init()
 {
 	help_state = 0;
+	bomb_init();
 }
 
 //--------------------------------------
@@ -40,7 +41,6 @@ void help_deinit()
 
 void help_update()
 {
-
 	switch (help_state)
 	{
 	case 0:
@@ -87,20 +87,7 @@ void help_update()
 			break;
 			
 		}
-        /*if (TRG(0) & PAD_START && select_c == 0)
-        {
-            sound::play(XWB_SYSTEM, XWB_SYSTEM_START);
-
-            nextScene = SCENE_GAME;
-            break;
-        }
-        if (TRG(0) & PAD_START && select_c == 1)
-        {
-            sound::play(XWB_TITLE, 0);
-
-            nextScene = SCENE_SETTING;
-            break;
-        }*/
+        
 
         break;
 	}
@@ -110,9 +97,10 @@ void help_render()
 {
 	// âÊñ Çê¬Ç≈ìhÇËÇ¬Ç‘Ç∑
 	GameLib::clear(0.3f, 0.5f, 1.0f);
-	/*sprite_render(sprBG_H, SCREEN_W / 2, SCREEN_H / 2, 1, 1, 0, 0, 1920, 1080, 1920 / 2, 1080 / 2);
+	sprite_render(sprBG_H, SCREEN_W / 2, SCREEN_H / 2, 1, 1, 0, 0, 1920, 1080, 1920 / 2, 1080 / 2);
 	sprite_render(sprOverley_H, SCREEN_W / 2, SCREEN_H / 2, 1, 1, 0, 0, 1920, 1080, 1920 / 2, 1080 / 2);
-	sprite_render(sprDescription_H, SCREEN_W / 2, SCREEN_H / 2, 1, 1, 0, 0, 1920, 1080, 1920 / 2, 1080 / 2);*/
+	//sprite_render(sprDescription_H, SCREEN_W / 2, SCREEN_H / 2, 1, 1, 0, 0, 1920, 1080, 1920 / 2, 1080 / 2);
+	bomb_render();
 	switch (render_mode)
 	{
 	case 1:
@@ -121,6 +109,8 @@ void help_render()
 		
 		break;
 	case 2:
+
+		bomb_render();
 		player_render();
 		sprite_render(bomb_description, 0, 0, 1, 1, 0, 0);
 		

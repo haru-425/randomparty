@@ -5,8 +5,7 @@ int Tutorial_state;
 extern int player_state;
 extern int select_c;
 extern int render_mode;
-
-
+extern int player_has_bomb;
 
 void tuto_player_init()
 {
@@ -35,19 +34,17 @@ void tuto_player_update()
 		}
 		break;
 	case 3:
-		player_deinit();
-
 		++Tutorial_state;
 		/*fallthrough*/
 
 	case 4:
-		player_init();
 		player_state++;
+		player_has_bomb = BOMB_MAX;
 		++Tutorial_state;
 		/*fallthrough*/
 	case 5:
-		debug::setString("a");
 		player_update();
+		bomb_update();
 		if (TRG(0) & PAD_START)
 		{
 			tuto_player_deinit();
