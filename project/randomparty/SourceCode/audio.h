@@ -10,9 +10,10 @@
 //******************************************************************************
 
 // ’è”‚Ì’è‹`
-// 
+//
 #define BGM_TITLE 0
 #define BGM_GAME 1
+#define BGM_RESULT 2
 // XWB‚Ìí—Ş
 //#define XWB_SYSTEM          0
 //#define XWB_STAGE1          1

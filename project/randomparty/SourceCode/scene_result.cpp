@@ -40,6 +40,8 @@ void result_init()
 
 	EndButton.end_button_init();
 
+	music::play(BGM_RESULT, true);
+
 }
 
 void result_deinit()
@@ -48,6 +50,8 @@ void result_deinit()
 	safe_delete(sprBG);
 	safe_delete(sprOverley);
 	safe_delete(sprScore);
+
+	music::stop(BGM_RESULT);
 
 
 }
@@ -115,6 +119,7 @@ void ScoreDisplay() {
 			d_score.bomb -= ENEMY_KILL_POINT / 2;
 		}
 		break;
+
 	case 2:
 		if (r_score.Nearby == d_score.Nearby)
 		{
