@@ -64,35 +64,29 @@ void game_update()
 		game_state++;
 		/*fallthrough*/
 	case 2:
-		if (countDown > 0) {
-            static int frameCounter = 0;
-            frameCounter++;
-            if (frameCounter >= 60) { // 1秒毎にカウントダウン
-                frameCounter = 0;
-                countDown--;
-            }
-        }
-        else if (!countdownComplete) {
-            static int startCounter = 0;
-            startCounter++;
-            if (startCounter >= 60) { // 1秒間 "Start" を表示
-                countdownComplete = true;
-                startCounter = 0;
-            }
-        }
-		
+		if (countDown >= 0) {
+			static int frameCounter = 0;
+			frameCounter++;
+			if (frameCounter >= 60) { // 1秒毎にカウントダウン
+				frameCounter = 0;
+				countDown--;
+			}
+		}
+		else {
+			countdownComplete = true;
+		}
+
 	case 3:
 		//////// 通常時 ////////
-		
+
 		if (countdownComplete) {
-			
 			enemy_update();
 			bomb_update();
 			timer_update();
 			score.near_score();
 		}
 		player_update();
-			break;
+		break;
 	}
 
 	game_timer++;
@@ -119,19 +113,17 @@ void game_render()
 
 	sprite_render(sprBG, SCREEN_W / 2, SCREEN_H / 2, 1, 1, 0, 0, 1920, 1080, 1920 / 2, 1080 / 2);
 	sprite_render(sprOverley, SCREEN_W / 2, SCREEN_H / 2, 1, 1, 0, 0, 1920, 1080, 1920 / 2, 1080 / 2);
-	//text_out(0, "Hello World", 0, 0);   // 見本
+
 	player_render();
 
 	if (countdownComplete) {
 		bomb_render();
-		enemy_render();	
+		enemy_render();
 		timer_render();
 	}
-	
-	else if(countDown>=0)
-	text_out(6, to_string(countDown), SCREEN_W / 2+120, SCREEN_H / 2 , 20, 20,1,1,1,0.5f,TEXT_ALIGN::MIDDLE);
-	
-	
+	else if (countDown >= 0) {
+		text_out(6, to_string(countDown), SCREEN_W / 2 + 120, SCREEN_H / 2, 20, 20, 1, 1, 1, 0.5f, TEXT_ALIGN::MIDDLE);
+	}
 }
 
 //--------------------------------------
