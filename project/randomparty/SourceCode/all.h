@@ -30,6 +30,7 @@
 #include "scene_result.h"
 #include "scene_help.h"
 #include "tuto_player.h"
+#include "tyto_enemy.h"
 
 #include"audio.h"
 
