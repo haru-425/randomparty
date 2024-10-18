@@ -86,6 +86,7 @@ void result_render()
 
 
 void ScoreDisplay() {
+	using namespace input;
 	music_timer++;
 	switch (DrawScoreState)
 	{
@@ -108,6 +109,11 @@ void ScoreDisplay() {
 		{
 			sound::play(XWB_SYSTEM, XWB_SYSTEM_RESULT);
 		}
+		if (TRG(0) & L_CLICK) {
+			DrawScoreState++;
+			d_score.kill = r_score.kill;
+			music_timer = 0;
+		}
 		break;
 	case 1:
 		if (r_score.bomb == d_score.bomb)
@@ -127,6 +133,11 @@ void ScoreDisplay() {
 		if (music_timer % 10 == 0)
 		{
 			sound::play(XWB_SYSTEM, XWB_SYSTEM_RESULT);
+		}
+		if (TRG(0) & L_CLICK) {
+			DrawScoreState++;
+			d_score.bomb = r_score.bomb;
+			music_timer = 0;
 		}
 		break;
 
@@ -148,6 +159,11 @@ void ScoreDisplay() {
 		if (music_timer % 10 == 0)
 		{
 			sound::play(XWB_SYSTEM, XWB_SYSTEM_RESULT);
+		}
+		if (TRG(0) & L_CLICK) {
+			DrawScoreState++;
+			d_score.Nearby = r_score.Nearby;
+			music_timer = 0;
 		}
 		break;
 	case 3:
@@ -174,6 +190,11 @@ void ScoreDisplay() {
 		if (music_timer % 10 == 0)
 		{
 			sound::play(XWB_SYSTEM, XWB_SYSTEM_RESULT);
+		}
+		if (TRG(0) & L_CLICK) {
+			
+			d_score.result = r_score.result;
+			music_timer = 0;
 		}
 		break;
 	}
