@@ -152,4 +152,6 @@ void bomb_deinit() // 爆弾のリセット処理
 	{
 		stage[i] = bomb_def; // すべての爆弾をデフォルト状態にリセット
 	}
+	safe_delete(range_circl); 
+	safe_delete(bomb);
 }

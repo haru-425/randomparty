@@ -17,7 +17,7 @@ void tuto_player_update()
 	{
 	case 0:
 		player_init();
-		
+		bomb_init();
 		++Tutorial_state;
 		/*fallthrough*/
 
@@ -49,6 +49,7 @@ void tuto_player_update()
 		{
 			tuto_player_deinit();
 			select_c = 0;
+			render_mode = 0;
 		}
 		break;
 
@@ -58,4 +59,5 @@ void tuto_player_update()
 void tuto_player_deinit()
 {
 	player_deinit();
+	bomb_deinit();
 }
