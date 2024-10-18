@@ -14,6 +14,8 @@ Sprite* sprEnd;
 Sprite* sprHelp;
 Sprite* sprSet;
 
+extern int render_mode;
+extern int select_c;
 
 void Button::button_init()
 {
@@ -223,6 +225,18 @@ void Button::button_act()
 
 void Button::end_button_act()
 {
+	if (curScene == SCENE_HELP)
+	{
+		if (TRG(0) & L_CLICK) {
+			if (end_click()) {
+
+				sound::play(XWB_SYSTEM, XWB_SYSTEM_BUTTON);
+				render_mode = 0;
+				select_c = 0;
+				return;
+			}
+	    }
+	}
 	// ボタン内部で左クリックが押された場合
 	if (TRG(0) & L_CLICK) {
 		if (end_click()) {

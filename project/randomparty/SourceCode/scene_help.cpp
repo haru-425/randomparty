@@ -60,15 +60,17 @@ void help_update()
 	case 1:
 		//////// ƒpƒ‰ƒ[ƒ^‚Ìİ’è ////////
 		tuto_player_init();
-		render_mode = 1;
+		enemy_tyto_init();
+		render_mode = 3;
 		help_state++;
 		/*fallthrough*/
 	case 2:
 		//////// ’Êí ////////
         POINT point;
         GetCursorPos(&point);
-        ScreenToClient(window::getHwnd(), &point);
-		tuto_player_update();
+        ScreenToClient(window::getHwnd(), &point);/*
+		tuto_player_update();*/
+		enemy_tyto_update();
         if (TRG(0) & PAD_DOWN)
         {
             select_c++;
@@ -82,6 +84,7 @@ void help_update()
 			tuto_player_update();
 			break;
 		case 2:
+			enemy_tyto_update();
 			break;
 		default:
 			break;
@@ -114,6 +117,9 @@ void help_render()
 		player_render();
 		sprite_render(bomb_description, 0, 0, 1, 1, 0, 0);
 		
+		break;
+	case 3:
+		enemy_tyto_render();
 		break;
 	default:
 		break;
