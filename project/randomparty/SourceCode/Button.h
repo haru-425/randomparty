@@ -62,7 +62,8 @@ public:
 	bool set_click();
 
 	void next_button_init();
-	bool next_click();
+	void back_button_init();
+	bool rect_click(Button button_info);
 
 };
 

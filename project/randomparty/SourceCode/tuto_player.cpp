@@ -6,6 +6,7 @@ extern int player_state;
 extern int select_c;
 extern int render_mode;
 extern int player_has_bomb;
+extern Button nextbutton;
 
 void tuto_player_init()
 {
@@ -18,6 +19,7 @@ void tuto_player_update()
 	case 0:
 		player_init();
 		bomb_init();
+		nextbutton.next_button_init();
 		++Tutorial_state;
 		/*fallthrough*/
 
@@ -27,7 +29,7 @@ void tuto_player_update()
 
 	case 2:
 		player_update();
-		if (TRG(0) & PAD_START)
+		if (TRG(0) & L_CLICK && nextbutton.rect_click(nextbutton))
 		{
 			++Tutorial_state;
 			++render_mode;
@@ -45,7 +47,7 @@ void tuto_player_update()
 	case 5:
 		player_update();
 		bomb_update();
-		if (TRG(0) & PAD_START)
+		if (TRG(0) & L_CLICK && nextbutton.rect_click(nextbutton))
 		{
 			tuto_player_deinit();
 			select_c = 0;
