@@ -38,7 +38,6 @@ void system_update()
 
 void system_render()
 {
-
 }
 
 
@@ -78,18 +77,18 @@ void game_end()
 }
 
 void result_end() {
-	
-	
-		nextScene = SCENE_TITLE;	
-		score.score_reset();
-		for (int i = 0; i < ENEMY_MAX; i++) {
-			enemy[i].reset();
-		}
-		
-	
+
+
+	nextScene = SCENE_TITLE;
+	score.score_reset();
+	for (int i = 0; i < ENEMY_MAX; i++) {
+		enemy[i].reset();
+	}
+
+
 }
 
-void help_start() 
+void help_start()
 {
-		nextScene = SCENE_HELP;
+	nextScene = SCENE_HELP;
 }
