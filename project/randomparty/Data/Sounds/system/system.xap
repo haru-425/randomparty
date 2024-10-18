@@ -225,6 +225,10 @@ Wave Bank
     Windows Bank Path Edited = 0;
     Seek Tables = 1;
     Compression Preset Name = <none>;
+    Xbox Bank Last Modified Low = 0;
+    Xbox Bank Last Modified High = 0;
+    PC Bank Last Modified Low = 2238284147;
+    PC Bank Last Modified High = 31137954;
     Bank Last Revised Low = 2125505772;
     Bank Last Revised High = 31137954;
 

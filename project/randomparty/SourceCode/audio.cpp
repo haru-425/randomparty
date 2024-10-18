@@ -12,7 +12,11 @@ void audio_init()
 
 
 	sound::load(XWB_SYSTEM, L"./Data/Sounds/system.xwb");   // ƒƒjƒ…[‚È‚Ç‚ÌSE
+	for (int i = 0; i < SOUND_EFFECT_COUNT; i++)
+	{
 
+		sound::setVolume(XWB_SYSTEM, i, 4.0f);
+	}
 
 	//sound::setVolume(XWB_STAGE1, XWB_STAGE1_MISSILE, 4.0f);
 }
