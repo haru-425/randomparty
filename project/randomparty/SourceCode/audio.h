@@ -25,6 +25,10 @@
 #define XWB_SYSTEM_BOMB_SET		5
 
 #define SOUND_EFFECT_COUNT 6
+#define VOLUME_BGM                  (2)
+#define VOLUME_FX                  (1)
+#define VOLUME_FX_RESULT                  (0.5f)
+
 
 // 関数のプロトタイプ宣言
 void audio_init();
