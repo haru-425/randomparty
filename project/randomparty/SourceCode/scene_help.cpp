@@ -6,6 +6,7 @@ using namespace input;
 int help_state;
 int select_c;
 int render_mode;
+int help_timer;
 
 Sprite* sprBG_H;
 Sprite* sprOverley_H;
@@ -13,6 +14,11 @@ Sprite* sprDescription_H;
 Sprite* player_description;
 Sprite* bomb_description;
 Sprite* next_button;
+Sprite* mouse1;
+Sprite* mouse2;
+Sprite* arrow;
+
+
 
 extern Button button;
 int help_page;
@@ -22,6 +28,7 @@ int help_page;
 void help_init()
 {
 	help_state = 0;
+	help_timer = 0;
 	bomb_init();
 }
 
@@ -36,11 +43,15 @@ void help_deinit()
 	safe_delete(sprBG_H);
 	safe_delete(sprOverley_H);
 	safe_delete(sprDescription_H);
+	safe_delete(mouse1);
+	safe_delete(mouse2);
+	safe_delete(arrow);
 
 }
 
 void help_update()
 {
+	help_timer++;
 	switch (help_state)
 	{
 	case 0:
@@ -54,23 +65,23 @@ void help_update()
 		sprDescription_H = sprite_load(L"./Data/Images/enemy_describe.png");
 		player_description = sprite_load(L"./Data/Images/help_player.png");
 		bomb_description = sprite_load(L"./Data/Images/help_boomb.png");
-		next_button = sprite_load(L"./Data/Images/nextButton.png");
+		next_button = sprite_load(L"./Data/Images/arrow00.png");
+		mouse1= sprite_load(L"./Data/Images/マウス.png");
+		mouse2 = sprite_load(L"./Data/Images/マウス右クリ.png");
+		arrow = sprite_load(L"./Data/Images/mugen.png");
 		help_state++;
 		/*fallthrough*/
 	case 1:
 		//////// パラメータの設定 ////////
 		tuto_player_init();
 		enemy_tyto_init();
-		render_mode = 1;
+		render_mode = 3;
 		help_state++;
 		/*fallthrough*/
 	case 2:
 		//////// 通常時 ////////
-        POINT point;
-        GetCursorPos(&point);
-        ScreenToClient(window::getHwnd(), &point);
-		tuto_player_update();/*
-		enemy_tyto_update();*/
+		/*tuto_player_update();*/
+		enemy_tyto_update();
         if (TRG(0) & PAD_DOWN)
         {
             select_c++;
@@ -107,14 +118,23 @@ void help_render()
 	case 1:
 		player_render();
 		sprite_render(player_description, 0, 0, 1, 1, 0, 0);
-		
+		sprite_render(arrow, 1400, 160, 1, 1, 0, 0);
+		sprite_render(mouse1, 1610, 260, 0.5, 0.5, 0, 0);
+		sprite_render(next_button, -20, 0, 1, 1, 0, 0);
 		break;
 	case 2:
-
-		bomb_render();
 		player_render();
 		sprite_render(bomb_description, 0, 0, 1, 1, 0, 0);
-		
+		if (help_timer >> 5 & 0x01)
+		{
+			sprite_render(mouse2, 1600, 280, 0.5, 0.5, 0, 0);
+		}
+		else
+		{
+			sprite_render(mouse1, 1600, 280, 0.5, 0.5, 0, 0);
+		}
+		bomb_render();
+		sprite_render(next_button, -20, 0, 1, 1, 0, 0);
 		break;
 	case 3:
 		enemy_tyto_render();

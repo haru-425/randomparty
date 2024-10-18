@@ -61,10 +61,9 @@ public:
 	void set_button_act();
 	bool set_click();
 
+	void next_button_init();
+	bool next_click();
+
 };
-
-
-
-
 
 #endif//BUTTON_H
