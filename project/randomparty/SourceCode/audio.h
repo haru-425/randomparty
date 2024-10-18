@@ -11,8 +11,8 @@
 
 // 定数の定義
 //
-#define BGM_TITLE 0
-#define BGM_GAME 1
+#define BGM_GAME 0
+#define BGM_TITLE 1
 #define BGM_RESULT 2
 // XWBの種類
 #define XWB_SYSTEM 0
@@ -23,6 +23,8 @@
 #define XWB_SYSTEM_RESULT		3
 #define XWB_SYSTEM_BUTTON		4
 #define XWB_SYSTEM_BOMB_SET		5
+
+#define SOUND_EFFECT_COUNT 6
 
 // 関数のプロトタイプ宣言
 void audio_init();
