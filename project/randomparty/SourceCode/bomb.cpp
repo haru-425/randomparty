@@ -143,7 +143,7 @@ void bomb_render() // 爆弾の描画処理
 
 	sprite_render(bomb, SCREEN_W - 70, SCREEN_H - 70, 0.5f, 0.5f, 1, 1, 400, 400, 200, 200, 0, 1, 1, 1, remainingAlpha);
 
-	text_out(1, std::to_string(player_has_bomb), SCREEN_W - 40, SCREEN_H - 40, 1, 1, 1, 1, 1, remainingAlpha, TEXT_ALIGN::MIDDLE);  // 爆弾の位置にテキストでタイマーを描画
+	text_out(1, std::to_string(player_has_bomb), SCREEN_W - 40, SCREEN_H - 40, 2, 2, 1, 1, 1, remainingAlpha, TEXT_ALIGN::MIDDLE);  // 爆弾の位置にテキストでタイマーを描画
 }
 
 void bomb_deinit() // 爆弾のリセット処理
