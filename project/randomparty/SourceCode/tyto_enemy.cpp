@@ -3,7 +3,9 @@
 int scene_state;
 int enemy_number;
 extern Button EndButton;
+extern Button nextbutton;
 
+using namespace input;
 
 Sprite* enemy_description;
 
@@ -26,13 +28,22 @@ void enemy_tyto_update()
 		enemy_description = sprite_load(L"./Data/Images/enemy_describe.png");
 		scene_state++;
 	case 1:
+		nextbutton.next_button_init();
 		scene_state++;
 	case 2:
-
+		if (TRG(0) & L_CLICK && nextbutton.rect_click(nextbutton) && enemy_number<3)
+		{
+			enemy_number++;
+		}
+		if (TRG(0) & L_CLICK && nextbutton.rect_click(nextbutton) && enemy_number < 3)
+		{
+			enemy_number++;
+		}
 		EndButton.end_button_update();
 	default:
 		break;
 	}
+	debug::setString("%d", enemy_number);
 }
 
 void enemy_tyto_render()

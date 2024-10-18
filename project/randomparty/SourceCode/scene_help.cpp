@@ -143,9 +143,11 @@ void help_render()
 		{
 		case 0:
 			sprite_render(next_button, -20, 0, 1, 1, 0, 0);
+			
 			break;
 		case 3:
 			sprite_render(next_button, 1940, 1080, 1, 1, 0, 0,1920,1080,0,0,ToRadian(180));
+			break;
 		default:
 			sprite_render(next_button, -20, 0, 1, 1, 0, 0);
 			sprite_render(next_button, 1940, 1080, 1, 1, 0, 0, 1920, 1080, 0, 0, ToRadian(180));
