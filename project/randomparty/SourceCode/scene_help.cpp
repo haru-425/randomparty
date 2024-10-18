@@ -61,16 +61,16 @@ void help_update()
 		//////// ƒpƒ‰ƒ[ƒ^‚Ìİ’è ////////
 		tuto_player_init();
 		enemy_tyto_init();
-		render_mode = 3;
+		render_mode = 1;
 		help_state++;
 		/*fallthrough*/
 	case 2:
 		//////// ’Êí ////////
         POINT point;
         GetCursorPos(&point);
-        ScreenToClient(window::getHwnd(), &point);/*
-		tuto_player_update();*/
-		enemy_tyto_update();
+        ScreenToClient(window::getHwnd(), &point);
+		tuto_player_update();/*
+		enemy_tyto_update();*/
         if (TRG(0) & PAD_DOWN)
         {
             select_c++;
@@ -91,7 +91,6 @@ void help_update()
 			
 		}
         
-
         break;
 	}
 
