@@ -10,6 +10,7 @@ Button EndButton;
 Button HelpButton;
 Button SetButton;
 Button nextbutton;
+Button backbutton;
 Sprite* sprButton;
 Sprite* sprEnd;
 Sprite* sprHelp;
@@ -360,12 +361,12 @@ void Button::next_button_init()
 
 void Button::back_button_init()
 {
-	nextbutton.position = { 20, 380 };  // 中心位置
-	nextbutton.scale = { 1.0f, 1.0f };
-	nextbutton.texPos = { 0, 0 };
-	nextbutton.texSize = { 80, 300 };
-	nextbutton.pivot = { 0, 0 };
-	nextbutton.color = { 1.0f, 1.0f, 1.0f, 1.0f };
+	backbutton.position = { 20, 380 };  // 中心位置
+	backbutton.scale = { 1.0f, 1.0f };
+	backbutton.texPos = { 0, 0 };
+	backbutton.texSize = { 80, 300 };
+	backbutton.pivot = { 0, 0 };
+	backbutton.color = { 1.0f, 1.0f, 1.0f, 1.0f };
 }
 
 bool Button::rect_click(Button button_info)

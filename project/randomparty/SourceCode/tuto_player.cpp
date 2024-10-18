@@ -7,6 +7,7 @@ extern int select_c;
 extern int render_mode;
 extern int player_has_bomb;
 extern Button nextbutton;
+extern Button backbutton;
 
 void tuto_player_init()
 {

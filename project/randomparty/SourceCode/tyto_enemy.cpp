@@ -4,6 +4,7 @@ int scene_state;
 int enemy_number;
 extern Button EndButton;
 extern Button nextbutton;
+extern Button backbutton;
 
 using namespace input;
 
@@ -35,9 +36,9 @@ void enemy_tyto_update()
 		{
 			enemy_number++;
 		}
-		if (TRG(0) & L_CLICK && nextbutton.rect_click(nextbutton) && enemy_number < 3)
+		if (TRG(0) & L_CLICK && nextbutton.rect_click(backbutton) && enemy_number > 0)
 		{
-			enemy_number++;
+			enemy_number--;
 		}
 		EndButton.end_button_update();
 	default:
