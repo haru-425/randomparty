@@ -151,7 +151,7 @@ void ScoreDisplay() {
 		}
 		break;
 	case 3:
-		if (r_score.result == d_score.result)
+		if (r_score.result == d_score.result || r_score.result < 0)
 		{
 			DrawScoreState++;
 

@@ -28,6 +28,7 @@ void timer_update()
 	{
 		timer.remaining_time--;   // 残り時間を1秒減少
 		timer.frame_count = 0;    // フレームカウントをリセット
+
 	}
 
 	// 残り時間が1以下になったらタイマー停止し、リザルト画面へ
