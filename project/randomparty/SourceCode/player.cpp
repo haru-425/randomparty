@@ -34,7 +34,7 @@ void player_deinit()
 //--------------------------------------
 void player_update()
 {
-	debug::setString("%d", player_state);
+	
 	switch (player_state)
 	{
 	case 0:

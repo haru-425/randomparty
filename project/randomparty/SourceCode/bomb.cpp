@@ -92,7 +92,7 @@ void bomb_update() // 爆弾のタイマーを更新する処理
 			}
 		}
 	}
-	debug::setString("%d", player_has_bomb);
+	
 
 	if ((player.position.x - (SCREEN_W - 70)) * (player.position.x - (SCREEN_W - 70)) + (player.position.y - (SCREEN_H - 70)) * (player.position.y - (SCREEN_H - 70)) <= 200 * 200)
 	{
