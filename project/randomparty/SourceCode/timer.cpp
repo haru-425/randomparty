@@ -43,8 +43,10 @@ void timer_render()
 {
 	// 残り時間が1秒以上の場合のみ表示
 	if (timer.remaining_time >= 1) {
-		string time_text = "TIME:" + to_string(timer.remaining_time);
-		text_out(6, time_text.c_str(), SCREEN_W / 2, SCREEN_H / 10 + 20, 2, 2, 1, 1, 1, 1, TEXT_ALIGN::MIDDLE);  // 座標 (0, 0) にテキスト描画
+		string time_text = "TIME";
+		string time= to_string(timer.remaining_time);
+		text_out(6, time_text.c_str(), SCREEN_W / 2, SCREEN_H / 17 , 2, 2, 1, 1, 1, 1, TEXT_ALIGN::MIDDLE);  // 座標 (0, 0) にテキスト描画
+		text_out(6, time.c_str(), SCREEN_W / 2, SCREEN_H / 10 + 30, 2, 2, 1, 1, 1, 1, TEXT_ALIGN::MIDDLE);
 	}
 }
 
