@@ -9,6 +9,7 @@ Button button;
 Button EndButton;
 Button HelpButton;
 Button SetButton;
+Button nextbutton;
 Sprite* sprButton;
 Sprite* sprEnd;
 Sprite* sprHelp;
@@ -347,4 +348,34 @@ bool Button::set_click()
 	return (Setdistance <= SetButton.radius);
 }
 
+void next_button_init()
+{
+	nextbutton.position = { 90, 60 };  // 中心位置
+	nextbutton.scale = { 1.0f, 1.0f };
+	nextbutton.texPos = { 0, 0 };
+	nextbutton.texSize = { 80, 320 };
+	nextbutton.pivot = { 0, 0 };
+	nextbutton.color = { 1.0f, 1.0f, 1.0f, 1.0f };
+}
+
+bool Button::next_click() 
+{
+	// マウスカーソルの座標取得
+	POINT nextpoint;
+	GetCursorPos(&nextpoint);
+	ScreenToClient(window::getHwnd(), &nextpoint);
+	// ボタンの四辺を取得
+	float button_right = EndButton.position.x + EndButton.texSize.x / 1.3;
+	float button_left = EndButton.position.x - EndButton.texSize.x / 1.3;
+	float button_top = EndButton.position.y - EndButton.texSize.y / 1.3;
+	float button_bottom = EndButton.position.y + EndButton.texSize.y / 1.3;
+
+	// マウスの座標がボタンの範囲内かチェック
+	bool isWithinX = (nextpoint.x >= button_left && nextpoint.x <= button_right);
+	bool isWithinY = (nextpoint.y >= button_top && nextpoint.y <= button_bottom);
+
+	// マウスがボタン範囲内ならクリックされたと判定
+	return isWithinX && isWithinY;
+
+}
 
