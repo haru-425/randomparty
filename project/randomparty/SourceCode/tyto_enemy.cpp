@@ -37,6 +37,6 @@ void enemy_tyto_update()
 
 void enemy_tyto_render()
 {
-	sprite_render(enemy_description, 0, 0, 1, 1, enemy_number * 1980, 0);
+	sprite_render(enemy_description, 0, 0, 1, 1, enemy_number * 1920, 0);
 	EndButton.end_button_render();
 }
