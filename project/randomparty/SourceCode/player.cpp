@@ -133,7 +133,8 @@ void player_act()
 	for (int i = 0; i < ENEMY_MAX; i++)
 	{
 
-		if (circle_hit(player.position, enemy[i].position, PLAYER_CORE_TEX_W * SCALE, ENEMY_CORE_TEX_W * SCALE)) {
+
+		if (circle_hit(player.position, enemy[i].position, PLAYER_CORE_TEX_W * SCALE / 2, ENEMY_CORE_TEX_W * SCALE / 2)) {
 			sound::play(XWB_SYSTEM, XWB_SYSTEM_DEATH);
 			game_end();
 		}
