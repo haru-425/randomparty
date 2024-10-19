@@ -31,6 +31,9 @@ extern Button select_score_button;
 extern Button EndButton;
 extern int enemy_number;
 
+extern Button nextbutton;
+extern Button backbutton;
+
 //--------------------------------------
 //  初期設定
 //--------------------------------------
@@ -79,7 +82,7 @@ void help_update()
 		player_description = sprite_load(L"./Data/Images/help_player.png");
 		bomb_description = sprite_load(L"./Data/Images/help_boomb.png");
 		next_button = sprite_load(L"./Data/Images/arrow00.png");
-		mouse1= sprite_load(L"./Data/Images/マウス.png");
+		mouse1 = sprite_load(L"./Data/Images/マウス.png");
 		mouse2 = sprite_load(L"./Data/Images/マウス右クリ.png");
 		arrow = sprite_load(L"./Data/Images/mugen.png");
 		select_button1 = sprite_load(L"./Data/Images/player_navi_button.png");
@@ -108,16 +111,44 @@ void help_update()
 			render_mode = 1;
 			select_c = 1;
 		}
+		if (select_player_button.rect_click(select_player_button))
+		{
+			select_player_button.scale = { 0.4f,0.4f };
+		}
+		else {
+			select_player_button.scale = { 0.3f,0.3f };
+		}
+
 		if (TRG(0) & L_CLICK && select_enemy_button.rect_click(select_enemy_button) && render_mode == 0)
 		{
 			render_mode = 3;
 			select_c = 2;
 		}
+		if (select_enemy_button.rect_click(select_enemy_button))
+		{
+			select_enemy_button.scale = { 0.4f,0.4f };
+		}
+		else {
+			select_enemy_button.scale = { 0.3f,0.3f };
+		}
+
 		if (TRG(0) & L_CLICK && select_score_button.rect_click(select_score_button) && render_mode == 0)
 		{
 			render_mode = 4;
 			select_c = 3;
 		}
+		if (select_score_button.rect_click(select_score_button))
+		{
+			select_score_button.scale = { 0.4f,0.4f };
+		}
+		else {
+			select_score_button.scale = { 0.3f,0.3f };
+		}
+
+
+
+
+
 		switch (select_c)
 		{
 		case 1:
@@ -133,10 +164,10 @@ void help_update()
 		default:
 			EndButton.end_button_update();
 			break;
-			
+
 		}
-        
-        break;
+
+		break;
 	}
 	/*debug::setString("%d", select_c);*/
 }
@@ -150,9 +181,9 @@ void help_render()
 	switch (render_mode)
 	{
 	case 0:
-		sprite_render(select_button1, 710, 180, 0.3f, 0.3f, 0, 0);
-		sprite_render(select_button2, 710, 500, 0.3f, 0.3f, 0, 0);
-		sprite_render(select_button3, 710, 820, 0.3f, 0.3f, 0, 0);
+		sprite_render(select_button1, select_player_button.position.x, select_player_button.position.y, select_player_button.scale.x, select_player_button.scale.y, 0, 0, 1500, 500, 750, 250);
+		sprite_render(select_button2, select_enemy_button.position.x, select_enemy_button.position.y, select_enemy_button.scale.x, select_enemy_button.scale.y, 0, 0, 1500, 500, 750, 250);
+		sprite_render(select_button3, select_score_button.position.x, select_score_button.position.y, select_score_button.scale.x, select_score_button.scale.y, 0, 0, 1500, 500, 750, 250);
 		EndButton.end_button_render();
 		//primitive::rect(710, 820, 1500*0.3f, 500*0.3f);
 
@@ -162,7 +193,7 @@ void help_render()
 		sprite_render(player_description, 0, 0, 1, 1, 0, 0);
 		sprite_render(arrow, 1400, 160, 1, 1, 0, 0);
 		sprite_render(mouse1, 1610, 260, 0.5, 0.5, 0, 0);
-		sprite_render(next_button, -20, 0, 1, 1, 0, 0);
+		sprite_render(next_button, nextbutton.position.x, nextbutton.position.y, nextbutton.scale.x, nextbutton.scale.y, 0, 0, 100, 300, 50, 150);
 		break;
 	case 2:
 		player_render();
@@ -176,7 +207,7 @@ void help_render()
 			sprite_render(mouse1, 1600, 280, 0.5, 0.5, 0, 0);
 		}
 		bomb_render();
-		sprite_render(next_button, -20, 0, 1, 1, 0, 0);
+		sprite_render(next_button, nextbutton.position.x, nextbutton.position.y, nextbutton.scale.x, nextbutton.scale.y, 0, 0, 100, 300, 50, 150);
 		sprite_render(bomb_stock_text, 1750, 820, 0.26f, 0.26f, 0, 0);
 		break;
 	case 3:
@@ -184,15 +215,15 @@ void help_render()
 		switch (enemy_number)
 		{
 		case 0:
-			sprite_render(next_button, -20, 0, 1, 1, 0, 0);
-			
+			sprite_render(next_button, nextbutton.position.x, nextbutton.position.y, nextbutton.scale.x, nextbutton.scale.y, 0, 0, 100, 300, 50, 150);
+
 			break;
 		case 3:
-			sprite_render(next_button, 1940, 1080, 1, 1, 0, 0,1920,1080,0,0,ToRadian(180));
+			sprite_render(next_button, backbutton.position.x, backbutton.position.y, nextbutton.scale.x, nextbutton.scale.y, 0, 0, 100, 300, 50, 150, ToRadian(180));
 			break;
 		default:
-			sprite_render(next_button, -20, 0, 1, 1, 0, 0);
-			sprite_render(next_button, 1940, 1080, 1, 1, 0, 0, 1920, 1080, 0, 0, ToRadian(180));
+			sprite_render(next_button, nextbutton.position.x, nextbutton.position.y, nextbutton.scale.x, nextbutton.scale.y, 0, 0, 100, 300, 50, 150);
+			sprite_render(next_button, backbutton.position.x, backbutton.position.y, nextbutton.scale.x, nextbutton.scale.y, 0, 0, 100, 300, 50, 150, ToRadian(180));
 			break;
 		}
 		break;
@@ -205,7 +236,7 @@ void help_render()
 	}
 
 }
-void help_act() 
+void help_act()
 {
 
 

@@ -26,6 +26,7 @@ extern int select_c;
 void Button::button_init()
 {
 	button_state = 0;
+
 }
 
 void Button::end_button_init()
@@ -195,23 +196,23 @@ void Button::set_button_update()
 void Button::button_render()
 {
 
-	sprite_render(sprButton, button.position.x, button.position.y, 0.5f, 0.5f, 0, 0, 440, 440, 440 / 2, 440 / 2);
+	sprite_render(sprButton, button.position.x, button.position.y, scale.x, scale.y, 0, 0, 440, 440, 440 / 2, 440 / 2);
 }
 
 void Button::end_button_render()
 {
-	sprite_render(sprEnd, EndButton.position.x, EndButton.position.y, 1.5f, 1.5f, 0, 0, 128, 64, 128 / 2, 64 / 2);
+	sprite_render(sprEnd, EndButton.position.x, EndButton.position.y, scale.x, scale.y, 0, 0, 128, 64, 128 / 2, 64 / 2);
 }
 
 void Button::help_button_render()
 {
-	sprite_render(sprHelp, HelpButton.position.x, HelpButton.position.y, 0.3f, 0.3f, 0, 0, 440, 440, 440 / 2, 440 / 2);
+	sprite_render(sprHelp, HelpButton.position.x, HelpButton.position.y, scale.x, scale.y, 0, 0, 440, 440, 440 / 2, 440 / 2);
 
 }
 
 void Button::set_button_render()
 {
-	sprite_render(sprSet, SetButton.position.x, SetButton.position.y, 0.3f, 0.3f, 0, 0, 440, 440, 440 / 2, 440 / 2);
+	sprite_render(sprSet, SetButton.position.x, SetButton.position.y, scale.x, scale.y, 0, 0, 440, 440, 440 / 2, 440 / 2);
 
 }
 
@@ -227,6 +228,14 @@ void Button::button_act()
 			return;
 		}
 	}
+
+	if (click())
+	{
+		scale = { 0.6f,0.6f };
+	}
+	else {
+		scale = { 0.5f,0.5f };
+	}
 }
 
 void Button::end_button_act()
@@ -241,7 +250,7 @@ void Button::end_button_act()
 				select_c = 0;
 				return;
 			}
-	    }
+		}
 	}
 	// ボタン内部で左クリックが押された場合
 	if (TRG(0) & L_CLICK) {
@@ -251,6 +260,13 @@ void Button::end_button_act()
 			result_end();
 			return;
 		}
+	}
+	if (end_click())
+	{
+		scale = { 1.6f,1.6f };
+	}
+	else {
+		scale = { 1.5f,1.5f };
 	}
 }
 
@@ -265,6 +281,13 @@ void Button::help_button_act()
 			return;
 		}
 	}
+	if (help_click())
+	{
+		scale = { 0.4f,0.4f };
+	}
+	else {
+		scale = { 0.3f,0.3f };
+	}
 }
 
 void Button::set_button_act()
@@ -277,6 +300,13 @@ void Button::set_button_act()
 			result_end();
 			return;
 		}
+	}
+	if (set_click())
+	{
+		scale = { 0.4f,0.4f };
+	}
+	else {
+		scale = { 0.3f,0.3f };
 	}
 }
 
@@ -355,27 +385,27 @@ bool Button::set_click()
 
 void Button::next_button_init()
 {
-	nextbutton.position = { 1825, 380 };  // 中心位置
+	nextbutton.position = { SCREEN_W - 50.0f, SCREEN_H / 2.0f };  // 中心位置
 	nextbutton.scale = { 1.0f, 1.0f };
 	nextbutton.texPos = { 0, 0 };
-	nextbutton.texSize = { 80, 300 };
+	nextbutton.texSize = { 100, 300 };
 	nextbutton.pivot = { 0, 0 };
 	nextbutton.color = { 1.0f, 1.0f, 1.0f, 1.0f };
 }
 
 void Button::back_button_init()
 {
-	backbutton.position = { 20, 380 };  // 中心位置
+	backbutton.position = { 50.0f, SCREEN_H / 2.0f };  // 中心位置
 	backbutton.scale = { 1.0f, 1.0f };
 	backbutton.texPos = { 0, 0 };
-	backbutton.texSize = { 80, 300 };
+	backbutton.texSize = { 100, 300 };
 	backbutton.pivot = { 0, 0 };
 	backbutton.color = { 1.0f, 1.0f, 1.0f, 1.0f };
 }
 
 void Button::tuto_player_button_init()
 {
-	select_player_button.position = { 710, 180 };  // 中心位置
+	select_player_button.position = { SCREEN_W / 2.0f, SCREEN_H / 2.0f - 200 };  // 中心位置
 	select_player_button.scale = { 0.3f, 0.3f };
 	select_player_button.texPos = { 0, 0 };
 	select_player_button.texSize = { 1500, 500 };
@@ -385,7 +415,7 @@ void Button::tuto_player_button_init()
 
 void Button::tyto_enemy_button_init()
 {
-	select_enemy_button.position = { 710, 500 };  // 中心位置
+	select_enemy_button.position = { SCREEN_W / 2.0f, SCREEN_H / 2.0f };  // 中心位置
 	select_enemy_button.scale = { 0.3f, 0.3f };
 	select_enemy_button.texPos = { 0, 0 };
 	select_enemy_button.texSize = { 1500, 500 };
@@ -395,7 +425,7 @@ void Button::tyto_enemy_button_init()
 
 void Button::descript_score_button_init()
 {
-	select_score_button.position = { 710, 820 };  // 中心位置
+	select_score_button.position = { SCREEN_W / 2.0f, SCREEN_H / 2.0f + 200 };  // 中心位置
 	select_score_button.scale = { 0.3f, 0.3f };
 	select_score_button.texPos = { 0, 0 };
 	select_score_button.texSize = { 1500, 500 };
@@ -410,10 +440,10 @@ bool Button::rect_click(Button button_info)
 	GetCursorPos(&nextpoint);
 	ScreenToClient(window::getHwnd(), &nextpoint);
 	// ボタンの四辺を取得
-	float button_right = button_info.position.x + button_info.texSize.x * button_info.scale.x;
-	float button_left = button_info.position.x;
-	float button_top = button_info.position.y;
-	float button_bottom = button_info.position.y + button_info.texSize.y* button_info.scale.y;
+	float button_right = button_info.position.x + button_info.texSize.x * button_info.scale.x / 2;
+	float button_left = button_info.position.x - button_info.texSize.x * button_info.scale.x / 2;
+	float button_top = button_info.position.y - button_info.texSize.y * button_info.scale.y / 2;
+	float button_bottom = button_info.position.y + button_info.texSize.y * button_info.scale.y / 2;
 
 	// マウスの座標がボタンの範囲内かチェック
 	bool isWithinX = (nextpoint.x >= button_left && nextpoint.x <= button_right);
