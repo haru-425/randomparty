@@ -11,6 +11,10 @@ Button HelpButton;
 Button SetButton;
 Button nextbutton;
 Button backbutton;
+Button select_player_button;
+Button select_enemy_button;
+Button select_score_button;
+
 Sprite* sprButton;
 Sprite* sprEnd;
 Sprite* sprHelp;
@@ -369,6 +373,36 @@ void Button::back_button_init()
 	backbutton.color = { 1.0f, 1.0f, 1.0f, 1.0f };
 }
 
+void Button::tuto_player_button_init()
+{
+	select_player_button.position = { 710, 180 };  // 中心位置
+	select_player_button.scale = { 0.3f, 0.3f };
+	select_player_button.texPos = { 0, 0 };
+	select_player_button.texSize = { 1500, 500 };
+	select_player_button.pivot = { 0, 0 };
+	select_player_button.color = { 1.0f, 1.0f, 1.0f, 1.0f };
+}
+
+void Button::tyto_enemy_button_init()
+{
+	select_enemy_button.position = { 710, 500 };  // 中心位置
+	select_enemy_button.scale = { 0.3f, 0.3f };
+	select_enemy_button.texPos = { 0, 0 };
+	select_enemy_button.texSize = { 1500, 500 };
+	select_enemy_button.pivot = { 0, 0 };
+	select_enemy_button.color = { 1.0f, 1.0f, 1.0f, 1.0f };
+}
+
+void Button::descript_score_button_init()
+{
+	select_score_button.position = { 710, 820 };  // 中心位置
+	select_score_button.scale = { 0.3f, 0.3f };
+	select_score_button.texPos = { 0, 0 };
+	select_score_button.texSize = { 1500, 500 };
+	select_score_button.pivot = { 0, 0 };
+	select_score_button.color = { 1.0f, 1.0f, 1.0f, 1.0f };
+}
+
 bool Button::rect_click(Button button_info)
 {
 	// マウスカーソルの座標取得
@@ -376,10 +410,10 @@ bool Button::rect_click(Button button_info)
 	GetCursorPos(&nextpoint);
 	ScreenToClient(window::getHwnd(), &nextpoint);
 	// ボタンの四辺を取得
-	float button_right = button_info.position.x + button_info.texSize.x;
+	float button_right = button_info.position.x + button_info.texSize.x * button_info.scale.x;
 	float button_left = button_info.position.x;
 	float button_top = button_info.position.y;
-	float button_bottom = button_info.position.y + button_info.texSize.y;
+	float button_bottom = button_info.position.y + button_info.texSize.y* button_info.scale.y;
 
 	// マウスの座標がボタンの範囲内かチェック
 	bool isWithinX = (nextpoint.x >= button_left && nextpoint.x <= button_right);

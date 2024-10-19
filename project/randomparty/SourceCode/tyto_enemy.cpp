@@ -30,13 +30,14 @@ void enemy_tyto_update()
 		scene_state++;
 	case 1:
 		nextbutton.next_button_init();
+		backbutton.back_button_init();
 		scene_state++;
 	case 2:
 		if (TRG(0) & L_CLICK && nextbutton.rect_click(nextbutton) && enemy_number<3)
 		{
 			enemy_number++;
 		}
-		if (TRG(0) & L_CLICK && nextbutton.rect_click(backbutton) && enemy_number > 0)
+		if (TRG(0) & L_CLICK && backbutton.rect_click(backbutton) && enemy_number > 0)
 		{
 			enemy_number--;
 		}
@@ -44,7 +45,7 @@ void enemy_tyto_update()
 	default:
 		break;
 	}
-	debug::setString("%d", enemy_number);
+	/*debug::setString("%d", enemy_number);*/
 }
 
 void enemy_tyto_render()
