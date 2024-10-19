@@ -58,7 +58,7 @@ void result_init()
 
 void result_deinit()
 {
-	EndButton.end_button_deinit();
+	//EndButton.end_button_deinit();
 	safe_delete(sprBG);
 	safe_delete(sprOverley);
 	safe_delete(sprScore);

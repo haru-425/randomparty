@@ -7,6 +7,7 @@ int help_state;
 int select_c;
 int render_mode;
 int help_timer;
+int help_page;
 
 Sprite* sprBG_H;
 Sprite* sprOverley_H;
@@ -21,14 +22,15 @@ Sprite* select_button1;
 Sprite* select_button2;
 Sprite* select_button3;
 Sprite* bomb_stock_text;
+Sprite* score_nabi;
 
 extern Button button;
 extern Button select_player_button;
 extern Button select_enemy_button;
 extern Button select_score_button;
-
+extern Button EndButton;
 extern int enemy_number;
-int help_page;
+
 //--------------------------------------
 //  èâä˙ê›íË
 //--------------------------------------
@@ -57,6 +59,7 @@ void help_deinit()
 	safe_delete(select_button2);
 	safe_delete(select_button3);
 	safe_delete(bomb_stock_text);
+	safe_delete(score_nabi);
 }
 
 void help_update()
@@ -83,6 +86,7 @@ void help_update()
 		select_button2 = sprite_load(L"./Data/Images/enemy_describ_button.png");
 		select_button3 = sprite_load(L"./Data/Images/score_describe.png");
 		bomb_stock_text = sprite_load(L"./Data/Images/bomb_stock_text.png");
+		score_nabi = sprite_load(L"./Data/Images/score_nabi.png");
 		help_state++;
 		/*fallthrough*/
 	case 1:
@@ -109,6 +113,11 @@ void help_update()
 			render_mode = 3;
 			select_c = 2;
 		}
+		if (TRG(0) & L_CLICK && select_score_button.rect_click(select_score_button) && render_mode == 0)
+		{
+			render_mode = 4;
+			select_c = 3;
+		}
 		switch (select_c)
 		{
 		case 1:
@@ -117,7 +126,12 @@ void help_update()
 		case 2:
 			enemy_tyto_update();
 			break;
+
+		case 3:
+			EndButton.end_button_update();
+			break;
 		default:
+			EndButton.end_button_update();
 			break;
 			
 		}
@@ -139,6 +153,7 @@ void help_render()
 		sprite_render(select_button1, 710, 180, 0.3f, 0.3f, 0, 0);
 		sprite_render(select_button2, 710, 500, 0.3f, 0.3f, 0, 0);
 		sprite_render(select_button3, 710, 820, 0.3f, 0.3f, 0, 0);
+		EndButton.end_button_render();
 		//primitive::rect(710, 820, 1500*0.3f, 500*0.3f);
 
 		break;
@@ -180,6 +195,10 @@ void help_render()
 			sprite_render(next_button, 1940, 1080, 1, 1, 0, 0, 1920, 1080, 0, 0, ToRadian(180));
 			break;
 		}
+		break;
+	case 4:
+		sprite_render(score_nabi, 0, 0, 1, 1, 0, 0);
+		EndButton.end_button_render();
 		break;
 	default:
 		break;

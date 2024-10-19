@@ -231,7 +231,7 @@ void Button::button_act()
 
 void Button::end_button_act()
 {
-	if (curScene == SCENE_HELP)
+	if (select_c != 0)
 	{
 		if (TRG(0) & L_CLICK) {
 			if (end_click()) {
