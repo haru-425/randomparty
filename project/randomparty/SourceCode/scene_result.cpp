@@ -37,6 +37,7 @@ void result_init()
 	sprOverley = sprite_load(L"./Data/Images/title_layer02.png");
 	sprScore = sprite_load(L"./Data/Images/result.png");
 
+	sprScore_c = sprite_load(L"./Data/Images/result_score.png");
 
 	DrawScoreState = 0;
 
@@ -52,8 +53,6 @@ void result_init()
 	music::play(BGM_RESULT, true);
 
 	score_angle = 0;
-	sprScore_c = sprite_load(L"./Data/Images/result_score.png");
-	safe_delete(sprScore_c);
 
 }
 
@@ -63,6 +62,7 @@ void result_deinit()
 	safe_delete(sprBG);
 	safe_delete(sprOverley);
 	safe_delete(sprScore);
+	safe_delete(sprScore_c);
 
 	music::stop(BGM_RESULT);
 
@@ -99,6 +99,8 @@ void result_render()
 
 
 	sprite_render(sprScore_c, scorePos.x, scorePos.y, 1, 1, 0, 0, 1920, 1080, 0, 0);
+	//sprite_render(sprScore_c, SCREEN_W / 2, SCREEN_H / 2, 0.5f, 0.5f, 0, 0, 1920, 1080, 1920 / 2, 1080 / 2);
+
 
 
 
