@@ -20,8 +20,8 @@ extern float(* const ToDegree)(float);// ƒ‰ƒWƒAƒ“‚ğŠp“x‚É
 #define SCENE_TITLE 0
 #define SCENE_GAME 1
 #define SCENE_RESULT 2
-
 #define SCENE_HELP 3
+#define SCENE_SETTING 4
 // •Ï”‚ÌéŒ¾
 extern int curScene;
 extern int nextScene;

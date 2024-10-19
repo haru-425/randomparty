@@ -192,6 +192,7 @@ attrib +h SourceCode\gp1.log
     <ClInclude Include="SourceCode\scene_help.h" />
     <ClInclude Include="SourceCode\scene_result.h" />
     <ClInclude Include="SourceCode\scene_game.h" />
+    <ClInclude Include="SourceCode\scene_setting.h" />
     <ClInclude Include="SourceCode\scene_title.h" />
     <ClInclude Include="SourceCode\game_system.h" />
     <ClInclude Include="SourceCode\score.h" />
@@ -231,6 +232,7 @@ attrib +h SourceCode\gp1.log
     <ClCompile Include="SourceCode\scene_help.cpp" />
     <ClCompile Include="SourceCode\scene_result.cpp" />
     <ClCompile Include="SourceCode\scene_game.cpp" />
+    <ClCompile Include="SourceCode\scene_setting.cpp" />
     <ClCompile Include="SourceCode\scene_title.cpp" />
     <ClCompile Include="SourceCode\game_system.cpp" />
     <ClCompile Include="SourceCode\score.cpp" />

@@ -20,6 +20,7 @@ Sprite* arrow;
 Sprite* select_button1;
 Sprite* select_button2;
 Sprite* select_button3;
+Sprite* bomb_stock_text;
 
 extern Button button;
 extern Button select_player_button;
@@ -55,7 +56,7 @@ void help_deinit()
 	safe_delete(select_button1);
 	safe_delete(select_button2);
 	safe_delete(select_button3);
-
+	safe_delete(bomb_stock_text);
 }
 
 void help_update()
@@ -81,6 +82,7 @@ void help_update()
 		select_button1 = sprite_load(L"./Data/Images/player_navi_button.png");
 		select_button2 = sprite_load(L"./Data/Images/enemy_describ_button.png");
 		select_button3 = sprite_load(L"./Data/Images/score_describe.png");
+		bomb_stock_text = sprite_load(L"./Data/Images/bomb_stock_text.png");
 		help_state++;
 		/*fallthrough*/
 	case 1:
@@ -122,7 +124,7 @@ void help_update()
         
         break;
 	}
-	debug::setString("%d", select_c);
+	/*debug::setString("%d", select_c);*/
 }
 void help_render()
 {
@@ -160,6 +162,7 @@ void help_render()
 		}
 		bomb_render();
 		sprite_render(next_button, -20, 0, 1, 1, 0, 0);
+		sprite_render(bomb_stock_text, 1750, 820, 0.26f, 0.26f, 0, 0);
 		break;
 	case 3:
 		enemy_tyto_render();
