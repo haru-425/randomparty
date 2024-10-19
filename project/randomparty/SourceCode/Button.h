@@ -63,6 +63,9 @@ public:
 
 	void next_button_init();
 	void back_button_init();
+	void tuto_player_button_init();
+	void tyto_enemy_button_init();
+	void descript_score_button_init();
 	bool rect_click(Button button_info);
 
 };
