@@ -33,13 +33,27 @@ void enemy_tyto_update()
 		backbutton.back_button_init();
 		scene_state++;
 	case 2:
-		if (TRG(0) & L_CLICK && nextbutton.rect_click(nextbutton) && enemy_number<3)
+		if (TRG(0) & L_CLICK && nextbutton.rect_click(nextbutton) && enemy_number < 3)
 		{
 			enemy_number++;
+		}
+		if (nextbutton.rect_click(nextbutton))
+		{
+			nextbutton.scale = { 1.1f,1.1f };
+		}
+		else {
+			nextbutton.scale = { 1.0f,1.0f };
 		}
 		if (TRG(0) & L_CLICK && backbutton.rect_click(backbutton) && enemy_number > 0)
 		{
 			enemy_number--;
+		}
+		if (backbutton.rect_click(backbutton))
+		{
+			backbutton.scale = { 1.1f,1.1f };
+		}
+		else {
+			backbutton.scale = { 1.0f,1.0f };
 		}
 		EndButton.end_button_update();
 	default:

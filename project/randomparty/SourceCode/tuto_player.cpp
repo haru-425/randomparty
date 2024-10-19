@@ -35,6 +35,14 @@ void tuto_player_update()
 			++Tutorial_state;
 			++render_mode;
 		}
+		if (nextbutton.rect_click(nextbutton))
+		{
+			nextbutton.scale = { 1.1f,1.1f };
+		}
+		else {
+			nextbutton.scale = { 1.0f,1.0f };
+		}
+
 		break;
 	case 3:
 		++Tutorial_state;
@@ -53,6 +61,13 @@ void tuto_player_update()
 			tuto_player_deinit();
 			select_c = 0;
 			render_mode = 0;
+		}
+		if (nextbutton.rect_click(nextbutton))
+		{
+			nextbutton.scale = { 1.1f,1.1f };
+		}
+		else {
+			nextbutton.scale = { 1.0f,1.0f };
 		}
 		break;
 

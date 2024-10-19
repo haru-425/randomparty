@@ -219,11 +219,11 @@ void help_render()
 
 			break;
 		case 3:
-			sprite_render(next_button, backbutton.position.x, backbutton.position.y, nextbutton.scale.x, nextbutton.scale.y, 0, 0, 100, 300, 50, 150, ToRadian(180));
+			sprite_render(next_button, backbutton.position.x, backbutton.position.y, backbutton.scale.x, backbutton.scale.y, 0, 0, 100, 300, 50, 150, ToRadian(180));
 			break;
 		default:
 			sprite_render(next_button, nextbutton.position.x, nextbutton.position.y, nextbutton.scale.x, nextbutton.scale.y, 0, 0, 100, 300, 50, 150);
-			sprite_render(next_button, backbutton.position.x, backbutton.position.y, nextbutton.scale.x, nextbutton.scale.y, 0, 0, 100, 300, 50, 150, ToRadian(180));
+			sprite_render(next_button, backbutton.position.x, backbutton.position.y, backbutton.scale.x, backbutton.scale.y, 0, 0, 100, 300, 50, 150, ToRadian(180));
 			break;
 		}
 		break;
