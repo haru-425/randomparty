@@ -6,6 +6,7 @@ void audio_init()
 	music::load(0, L"./Data/Musics/9th_Attempt.wav");
 	music::load(1, L"./Data/Musics/超頭脳バトル.wav");
 	music::load(2, L"./Data/Musics/マッドサイエンティス子.wav");
+	music::load(3, L"./Data/Musics/拠点制圧ミッション.wav");
 
 	for (int i = 0; i < 3; i++)
 	{

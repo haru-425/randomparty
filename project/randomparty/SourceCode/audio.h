@@ -14,7 +14,7 @@
 #define BGM_GAME 0
 #define BGM_TITLE 1
 #define BGM_RESULT 2
-// XWB‚ÌŽí—Þ
+#define BGM_HELP 3// XWB‚ÌŽí—Þ
 #define XWB_SYSTEM 0
 // SYSTEM‚ÌŒø‰Ê‰¹
 #define XWB_SYSTEM_BOMB_FAILURE 0

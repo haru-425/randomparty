@@ -35,6 +35,7 @@ void enemy_tyto_update()
 	case 2:
 		if (TRG(0) & L_CLICK && nextbutton.rect_click(nextbutton) && enemy_number < 3)
 		{
+			sound::play(XWB_SYSTEM, XWB_SYSTEM_BUTTON);
 			enemy_number++;
 		}
 		if (nextbutton.rect_click(nextbutton))
@@ -46,6 +47,7 @@ void enemy_tyto_update()
 		}
 		if (TRG(0) & L_CLICK && backbutton.rect_click(backbutton) && enemy_number > 0)
 		{
+			sound::play(XWB_SYSTEM, XWB_SYSTEM_BUTTON);
 			enemy_number--;
 		}
 		if (backbutton.rect_click(backbutton))

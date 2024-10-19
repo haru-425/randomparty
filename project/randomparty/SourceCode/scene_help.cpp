@@ -42,6 +42,8 @@ void help_init()
 	help_state = 0;
 	help_timer = 0;
 	bomb_init();
+
+
 }
 
 //--------------------------------------
@@ -63,6 +65,8 @@ void help_deinit()
 	safe_delete(select_button3);
 	safe_delete(bomb_stock_text);
 	safe_delete(score_nabi);
+
+	music::stop(BGM_HELP);
 }
 
 void help_update()
@@ -91,6 +95,8 @@ void help_update()
 		bomb_stock_text = sprite_load(L"./Data/Images/bomb_stock_text.png");
 		score_nabi = sprite_load(L"./Data/Images/score_nabi.png");
 		help_state++;
+
+		music::play(BGM_HELP, true);
 		/*fallthrough*/
 	case 1:
 		//////// ÉpÉâÉÅÅ[É^ÇÃê›íË ////////
@@ -108,6 +114,7 @@ void help_update()
 		//enemy_tyto_update();
 		if (TRG(0) & L_CLICK && select_player_button.rect_click(select_player_button) && render_mode == 0)
 		{
+			sound::play(XWB_SYSTEM, XWB_SYSTEM_BUTTON);
 			render_mode = 1;
 			select_c = 1;
 		}
@@ -121,6 +128,7 @@ void help_update()
 
 		if (TRG(0) & L_CLICK && select_enemy_button.rect_click(select_enemy_button) && render_mode == 0)
 		{
+			sound::play(XWB_SYSTEM, XWB_SYSTEM_BUTTON);
 			render_mode = 3;
 			select_c = 2;
 		}
@@ -134,6 +142,7 @@ void help_update()
 
 		if (TRG(0) & L_CLICK && select_score_button.rect_click(select_score_button) && render_mode == 0)
 		{
+			sound::play(XWB_SYSTEM, XWB_SYSTEM_BUTTON);
 			render_mode = 4;
 			select_c = 3;
 		}

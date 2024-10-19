@@ -58,6 +58,7 @@ void tuto_player_update()
 		bomb_update();
 		if (TRG(0) & L_CLICK && nextbutton.rect_click(nextbutton))
 		{
+			sound::play(XWB_SYSTEM, XWB_SYSTEM_BUTTON);
 			tuto_player_deinit();
 			select_c = 0;
 			render_mode = 0;
