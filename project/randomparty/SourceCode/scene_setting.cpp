@@ -114,7 +114,5 @@ void setting_render()
 		sprite_render(volume_change, 970, 530, 0.3f, 0.3f, 0, 0, 400, 400, 400, 0, ToRadian(-90), 1, 1, 1, 0.5);
 	}
 	
-	
-	
 	EndButton.end_button_render();
 }
