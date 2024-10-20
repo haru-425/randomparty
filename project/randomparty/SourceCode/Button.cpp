@@ -295,9 +295,8 @@ void Button::set_button_act()
 	// ボタン内部で左クリックが押された場合
 	if (TRG(0) & L_CLICK) {
 		if (set_click()) {
-
 			sound::play(XWB_SYSTEM, XWB_SYSTEM_BUTTON);
-			result_end();
+			nextScene = SCENE_SETTING;
 			return;
 		}
 	}

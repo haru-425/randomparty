@@ -79,4 +79,5 @@ void tuto_player_deinit()
 {
 	player_deinit();
 	bomb_deinit();
+	Tutorial_state = 0;
 }
