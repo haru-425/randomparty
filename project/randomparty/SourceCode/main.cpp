@@ -15,7 +15,7 @@ using namespace GameLib;
 //------< •Ï” >----------------------------------------------------------------
 int curScene = SCENE_NONE;
 int nextScene = SCENE_TITLE;
-
+extern Bolume game_volume;
 //------------------------------------------------------------------------------
 //  WinMainiƒGƒ“ƒgƒŠƒ|ƒCƒ“ƒgj
 //------------------------------------------------------------------------------
@@ -28,6 +28,9 @@ int APIENTRY wWinMain(HINSTANCE, HINSTANCE, LPWSTR, int)// g—p‚µ‚È‚¢•Ï”‚Í‹Lq‚
 	audio_init();
 	while (GameLib::gameLoop())
 	{
+
+
+
 
 		// ƒV[ƒ“Ø‚è‘Ö‚¦ˆ—
 		if (curScene != nextScene)
@@ -54,7 +57,16 @@ int APIENTRY wWinMain(HINSTANCE, HINSTANCE, LPWSTR, int)// g—p‚µ‚È‚¢•Ï”‚Í‹Lq‚
 				setting_deinit();
 				break;
 			}
+			for (int i; i < 4; i++)
+			{
 
+				music::setVolume(i, game_volume.bgm_volume * 5.0f);
+			}
+			for (int i = 0; i < SOUND_EFFECT_COUNT; i++)
+			{
+
+				sound::setVolume(XWB_SYSTEM, i, game_volume.se_volume * 5.0f);
+			}
 			// Ÿ‚ÌƒV[ƒ“‚É‰‚¶‚½‰Šúİ’èˆ—
 			switch (nextScene)
 			{
@@ -109,7 +121,17 @@ int APIENTRY wWinMain(HINSTANCE, HINSTANCE, LPWSTR, int)// g—p‚µ‚È‚¢•Ï”‚Í‹Lq‚
 			setting_render();
 			break;
 		}
+		for (int i = 0; i < 4; i++)
+		{
 
+			music::setVolume(i, game_volume.bgm_volume * (1.0f / 5.0f));
+		}
+		for (int i = 0; i < SOUND_EFFECT_COUNT; i++)
+		{
+
+			sound::setVolume(XWB_SYSTEM, i, game_volume.se_volume * (1.0f / 5.0f));
+		}
+		//debug::setString("B:S %d:%d", game_volume.bgm_volume, game_volume.se_volume);
 #ifdef USE_IMGUI
 		ImGui_ImplDX11_NewFrame();
 		ImGui_ImplWin32_NewFrame();
