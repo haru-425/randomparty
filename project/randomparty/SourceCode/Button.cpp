@@ -23,6 +23,13 @@ Sprite* sprSet;
 extern int render_mode;
 extern int select_c;
 
+extern Button bgm_volume_up;
+extern Button bgm_volume_Down;
+extern Button se_volume_up;
+extern Button se_volume_Down;
+
+
+
 void Button::button_init()
 {
 	button_state = 0;
@@ -430,6 +437,43 @@ void Button::descript_score_button_init()
 	select_score_button.texSize = { 1500, 500 };
 	select_score_button.pivot = { 0, 0 };
 	select_score_button.color = { 1.0f, 1.0f, 1.0f, 1.0f };
+}
+
+void Button::bgm_volume_Down_init()
+{
+	bgm_volume_Down.position = { 1027, 390 };
+	bgm_volume_Down.scale = { 0.3f, 0.2f };
+	bgm_volume_Down.texPos = { 0, 0 };
+	bgm_volume_Down.texSize = { 400, 400 };
+	bgm_volume_Down.pivot = { 0, 0 };
+	bgm_volume_Down.color = { 1.0f, 1.0f, 1.0f, 1.0f };
+}
+void Button::bgm_volume_up_init()
+{
+	bgm_volume_up.position = { 1513, 390 };  // 中心位置
+	bgm_volume_up.scale = { 0.3f, 0.2f };
+	bgm_volume_up.texPos = { 0, 0 };
+	bgm_volume_up.texSize = { 400, 400 };
+	bgm_volume_up.pivot = { 0, 0 };
+	bgm_volume_up.color = { 1.0f, 1.0f, 1.0f, 1.0f };
+}
+void Button::se_volume_Down_init()
+{
+	se_volume_Down.position = { 1027, 590 };  // 中心位置
+	se_volume_Down.scale = { 0.3f, 0.2f };
+	se_volume_Down.texPos = { 0, 0 };
+	se_volume_Down.texSize = { 400, 400 };
+	se_volume_Down.pivot = { 0, 0 };
+	se_volume_Down.color = { 1.0f, 1.0f, 1.0f, 1.0f };
+}
+void Button::se_volume_up_init()
+{
+	se_volume_up.position = { 1513, 590 };  // 中心位置
+	se_volume_up.scale = { 0.3f, 0.2f };
+	se_volume_up.texPos = { 0, 0 };
+	se_volume_up.texSize = { 400, 400 };
+	se_volume_up.pivot = { 0, 0 };
+	se_volume_up.color = { 1.0f, 1.0f, 1.0f, 1.0f };
 }
 
 bool Button::rect_click(Button button_info)

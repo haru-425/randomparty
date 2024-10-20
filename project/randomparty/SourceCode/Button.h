@@ -66,6 +66,10 @@ public:
 	void tuto_player_button_init();
 	void tyto_enemy_button_init();
 	void descript_score_button_init();
+	void bgm_volume_up_init();
+	void bgm_volume_Down_init();
+	void se_volume_up_init();
+	void se_volume_Down_init();
 	bool rect_click(Button button_info);
 
 };

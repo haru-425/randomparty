@@ -6,6 +6,11 @@
 class Bolume
 {
 public:
+	Bolume()
+	{
+		bgm_volume = 3;
+		se_volume = 3;
+	}
 	int bgm_volume;
 	int se_volume;
 	int bolume(int bolume)
