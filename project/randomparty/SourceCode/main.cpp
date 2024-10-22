@@ -22,7 +22,7 @@ extern Bolume game_volume;
 int APIENTRY wWinMain(HINSTANCE, HINSTANCE, LPWSTR, int)// g—p‚µ‚È‚¢•Ï”‚Í‹Lq‚µ‚È‚¢
 {
 	// ƒQ[ƒ€ƒ‰ƒCƒuƒ‰ƒŠ‚Ì‰Šúİ’è
-	GameLib::init(L"FIGAVOID", SCREEN_W, SCREEN_H, FULLSCREEN);
+	GameLib::init(L"FIGAVOID", SCREEN_W, SCREEN_H, false);
 
 	//game_init();
 	audio_init();
@@ -57,7 +57,7 @@ int APIENTRY wWinMain(HINSTANCE, HINSTANCE, LPWSTR, int)// g—p‚µ‚È‚¢•Ï”‚Í‹Lq‚
 				setting_deinit();
 				break;
 			}
-			for (int i; i < 4; i++)
+			for (int i=0; i < 4; i++)
 			{
 
 				music::setVolume(i, game_volume.bgm_volume * 5.0f);
