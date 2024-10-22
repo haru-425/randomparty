@@ -46,6 +46,9 @@ extern ImWchar glyphRangesJapanese[];
 #include "view_settings.h"
 #include "depth_stencil.h"
 
+//ちょいとアイコン用に付け足しますよ
+#include "../resource1.h"
+
 namespace GameLib
 {
 
@@ -644,7 +647,7 @@ namespace GameLib
 		wcex.cbClsExtra = 0;
 		wcex.cbWndExtra = 0;
 		wcex.hInstance = GetModuleHandle(NULL);
-		wcex.hIcon = NULL;
+		wcex.hIcon = LoadIcon(wcex.hInstance, MAKEINTRESOURCE(IDI_ICON1));
 		wcex.hCursor = LoadCursor(NULL, IDC_ARROW);
 		wcex.hbrBackground = (HBRUSH)(COLOR_WINDOW + 1);
 		wcex.lpszMenuName = NULL;
