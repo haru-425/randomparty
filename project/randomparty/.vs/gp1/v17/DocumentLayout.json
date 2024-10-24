@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\2240007\\Desktop\\\u30C1\u30FC\u30E0\u5236\u4F5C\\randomparty\\project\\randomparty\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{D11430B7-E3E6-482E-8B36-A78D576C6E14}|gp1.vcxproj|C:\\Users\\2240007\\Desktop\\\u30C1\u30FC\u30E0\u5236\u4F5C\\randomparty\\project\\randomparty\\SourceCode\\enemy.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{D11430B7-E3E6-482E-8B36-A78D576C6E14}|gp1.vcxproj|solutionrelative:SourceCode\\enemy.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{D11430B7-E3E6-482E-8B36-A78D576C6E14}|gp1.vcxproj|C:\\Users\\2240007\\Desktop\\\u30C1\u30FC\u30E0\u5236\u4F5C\\randomparty\\project\\randomparty\\SourceCode\\enemy.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{D11430B7-E3E6-482E-8B36-A78D576C6E14}|gp1.vcxproj|solutionrelative:SourceCode\\enemy.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D11430B7-E3E6-482E-8B36-A78D576C6E14}|gp1.vcxproj|C:\\Users\\2240007\\Desktop\\\u30C1\u30FC\u30E0\u5236\u4F5C\\randomparty\\project\\randomparty\\SourceCode\\enemy.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{D11430B7-E3E6-482E-8B36-A78D576C6E14}|gp1.vcxproj|solutionrelative:SourceCode\\enemy.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{D11430B7-E3E6-482E-8B36-A78D576C6E14}|gp1.vcxproj|C:\\Users\\2240007\\Desktop\\\u30C1\u30FC\u30E0\u5236\u4F5C\\randomparty\\project\\randomparty\\SourceCode\\scene_game.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{D11430B7-E3E6-482E-8B36-A78D576C6E14}|gp1.vcxproj|solutionrelative:SourceCode\\scene_game.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D11430B7-E3E6-482E-8B36-A78D576C6E14}|gp1.vcxproj|C:\\Users\\2240007\\Desktop\\\u30C1\u30FC\u30E0\u5236\u4F5C\\randomparty\\project\\randomparty\\SourceCode\\common.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -126,7 +130,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 23,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Bookmark",
@@ -138,7 +142,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 2,
+              "Title": "scene_game.h",
+              "DocumentMoniker": "C:\\Users\\2240007\\Desktop\\\u30C1\u30FC\u30E0\u5236\u4F5C\\randomparty\\project\\randomparty\\SourceCode\\scene_game.h",
+              "RelativeDocumentMoniker": "SourceCode\\scene_game.h",
+              "ToolTip": "C:\\Users\\2240007\\Desktop\\\u30C1\u30FC\u30E0\u5236\u4F5C\\randomparty\\project\\randomparty\\SourceCode\\scene_game.h",
+              "RelativeToolTip": "SourceCode\\scene_game.h",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2024-10-24T08:41:11.287Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "timer.cpp",
               "DocumentMoniker": "C:\\Users\\2240007\\Desktop\\\u30C1\u30FC\u30E0\u5236\u4F5C\\randomparty\\project\\randomparty\\SourceCode\\timer.cpp",
               "RelativeDocumentMoniker": "SourceCode\\timer.cpp",
@@ -150,7 +167,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "scene_help.cpp",
               "DocumentMoniker": "C:\\Users\\2240007\\Desktop\\\u30C1\u30FC\u30E0\u5236\u4F5C\\randomparty\\project\\randomparty\\SourceCode\\scene_help.cpp",
               "RelativeDocumentMoniker": "SourceCode\\scene_help.cpp",
@@ -162,7 +179,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "audio.h",
               "DocumentMoniker": "C:\\Users\\2240007\\Desktop\\\u30C1\u30FC\u30E0\u5236\u4F5C\\randomparty\\project\\randomparty\\SourceCode\\audio.h",
               "RelativeDocumentMoniker": "SourceCode\\audio.h",
@@ -174,7 +191,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "audio.cpp",
               "DocumentMoniker": "C:\\Users\\2240007\\Desktop\\\u30C1\u30FC\u30E0\u5236\u4F5C\\randomparty\\project\\randomparty\\SourceCode\\audio.cpp",
               "RelativeDocumentMoniker": "SourceCode\\audio.cpp",
@@ -186,7 +203,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "game_system.cpp",
               "DocumentMoniker": "C:\\Users\\2240007\\Desktop\\\u30C1\u30FC\u30E0\u5236\u4F5C\\randomparty\\project\\randomparty\\SourceCode\\game_system.cpp",
               "RelativeDocumentMoniker": "SourceCode\\game_system.cpp",
@@ -198,7 +215,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "game_lib.cpp",
               "DocumentMoniker": "C:\\Users\\2240007\\Desktop\\\u30C1\u30FC\u30E0\u5236\u4F5C\\randomparty\\project\\randomparty\\GameLib\\game_lib.cpp",
               "RelativeDocumentMoniker": "GameLib\\game_lib.cpp",
@@ -210,20 +227,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "enemy.cpp",
               "DocumentMoniker": "C:\\Users\\2240007\\Desktop\\\u30C1\u30FC\u30E0\u5236\u4F5C\\randomparty\\project\\randomparty\\SourceCode\\enemy.cpp",
               "RelativeDocumentMoniker": "SourceCode\\enemy.cpp",
               "ToolTip": "C:\\Users\\2240007\\Desktop\\\u30C1\u30FC\u30E0\u5236\u4F5C\\randomparty\\project\\randomparty\\SourceCode\\enemy.cpp",
               "RelativeToolTip": "SourceCode\\enemy.cpp",
-              "ViewState": "AQIAAGAAAAAAAAAAAAAAAGAAAAASAAAA",
+              "ViewState": "AQIAAFcAAAAAAAAAAAAAAHEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-10-04T12:57:12.13Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "scene_setting.cpp",
               "DocumentMoniker": "C:\\Users\\2240007\\Desktop\\\u30C1\u30FC\u30E0\u5236\u4F5C\\randomparty\\project\\randomparty\\SourceCode\\scene_setting.cpp",
               "RelativeDocumentMoniker": "SourceCode\\scene_setting.cpp",
@@ -235,7 +252,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "main.cpp",
               "DocumentMoniker": "C:\\Users\\2240007\\Desktop\\\u30C1\u30FC\u30E0\u5236\u4F5C\\randomparty\\project\\randomparty\\SourceCode\\main.cpp",
               "RelativeDocumentMoniker": "SourceCode\\main.cpp",
@@ -247,7 +264,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "tyto_enemy.cpp",
               "DocumentMoniker": "C:\\Users\\2240007\\Desktop\\\u30C1\u30FC\u30E0\u5236\u4F5C\\randomparty\\project\\randomparty\\SourceCode\\tyto_enemy.cpp",
               "RelativeDocumentMoniker": "SourceCode\\tyto_enemy.cpp",
@@ -259,7 +276,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "scene_game.cpp",
               "DocumentMoniker": "C:\\Users\\2240007\\Desktop\\\u30C1\u30FC\u30E0\u5236\u4F5C\\randomparty\\project\\randomparty\\SourceCode\\scene_game.cpp",
               "RelativeDocumentMoniker": "SourceCode\\scene_game.cpp",
@@ -271,7 +288,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "bomb.cpp",
               "DocumentMoniker": "C:\\Users\\2240007\\Desktop\\\u30C1\u30FC\u30E0\u5236\u4F5C\\randomparty\\project\\randomparty\\SourceCode\\bomb.cpp",
               "RelativeDocumentMoniker": "SourceCode\\bomb.cpp",
@@ -283,7 +300,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "dxtk_audio.cpp",
               "DocumentMoniker": "C:\\Users\\2240007\\Desktop\\\u30C1\u30FC\u30E0\u5236\u4F5C\\randomparty\\project\\randomparty\\GameLib\\dxtk_audio.cpp",
               "RelativeDocumentMoniker": "GameLib\\dxtk_audio.cpp",
@@ -295,7 +312,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "scene_title.cpp",
               "DocumentMoniker": "C:\\Users\\2240007\\Desktop\\\u30C1\u30FC\u30E0\u5236\u4F5C\\randomparty\\project\\randomparty\\SourceCode\\scene_title.cpp",
               "RelativeDocumentMoniker": "SourceCode\\scene_title.cpp",
@@ -307,7 +324,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "scene_title.h",
               "DocumentMoniker": "C:\\Users\\2240007\\Desktop\\\u30C1\u30FC\u30E0\u5236\u4F5C\\randomparty\\project\\randomparty\\SourceCode\\scene_title.h",
               "RelativeDocumentMoniker": "SourceCode\\scene_title.h",
@@ -319,7 +336,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 27,
               "Title": "bomb.h",
               "DocumentMoniker": "C:\\Users\\2240007\\Desktop\\\u30C1\u30FC\u30E0\u5236\u4F5C\\randomparty\\project\\randomparty\\SourceCode\\bomb.h",
               "RelativeDocumentMoniker": "SourceCode\\bomb.h",
@@ -331,7 +348,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "Button.cpp",
               "DocumentMoniker": "C:\\Users\\2240007\\Desktop\\\u30C1\u30FC\u30E0\u5236\u4F5C\\randomparty\\project\\randomparty\\SourceCode\\Button.cpp",
               "RelativeDocumentMoniker": "SourceCode\\Button.cpp",
@@ -343,7 +360,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "tuto_player.cpp",
               "DocumentMoniker": "C:\\Users\\2240007\\Desktop\\\u30C1\u30FC\u30E0\u5236\u4F5C\\randomparty\\project\\randomparty\\SourceCode\\tuto_player.cpp",
               "RelativeDocumentMoniker": "SourceCode\\tuto_player.cpp",
@@ -355,7 +372,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 24,
               "Title": "game_system.h",
               "DocumentMoniker": "C:\\Users\\2240007\\Desktop\\\u30C1\u30FC\u30E0\u5236\u4F5C\\randomparty\\project\\randomparty\\SourceCode\\game_system.h",
               "RelativeDocumentMoniker": "SourceCode\\game_system.h",
@@ -367,7 +384,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "scene_result.cpp",
               "DocumentMoniker": "C:\\Users\\2240007\\Desktop\\\u30C1\u30FC\u30E0\u5236\u4F5C\\randomparty\\project\\randomparty\\SourceCode\\scene_result.cpp",
               "RelativeDocumentMoniker": "SourceCode\\scene_result.cpp",
@@ -379,7 +396,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "Button.h",
               "DocumentMoniker": "C:\\Users\\2240007\\Desktop\\\u30C1\u30FC\u30E0\u5236\u4F5C\\randomparty\\project\\randomparty\\SourceCode\\Button.h",
               "RelativeDocumentMoniker": "SourceCode\\Button.h",
@@ -391,20 +408,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "enemy.h",
               "DocumentMoniker": "C:\\Users\\2240007\\Desktop\\\u30C1\u30FC\u30E0\u5236\u4F5C\\randomparty\\project\\randomparty\\SourceCode\\enemy.h",
               "RelativeDocumentMoniker": "SourceCode\\enemy.h",
               "ToolTip": "C:\\Users\\2240007\\Desktop\\\u30C1\u30FC\u30E0\u5236\u4F5C\\randomparty\\project\\randomparty\\SourceCode\\enemy.h",
               "RelativeToolTip": "SourceCode\\enemy.h",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAGQAAAApAAAA",
+              "ViewState": "AQIAAEkAAAAAAAAAAAAAAGQAAAApAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2024-10-04T12:56:55.955Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "resource1.h",
               "DocumentMoniker": "C:\\Users\\2240007\\Desktop\\\u30C1\u30FC\u30E0\u5236\u4F5C\\randomparty\\project\\randomparty\\resource1.h",
               "RelativeDocumentMoniker": "resource1.h",
@@ -416,7 +433,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 26,
               "Title": "player.h",
               "DocumentMoniker": "C:\\Users\\2240007\\Desktop\\\u30C1\u30FC\u30E0\u5236\u4F5C\\randomparty\\project\\randomparty\\SourceCode\\player.h",
               "RelativeDocumentMoniker": "SourceCode\\player.h",
@@ -428,7 +445,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 25,
               "Title": "player.cpp",
               "DocumentMoniker": "C:\\Users\\2240007\\Desktop\\\u30C1\u30FC\u30E0\u5236\u4F5C\\randomparty\\project\\randomparty\\SourceCode\\player.cpp",
               "RelativeDocumentMoniker": "SourceCode\\player.cpp",
@@ -440,7 +457,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 29,
               "Title": "all.h",
               "DocumentMoniker": "C:\\Users\\2240007\\Desktop\\\u30C1\u30FC\u30E0\u5236\u4F5C\\randomparty\\project\\randomparty\\SourceCode\\all.h",
               "RelativeDocumentMoniker": "SourceCode\\all.h",
@@ -452,7 +469,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "common.h",
               "DocumentMoniker": "C:\\Users\\2240007\\Desktop\\\u30C1\u30FC\u30E0\u5236\u4F5C\\randomparty\\project\\randomparty\\SourceCode\\common.h",
               "RelativeDocumentMoniker": "SourceCode\\common.h",
@@ -464,7 +481,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 28,
               "Title": "wnd_proc.cpp",
               "DocumentMoniker": "C:\\Users\\2240007\\Desktop\\\u30C1\u30FC\u30E0\u5236\u4F5C\\randomparty\\project\\randomparty\\GameLib\\wnd_proc.cpp",
               "RelativeDocumentMoniker": "GameLib\\wnd_proc.cpp",
@@ -476,7 +493,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "common.cpp",
               "DocumentMoniker": "C:\\Users\\2240007\\Desktop\\\u30C1\u30FC\u30E0\u5236\u4F5C\\randomparty\\project\\randomparty\\SourceCode\\common.cpp",
               "RelativeDocumentMoniker": "SourceCode\\common.cpp",
