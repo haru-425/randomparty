@@ -22,7 +22,7 @@ extern Bolume game_volume;
 int APIENTRY wWinMain(HINSTANCE, HINSTANCE, LPWSTR, int)// 使用しない変数は記述しない
 {
 	// ゲームライブラリの初期設定
-	GameLib::init(L"FIGAVOID", SCREEN_W, SCREEN_H, false);
+	GameLib::init(L"FIGAVOID", SCREEN_W, SCREEN_H, true);
 
 	//game_init();
 	audio_init();
